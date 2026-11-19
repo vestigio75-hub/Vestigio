@@ -36,25 +36,13 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 .lr-t .ch:hover{transform:translateY(-.08em) rotate(-6deg)}
 @keyframes lrDrop{to{opacity:1;transform:none}}
 .lr-t2{display:block;margin-top:clamp(6px,1.2vh,14px);font-size:clamp(30px,4.6vw,64px);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--cafe);opacity:0;animation:lrUp .9s .75s cubic-bezier(.2,.8,.2,1) forwards}
-.lr-paz{position:relative;display:inline-block;white-space:nowrap;color:var(--roja);padding:0 .08em;margin:0 .14em}
-.lr-circ{position:absolute;left:-14%;top:-22%;width:128%;height:150%;overflow:visible;pointer-events:none}
-.lr-circ path{fill:none;stroke:var(--roja);stroke-width:3.2;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:lrDraw 1.1s 1.5s cubic-bezier(.6,.1,.3,1) forwards}
-@keyframes lrDraw{to{stroke-dashoffset:0}}
-.lr-by{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:clamp(20px,3.4vh,34px) 0 0;opacity:0;animation:lrUp .8s 1.2s forwards}
+.lr-by{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:clamp(20px,3.4vh,34px) 0 0;opacity:0;animation:lrUp .8s 1.2s forwards}
 .lr-by .ln{width:44px;height:2px;background:var(--cafe)}
-.lr-by .lb{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
-.lr-by .nm{font-family:Caveat,cursive;font-weight:700;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--roja);transform:rotate(-2deg)}
-.lr-sum{position:relative;display:grid;grid-template-columns:14px 1fr;gap:clamp(18px,3vw,34px);margin:clamp(34px,6vh,60px) 0 clamp(40px,7vh,70px);max-width:900px;opacity:0;animation:lrUp 1s 1.45s cubic-bezier(.2,.8,.2,1) forwards}
-.lr-level{position:relative;border-radius:14px;background:rgba(107,86,76,.16);overflow:hidden;box-shadow:inset 0 0 0 2px rgba(107,86,76,.28)}
-.lr-level b{position:absolute;inset:0;transform-origin:50% 100%;transform:scaleY(0);background:linear-gradient(0deg,#9A5E1C,#E0A24A 85%,#F4EFE6 85%);animation:lrFill 2.4s 1.8s cubic-bezier(.4,.1,.2,1) forwards}
-@keyframes lrFill{to{transform:scaleY(1)}}
-.lr-lead{margin:0 0 16px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(22px,2.4vw,31px);line-height:1.25;letter-spacing:-.01em}
-.lr-lead::first-letter{float:left;font-size:3.1em;line-height:.8;margin:.06em .1em 0 0;color:var(--roja);font-weight:800}
-.lr-rest{margin:0;font-size:clamp(16px,1.45vw,18.5px);line-height:1.75}
-.lr-hl{background:linear-gradient(transparent 58%,rgba(224,162,74,.55) 58%) no-repeat 0 0/0% 100%;animation:lrMark .9s cubic-bezier(.6,.1,.3,1) forwards;padding:0 .1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.lr-hl.a{animation-delay:2.2s}.lr-hl.b{animation-delay:2.7s}.lr-hl.c{animation-delay:3.2s}
-.lr-hl strong{font-weight:600}
-@keyframes lrMark{to{background-size:100% 100%}}
+.lr-by .lb{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cafe)}
+.lr-by .nm{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--cafe)}
+.lr-sum{margin:clamp(34px,6vh,60px) 0 clamp(40px,7vh,70px);max-width:860px;font-size:clamp(17px,1.6vw,21px);line-height:1.75;will-change:transform}
+.lr-sum .sw{opacity:.22;transition:opacity .35s ease}
+.lr-sum .sw.on{opacity:1}
 .lr-plant{position:absolute;pointer-events:none;color:var(--cafe);opacity:.55}
 .lr-plant svg{display:block;width:100%;height:auto;transform-origin:50% 100%;animation:lrSway 6s ease-in-out infinite alternate}
 .lr-hop{right:-6px;top:-30px;width:clamp(90px,11vw,150px)}
@@ -84,22 +72,19 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 .lr-band i{font-style:normal;color:#E9C98A;padding-right:.9em}
 @keyframes lrMarq{to{transform:translateX(-50%)}}
 /* proceso */
-.lr-end{position:relative;z-index:1;text-align:center;padding:0 16px clamp(50px,9vh,90px)}
+.lr-end{position:relative;z-index:1;text-align:center;padding:clamp(80px,14vh,150px) 16px clamp(60px,10vh,100px)}
 .lr-end a{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;border:2px solid var(--cafe);color:var(--cafe);text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;transition:background .3s,color .3s}
 .lr-end a:hover{background:var(--cafe);color:var(--crema)}
 @media(max-width:760px){
- .lr-sum{grid-template-columns:8px 1fr;gap:16px}
- .lr-by .ln{width:28px}
  .lr-hop{width:74px;top:-46px;right:-8px;opacity:.4}
  .lr-barley{display:none}
  .lr-seal{right:6px;bottom:-40px}
 }
 @media(prefers-reduced-motion:reduce){
  #laroja *,#laroja *::before,#laroja *::after{animation:none!important;transition:none!important}
- .lr-t .ch,.lr-t2,.lr-by,.lr-sum,.lr-kick{opacity:1!important;transform:none!important}
- .lr-hl{background-size:100% 100%!important}
- .lr-circ path{stroke-dashoffset:0!important}
- .lr-level b{transform:none!important}
+ .lr-t .ch,.lr-t2,.lr-by,.lr-kick{opacity:1!important;transform:none!important}
+ .lr-sum .sw{opacity:1!important}
+ .lr-sum{transform:none!important}
 }
 </style>
 </helmet>
@@ -111,9 +96,9 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 <div class="lr-plant lr-hop" aria-hidden="true"><svg viewBox="0 0 100 150" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M50 0v26"/><path d="M50 18c12-8 26-6 34 2-10 6-24 6-34-2z"/><path d="M50 22c-10-10-24-10-32-4 9 7 22 9 32 4z"/><path d="M50 30c-14 0-22 10-22 22 0 22 10 46 22 58 12-12 22-36 22-58 0-12-8-22-22-22z" fill="rgba(201,138,43,.18)"/><path d="M34 48c6 4 26 4 32 0M30 64c8 5 32 5 40 0M32 80c7 5 29 5 36 0M38 96c5 4 19 4 24 0"/><path d="M50 30v80"/></svg></div>
 <div class="lr-plant lr-barley" aria-hidden="true"><svg viewBox="0 0 40 160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 160V30"/><g fill="rgba(201,138,43,.22)"><ellipse cx="14" cy="40" rx="4" ry="8" transform="rotate(-25 14 40)"/><ellipse cx="26" cy="40" rx="4" ry="8" transform="rotate(25 26 40)"/><ellipse cx="14" cy="56" rx="4" ry="8" transform="rotate(-25 14 56)"/><ellipse cx="26" cy="56" rx="4" ry="8" transform="rotate(25 26 56)"/><ellipse cx="14" cy="72" rx="4" ry="8" transform="rotate(-25 14 72)"/><ellipse cx="26" cy="72" rx="4" ry="8" transform="rotate(25 26 72)"/><ellipse cx="20" cy="24" rx="4" ry="8"/></g><path d="M20 16V2M14 32 8 14M26 32l6-18"/><path d="M20 120c-8-4-14-12-14-20M20 132c8-4 14-12 14-20"/></svg></div>
 <p class="lr-kick"><span class="rec" aria-hidden="true"></span>Video reportaje</p>
-<h1 class="lr-t"><span class="lr-t1" aria-label="La Roja:"><span class="ch" style="animation-delay:0.15s">L</span><span class="ch" style="animation-delay:0.22s">a</span><span class="ch" style="animation-delay:0.29s">&nbsp;</span><span class="ch" style="animation-delay:0.36s">R</span><span class="ch" style="animation-delay:0.43s">o</span><span class="ch" style="animation-delay:0.50s">j</span><span class="ch" style="animation-delay:0.57s">a</span><span class="ch" style="animation-delay:0.64s">:</span></span><span class="lr-t2">cuando la <span class="lr-paz">paz<svg class="lr-circ" viewBox="0 0 120 70" preserveAspectRatio="none" aria-hidden="true"><path d="M70 6C40 2 8 12 6 34c-2 22 32 32 62 30 30-2 50-14 48-32C114 14 92 4 60 8 48 9.5 38 13 30 18"/></svg></span> se fábrica.</span></h1>
-<p class="lr-by"><span class="ln" aria-hidden="true"></span><span class="lb">Realizado por:</span><span class="nm">Valentina Martínez</span></p>
-<div class="lr-sum"><div class="lr-level" aria-hidden="true"><b></b></div><div><p class="lr-lead">El conflicto armado deja marcas profundas en los actores,</p><p class="lr-rest">a partir de estas vivencias y del <span class="lr-hl a"><strong>acuerdo de paz del 2016</strong></span> se impulsan procesos de <span class="lr-hl b"><strong>resiliencia y reincorporación</strong></span> en las personas firmantes de las FARC-EP. A través de procesos productivos, las manualidades, la creación de objetos o la producción de nuevas cervezas, muchas personas encuentran una forma de procesar y de reincorporación a la vida civil después del conflicto así como <span class="lr-hl c"><strong>José Mayorga “Arley”</strong></span>, firmante de paz y socio de La Roja Cerveza Artesanal y ASOROJA.</p></div></div>
+<h1 class="lr-t"><span class="lr-t1" aria-label="La Roja:"><span class="ch" style="animation-delay:0.15s">L</span><span class="ch" style="animation-delay:0.22s">a</span><span class="ch" style="animation-delay:0.29s">&nbsp;</span><span class="ch" style="animation-delay:0.36s">R</span><span class="ch" style="animation-delay:0.43s">o</span><span class="ch" style="animation-delay:0.50s">j</span><span class="ch" style="animation-delay:0.57s">a</span><span class="ch" style="animation-delay:0.64s">:</span></span><span class="lr-t2">cuando la paz se fábrica.</span></h1>
+<p class="lr-by"><span class="lb">Realizado por:</span><span class="nm">Valentina Martínez</span></p>
+<p class="lr-sum" id="lr-sum"><span class="sw">El</span> <span class="sw">conflicto</span> <span class="sw">armado</span> <span class="sw">deja</span> <span class="sw">marcas</span> <span class="sw">profundas</span> <span class="sw">en</span> <span class="sw">los</span> <span class="sw">actores,</span> <span class="sw">a</span> <span class="sw">partir</span> <span class="sw">de</span> <span class="sw">estas</span> <span class="sw">vivencias</span> <span class="sw">y</span> <span class="sw">del</span> <span class="sw">acuerdo</span> <span class="sw">de</span> <span class="sw">paz</span> <span class="sw">del</span> <span class="sw">2016</span> <span class="sw">se</span> <span class="sw">impulsan</span> <span class="sw">procesos</span> <span class="sw">de</span> <span class="sw">resiliencia</span> <span class="sw">y</span> <span class="sw">reincorporación</span> <span class="sw">en</span> <span class="sw">las</span> <span class="sw">personas</span> <span class="sw">firmantes</span> <span class="sw">de</span> <span class="sw">las</span> <span class="sw">FARC-EP.</span> <span class="sw">A</span> <span class="sw">través</span> <span class="sw">de</span> <span class="sw">procesos</span> <span class="sw">productivos,</span> <span class="sw">las</span> <span class="sw">manualidades,</span> <span class="sw">la</span> <span class="sw">creación</span> <span class="sw">de</span> <span class="sw">objetos</span> <span class="sw">o</span> <span class="sw">la</span> <span class="sw">producción</span> <span class="sw">de</span> <span class="sw">nuevas</span> <span class="sw">cervezas,</span> <span class="sw">muchas</span> <span class="sw">personas</span> <span class="sw">encuentran</span> <span class="sw">una</span> <span class="sw">forma</span> <span class="sw">de</span> <span class="sw">procesar</span> <span class="sw">y</span> <span class="sw">de</span> <span class="sw">reincorporación</span> <span class="sw">a</span> <span class="sw">la</span> <span class="sw">vida</span> <span class="sw">civil</span> <span class="sw">después</span> <span class="sw">del</span> <span class="sw">conflicto</span> <span class="sw">así</span> <span class="sw">como</span> <span class="sw">José</span> <span class="sw">Mayorga</span> <span class="sw">“Arley”,</span> <span class="sw">firmante</span> <span class="sw">de</span> <span class="sw">paz</span> <span class="sw">y</span> <span class="sw">socio</span> <span class="sw">de</span> <span class="sw">La</span> <span class="sw">Roja</span> <span class="sw">Cerveza</span> <span class="sw">Artesanal</span> <span class="sw">y</span> <span class="sw">ASOROJA.</span></p>
 </section>
 <div class="lr-vwrap">
 <div class="lr-foam" aria-hidden="true"><svg viewBox="0 0 800 44" preserveAspectRatio="none"><path d="M0 26 Q25 6 50 22 T100 22 T150 20 T200 24 T250 18 T300 24 T350 20 T400 26 Q425 6 450 22 T500 22 T550 20 T600 24 T650 18 T700 24 T750 20 T800 26 V44 H0Z" fill="#F4EFE6"/></svg><i class="b" style="left:6%;top:10px;width:10px;height:10px"></i><i class="b" style="left:18%;top:14px;width:7px;height:7px"></i><i class="b" style="left:33%;top:8px;width:12px;height:12px"></i><i class="b" style="left:47%;top:15px;width:6px;height:6px"></i><i class="b" style="left:61%;top:9px;width:9px;height:9px"></i><i class="b" style="left:74%;top:13px;width:8px;height:8px"></i><i class="b" style="left:88%;top:7px;width:11px;height:11px"></i><i class="b" style="left:95%;top:16px;width:6px;height:6px"></i></div>
@@ -139,6 +124,21 @@ class Component extends DCLogic {
     try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
     root.scrollTop = 0;
     const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // resumen: las palabras se encienden al bajar hacia el video
+    const sum = document.getElementById('lr-sum');
+    const sws = sum ? Array.from(sum.querySelectorAll('.sw')) : [];
+    let lit = -1;
+    const sumTick = () => {
+      if (!sum) return;
+      if (reduce) { if (lit !== sws.length) { sws.forEach((w) => w.classList.add('on')); lit = sws.length; } return; }
+      const vh = root.clientHeight, r = sum.getBoundingClientRect(), r0 = root.getBoundingClientRect();
+      const top = r.top - r0.top;
+      const pr = Math.max(0, Math.min(1, (vh * 0.92 - top) / (r.height + vh * 0.45)));
+      const n = Math.round(pr * sws.length);
+      if (n !== lit) { for (let i = 0; i < sws.length; i++) sws[i].classList.toggle('on', i < n); lit = n; }
+      sum.style.transform = 'translateY(' + ((1 - pr) * 34).toFixed(1) + 'px)';
+    };
 
     // burbujas de cerveza
     const cv = document.getElementById('lr-bub'), ctx = cv && cv.getContext('2d');
@@ -180,6 +180,7 @@ class Component extends DCLogic {
         if (this.wasHidden) { this.wasHidden = false; root.scrollTop = 0; sTop = 0; size(); }
         if (root.clientWidth !== W || root.clientHeight !== H) size();
         draw(t);
+        sumTick();
       }
       this.raf = requestAnimationFrame(tick);
     };
