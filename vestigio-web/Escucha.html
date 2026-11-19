@@ -237,6 +237,8 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
+    // cm-strip-go: la franja del cómic abre la misma página que su botón Ver más
+    document.querySelectorAll('.cm-strip').forEach((el) => el.addEventListener('click', (e) => { const h = el.getAttribute('href'); if (!h) return; e.preventDefault(); window.location.href = h; }));
     this.onTitleResize = () => { clearTimeout(this.trT); this.trT = setTimeout(() => this.makeTitleCanvas(), 150); };
     window.addEventListener('resize', this.onTitleResize);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this.makeTitleCanvas()); else this.makeTitleCanvas();
