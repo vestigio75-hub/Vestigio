@@ -36,6 +36,8 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 .rs-play:focus-visible,.rs-skip:focus-visible,.rs-seek:focus-visible,.rp-back:focus-visible{outline:2px solid #6B564C;outline-offset:3px}
 .rs-time{font:500 13px Inter,sans-serif;color:#6B564C;font-variant-numeric:tabular-nums;min-width:44px}
 .rs-seek{flex:1 1 200px;min-width:120px;accent-color:#6B564C;height:28px;cursor:pointer}
+.rp-src{margin:clamp(26px,4.5vh,40px) 0 0;padding-top:16px;border-top:1px solid rgba(107,86,76,.35);font-size:13px;line-height:1.65;max-width:820px}
+.rp-src b{font-weight:600}
 @media (max-width:560px){.rs-ctrl{gap:8px}.rs-seek{order:5;flex-basis:100%}.rs-play{width:52px;height:52px}}
 </style>
 </helmet>
@@ -59,6 +61,7 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 <audio id="rs-audio" preload="metadata" src="assets/e6c4716d16afef41dd31141699987938.mp4"></audio>
 </div>
 </div>
+<p class="rp-src"><b>Fuentes:</b> Lorena Murcia - Julieth Moreno - Ley 1448 de 2011 — Gestor Normativo - Estudio de caracterización de la niñez desvinculada de grupos armados organizados al margen de la ley (2013-2022) / ICBF y UNICEF - Una guerra sin edad / Informe nacional de reclutamiento y utilización de niños, niñas y adolescentes en el conflicto armado colombiano, Centro de Memoria Histórica.</p>
 </main>
 </div>
 </x-dc></template>
