@@ -36,28 +36,16 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 .lr-t .ch:hover{transform:translateY(-.08em) rotate(-6deg)}
 @keyframes lrDrop{to{opacity:1;transform:none}}
 .lr-t2{display:block;margin-top:clamp(6px,1.2vh,14px);font-size:clamp(30px,4.6vw,64px);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--cafe);opacity:0;animation:lrUp .9s .75s cubic-bezier(.2,.8,.2,1) forwards}
-.lr-by{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:clamp(20px,3.4vh,34px) 0 0;opacity:0;animation:lrUp .8s 1.2s forwards}
+.lr-by{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:clamp(16px,2.6vh,26px) 0 0;opacity:0;animation:lrUp .8s 1.2s forwards}
 .lr-by .ln{width:44px;height:2px;background:var(--cafe)}
 .lr-by .lb{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cafe)}
 .lr-by .nm{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--cafe)}
-.lr-sum{margin:clamp(34px,6vh,60px) 0 clamp(40px,7vh,70px);max-width:860px;font-size:clamp(17px,1.6vw,21px);line-height:1.75;will-change:transform}
+.lr-sum{margin:clamp(18px,3vh,30px) 0 clamp(40px,7vh,70px);max-width:860px;font-size:clamp(17px,1.6vw,21px);line-height:1.75;will-change:transform}
 .lr-sum .sw{opacity:.22;transition:opacity .35s ease}
 .lr-sum .sw.on{opacity:1}
-.lr-plant{position:absolute;pointer-events:none;color:var(--cafe);opacity:.55}
-.lr-plant svg{display:block;width:100%;height:auto;transform-origin:50% 100%;animation:lrSway 6s ease-in-out infinite alternate}
-.lr-hop{right:-6px;top:-30px;width:clamp(90px,11vw,150px)}
-.lr-hop svg{transform-origin:50% 0;animation-duration:5s}
-.lr-barley{right:clamp(110px,12vw,170px);top:-34px;width:36px}
-.lr-barley svg{animation-duration:7s;animation-delay:-2s}
-@keyframes lrSway{from{transform:rotate(-4deg)}to{transform:rotate(5deg)}}
 /* video */
-.lr-vwrap{position:relative;margin-top:28px}
-.lr-glass{position:relative;padding:12px;border-radius:24px;background:linear-gradient(170deg,#E0A24A 0%,#C98A2B 45%,#9A5E1C 100%);box-shadow:0 24px 60px rgba(60,40,30,.28)}
-.lr-foam{position:absolute;left:0;right:0;top:-26px;height:44px;overflow:hidden;border-radius:24px 24px 0 0;pointer-events:none}
-.lr-foam svg{position:absolute;left:0;top:0;width:200%;height:100%;animation:lrFoam 9s linear infinite}
-.lr-foam .b{position:absolute;border-radius:50%;background:var(--crema);border:1px solid rgba(107,86,76,.18)}
-@keyframes lrFoam{to{transform:translateX(-50%)}}
-.lr-video{position:relative;border-radius:14px;overflow:hidden;background:#1B1B1B;aspect-ratio:16/9}
+.lr-vwrap{position:relative;margin-top:0}
+.lr-video{position:relative;border-radius:18px;box-shadow:0 24px 60px rgba(60,40,30,.28);overflow:hidden;background:#1B1B1B;aspect-ratio:16/9}
 .lr-video iframe{display:block;width:100%;height:100%;border:0;background:#1B1B1B}
 .lr-seal{position:absolute;right:clamp(-22px,-2vw,-10px);bottom:clamp(-46px,-4vw,-30px);width:clamp(96px,11vw,132px);height:clamp(96px,11vw,132px);z-index:2;pointer-events:none}
 .lr-seal .ring{width:100%;height:100%;animation:lrSpin 18s linear infinite}
@@ -72,12 +60,10 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 .lr-band i{font-style:normal;color:#E9C98A;padding-right:.9em}
 @keyframes lrMarq{to{transform:translateX(-50%)}}
 /* proceso */
-.lr-end{position:relative;z-index:1;text-align:center;padding:clamp(80px,14vh,150px) 16px clamp(60px,10vh,100px)}
+.lr-end{position:relative;z-index:1;text-align:center;padding:clamp(44px,7vh,80px) 16px clamp(60px,10vh,100px)}
 .lr-end a{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;border:2px solid var(--cafe);color:var(--cafe);text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;transition:background .3s,color .3s}
 .lr-end a:hover{background:var(--cafe);color:var(--crema)}
 @media(max-width:760px){
- .lr-hop{width:74px;top:-46px;right:-8px;opacity:.4}
- .lr-barley{display:none}
  .lr-seal{right:6px;bottom:-40px}
 }
 @media(prefers-reduced-motion:reduce){
@@ -93,16 +79,13 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 <div class="lr-bar"><a class="lr-back" href="Conoce.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Volver a Memoria</a></div>
 <main class="lr-in">
 <section class="lr-hero">
-<div class="lr-plant lr-hop" aria-hidden="true"><svg viewBox="0 0 100 150" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M50 0v26"/><path d="M50 18c12-8 26-6 34 2-10 6-24 6-34-2z"/><path d="M50 22c-10-10-24-10-32-4 9 7 22 9 32 4z"/><path d="M50 30c-14 0-22 10-22 22 0 22 10 46 22 58 12-12 22-36 22-58 0-12-8-22-22-22z" fill="rgba(201,138,43,.18)"/><path d="M34 48c6 4 26 4 32 0M30 64c8 5 32 5 40 0M32 80c7 5 29 5 36 0M38 96c5 4 19 4 24 0"/><path d="M50 30v80"/></svg></div>
-<div class="lr-plant lr-barley" aria-hidden="true"><svg viewBox="0 0 40 160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 160V30"/><g fill="rgba(201,138,43,.22)"><ellipse cx="14" cy="40" rx="4" ry="8" transform="rotate(-25 14 40)"/><ellipse cx="26" cy="40" rx="4" ry="8" transform="rotate(25 26 40)"/><ellipse cx="14" cy="56" rx="4" ry="8" transform="rotate(-25 14 56)"/><ellipse cx="26" cy="56" rx="4" ry="8" transform="rotate(25 26 56)"/><ellipse cx="14" cy="72" rx="4" ry="8" transform="rotate(-25 14 72)"/><ellipse cx="26" cy="72" rx="4" ry="8" transform="rotate(25 26 72)"/><ellipse cx="20" cy="24" rx="4" ry="8"/></g><path d="M20 16V2M14 32 8 14M26 32l6-18"/><path d="M20 120c-8-4-14-12-14-20M20 132c8-4 14-12 14-20"/></svg></div>
 <p class="lr-kick"><span class="rec" aria-hidden="true"></span>Video reportaje</p>
 <h1 class="lr-t"><span class="lr-t1" aria-label="La Roja:"><span class="ch" style="animation-delay:0.15s">L</span><span class="ch" style="animation-delay:0.22s">a</span><span class="ch" style="animation-delay:0.29s">&nbsp;</span><span class="ch" style="animation-delay:0.36s">R</span><span class="ch" style="animation-delay:0.43s">o</span><span class="ch" style="animation-delay:0.50s">j</span><span class="ch" style="animation-delay:0.57s">a</span><span class="ch" style="animation-delay:0.64s">:</span></span><span class="lr-t2">cuando la paz se fábrica.</span></h1>
 <p class="lr-by"><span class="lb">Realizado por:</span><span class="nm">Valentina Martínez</span></p>
 <p class="lr-sum" id="lr-sum"><span class="sw">El</span> <span class="sw">conflicto</span> <span class="sw">armado</span> <span class="sw">deja</span> <span class="sw">marcas</span> <span class="sw">profundas</span> <span class="sw">en</span> <span class="sw">los</span> <span class="sw">actores,</span> <span class="sw">a</span> <span class="sw">partir</span> <span class="sw">de</span> <span class="sw">estas</span> <span class="sw">vivencias</span> <span class="sw">y</span> <span class="sw">del</span> <span class="sw">acuerdo</span> <span class="sw">de</span> <span class="sw">paz</span> <span class="sw">del</span> <span class="sw">2016</span> <span class="sw">se</span> <span class="sw">impulsan</span> <span class="sw">procesos</span> <span class="sw">de</span> <span class="sw">resiliencia</span> <span class="sw">y</span> <span class="sw">reincorporación</span> <span class="sw">en</span> <span class="sw">las</span> <span class="sw">personas</span> <span class="sw">firmantes</span> <span class="sw">de</span> <span class="sw">las</span> <span class="sw">FARC-EP.</span> <span class="sw">A</span> <span class="sw">través</span> <span class="sw">de</span> <span class="sw">procesos</span> <span class="sw">productivos,</span> <span class="sw">las</span> <span class="sw">manualidades,</span> <span class="sw">la</span> <span class="sw">creación</span> <span class="sw">de</span> <span class="sw">objetos</span> <span class="sw">o</span> <span class="sw">la</span> <span class="sw">producción</span> <span class="sw">de</span> <span class="sw">nuevas</span> <span class="sw">cervezas,</span> <span class="sw">muchas</span> <span class="sw">personas</span> <span class="sw">encuentran</span> <span class="sw">una</span> <span class="sw">forma</span> <span class="sw">de</span> <span class="sw">procesar</span> <span class="sw">y</span> <span class="sw">de</span> <span class="sw">reincorporación</span> <span class="sw">a</span> <span class="sw">la</span> <span class="sw">vida</span> <span class="sw">civil</span> <span class="sw">después</span> <span class="sw">del</span> <span class="sw">conflicto</span> <span class="sw">así</span> <span class="sw">como</span> <span class="sw">José</span> <span class="sw">Mayorga</span> <span class="sw">“Arley”,</span> <span class="sw">firmante</span> <span class="sw">de</span> <span class="sw">paz</span> <span class="sw">y</span> <span class="sw">socio</span> <span class="sw">de</span> <span class="sw">La</span> <span class="sw">Roja</span> <span class="sw">Cerveza</span> <span class="sw">Artesanal</span> <span class="sw">y</span> <span class="sw">ASOROJA.</span></p>
 </section>
 <div class="lr-vwrap">
-<div class="lr-foam" aria-hidden="true"><svg viewBox="0 0 800 44" preserveAspectRatio="none"><path d="M0 26 Q25 6 50 22 T100 22 T150 20 T200 24 T250 18 T300 24 T350 20 T400 26 Q425 6 450 22 T500 22 T550 20 T600 24 T650 18 T700 24 T750 20 T800 26 V44 H0Z" fill="#F4EFE6"/></svg><i class="b" style="left:6%;top:10px;width:10px;height:10px"></i><i class="b" style="left:18%;top:14px;width:7px;height:7px"></i><i class="b" style="left:33%;top:8px;width:12px;height:12px"></i><i class="b" style="left:47%;top:15px;width:6px;height:6px"></i><i class="b" style="left:61%;top:9px;width:9px;height:9px"></i><i class="b" style="left:74%;top:13px;width:8px;height:8px"></i><i class="b" style="left:88%;top:7px;width:11px;height:11px"></i><i class="b" style="left:95%;top:16px;width:6px;height:6px"></i></div>
-<div class="lr-glass"><div class="lr-video"><iframe id="lr-yt" src="https://www.youtube-nocookie.com/embed/T_Mk8Ti9Vvk?rel=0&amp;enablejsapi=1" title="La Roja: cuando la paz se fábrica (video en YouTube)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+<div class="lr-video"><iframe id="lr-yt" src="https://www.youtube-nocookie.com/embed/T_Mk8Ti9Vvk?rel=0&amp;enablejsapi=1" title="La Roja: cuando la paz se fábrica (video en YouTube)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 <div class="lr-seal" aria-hidden="true"><svg class="ring" viewBox="0 0 120 120"><defs><path id="lrc" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><circle cx="60" cy="60" r="58" fill="#B3261E"/><text font-family="Inter,sans-serif" font-weight="600" font-size="10" fill="#F4EFE6"><textPath href="#lrc" textLength="286" lengthAdjust="spacing">LA ROJA · CERVEZA ARTESANAL · FIRMANTES DE PAZ ·</textPath></text></svg><div class="core"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg></div></div>
 </div>
 <p class="lr-yt-link"><a href="https://youtu.be/T_Mk8Ti9Vvk" target="_blank" rel="noopener noreferrer">Ver el video en YouTube ↗</a></p>
