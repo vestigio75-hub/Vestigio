@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoja de vida · Vestigio</title>
+<link rel="icon" href="assets/a08a2729465d42bf4d55ea6c95c53547.png">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<template id="dc-template"><x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
+#hoja{--bar:52px;position:relative;height:100vh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:#D9C7B1;color:#6B564C;font-family:Inter,sans-serif}
+#hoja *{box-sizing:border-box}
+.hv-bar{position:fixed;top:0;left:0;right:0;height:var(--bar);z-index:30;display:flex;align-items:center;padding:0 clamp(12px,3vw,28px);background:rgba(217,199,177,.95);border-bottom:1px solid rgba(107,86,76,.3)}
+.hv-back{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 4px;color:#6B564C;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.hv-back:hover{text-decoration:underline;text-underline-offset:4px}
+.hv-back:focus-visible{outline:2px solid #6B564C;outline-offset:3px}
+.hv-in{max-width:1060px;margin:0 auto;padding:calc(var(--bar) + clamp(36px,7vh,80px)) clamp(16px,4vw,48px) clamp(60px,10vh,110px)}
+.hv-kick{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px}
+.hv-t{margin:0 0 clamp(24px,4vh,40px);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,6vw,80px);line-height:.98;letter-spacing:-.03em;color:#3B2E28}
+.hv-video{position:relative;width:100%;aspect-ratio:16/9;background:#1B1B1B;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(60,40,30,.28)}
+.hv-video video{display:block;width:100%;height:100%;background:#1B1B1B}
+.hv-p{margin:clamp(26px,4.5vh,44px) 0 0;font-size:clamp(16px,1.5vw,19px);line-height:1.7;max-width:820px}
+.hv-src{margin:clamp(30px,5vh,50px) 0 0;padding-top:18px;border-top:1px solid rgba(107,86,76,.35);font-size:13px;line-height:1.65;max-width:820px}
+.hv-src b{font-weight:600}
+</style>
+</helmet>
+<div id="hoja" ref="{{ setRoot }}">
+<div class="hv-bar"><a class="hv-back" href="Conoce.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Volver a Memoria</a></div>
+<main class="hv-in">
+<p class="hv-kick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 8h20M2 16h20M6 4v4M10 4v4M14 4v4M18 4v4M6 16v4M10 16v4M14 16v4M18 16v4"></path></svg>Stop motion</p>
+<h1 class="hv-t">Hoja de vida</h1>
+<div class="hv-video"><video id="hv-video" src="assets/ddaf8dec684304a3cb74f6b93ee01c7e.mp4" poster="assets/54ad05a8087095509460476d22528d7d.jpg" controls playsinline preload="metadata" aria-label="Stop motion Hoja de vida"></video></div>
+<p class="hv-p">Marcos es un hombre que busca una oportunidad para reconstruir su vida y encontrar un lugar en una sociedad que parece no estar dispuesta a darle una segunda oportunidad. Al salir en busca de empleo, se enfrenta a los prejuicios que todavía existen hacia las personas que han pasado por un proceso de reincorporación.</p>
+<p class="hv-src"><b>Fuentes:</b> Servicio Público de Empleo (SPE) y Agencia para la Reincorporación y la Normalización (ARN) - ABC de Inclusión Laboral de Personas en Proceso de Reincorporación, 2025 - ARN.</p>
+</main>
+</div>
+</x-dc></template>
+
+<script>
+
+class Component extends DCLogic {
+  setRoot = (el) => { this.root = el; };
+
+  componentDidMount() {
+    const root = this.root, v = document.getElementById('hv-video');
+    if (!root) return;
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    root.scrollTop = 0;
+    // al salir de esta pestaña el video se pausa; al volver empieza arriba
+    const tick = () => {
+      const visible = root.clientHeight > 0 && root.getClientRects().length > 0;
+      if (!visible) { if (!this.wasHidden && v && !v.paused) v.pause(); this.wasHidden = true; }
+      else if (this.wasHidden) { this.wasHidden = false; root.scrollTop = 0; }
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    const v = document.getElementById('hv-video'); if (v) v.pause();
+  }
+
+  renderVals() {
+    return { setRoot: this.setRoot };
+  }
+}
+
+DCBoot(Component, {});
+</script>
+</body>
+</html>
