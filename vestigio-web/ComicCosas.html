@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cosas que sé de mí · Vestigio</title>
+<link rel="icon" href="assets/a08a2729465d42bf4d55ea6c95c53547.png">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<template id="dc-template"><x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
+#comic{--bar:52px;position:relative;height:100vh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:#D9C7B1;color:#6B564C;font-family:Inter,sans-serif}
+#comic *{box-sizing:border-box}
+.cc-bar{position:fixed;top:0;left:0;right:0;height:var(--bar);z-index:30;display:flex;align-items:center;padding:0 clamp(12px,3vw,28px);background:rgba(217,199,177,.95);border-bottom:1px solid rgba(107,86,76,.3)}
+.cc-back{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 4px;color:#6B564C;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.cc-back:hover{text-decoration:underline;text-underline-offset:4px}
+.cc-back:focus-visible{outline:2px solid #6B564C;outline-offset:3px}
+.cc-in{max-width:1060px;margin:0 auto;padding:calc(var(--bar) + clamp(40px,8vh,90px)) clamp(16px,4vw,48px) clamp(60px,10vh,110px)}
+.cc-kick{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;margin:0 0 18px}
+.cc-t{margin:0 0 20px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,64px);line-height:1.02;letter-spacing:-.02em}
+.cc-p{margin:0 0 clamp(36px,7vh,70px);font-size:clamp(16px,1.5vw,19px);line-height:1.7;max-width:820px}
+.cc-pages{display:flex;flex-direction:column;align-items:center;gap:clamp(28px,6vh,56px)}
+.cc-pg{margin:0;width:min(100%,760px);opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform 1s cubic-bezier(.2,.75,.2,1)}
+.cc-pg.in{opacity:1;transform:none}
+.cc-pg img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 24px 60px rgba(60,40,30,.25)}
+.cc-pg figcaption{margin-top:10px;text-align:right;font-size:12px;font-weight:600;letter-spacing:.18em}
+@media (prefers-reduced-motion:reduce){.cc-pg{opacity:1;transform:none;transition:none}}
+</style>
+</helmet>
+<div id="comic" ref="{{ setRoot }}">
+<div class="cc-bar"><a class="cc-back" href="Escucha.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Volver a Desarraigo</a></div>
+<main class="cc-in">
+<p class="cc-kick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 12h18M12 3v9"></path></svg>Cómic</p>
+<h1 class="cc-t">Cosas que sé de mí</h1>
+<p class="cc-p">En Caldono, un municipio de Cauca vive Rosario, es una niña que a temprana edad fue dejada por su mamá, Amparo, en una guardería comunitaria cuando la guerrillera debe volver a las filas de las FARC tras el asesinato de su esposo a manos del Ejército. Rosario crece en un hogar del Bienestar Familiar, donde la estigmatizan y la tratan como la hija de la guerrillera, y su única aliada es su profesora, Elvira. En un pueblo donde el Ejército y los paramilitares abusan de las mujeres creyéndolas colaboradoras de la guerrilla, Rosario entra a las FARC-EP a los 14 años. Allí descubre que su cuerpo tampoco le pertenece: planificación obligatoria, vigilancia de su ciclo y ninguna decisión propia. Mantiene contacto por cartas con su profesora y, al cumplir la mayoría de edad, decide no seguir en la guerrilla. Se desmoviliza y Elvira la ayuda a estudiar y a construir una vida.</p>
+<div class="cc-pages">
+<figure class="cc-pg"><img src="assets/f552b924b9d1694c23d99e6c3cf8399d.jpg" alt="Página 1 del cómic Cosas que sé de mí" loading="lazy"><figcaption>1</figcaption></figure>
+<figure class="cc-pg"><img src="assets/df6de4ac9af891c39ee3e8bc4f5ed5e4.jpg" alt="Página 7 del cómic Cosas que sé de mí" loading="lazy"><figcaption>7</figcaption></figure>
+<figure class="cc-pg"><img src="assets/bb6d382678f869db81b1ce936b2c9e4c.jpg" alt="Página 13 del cómic Cosas que sé de mí" loading="lazy"><figcaption>13</figcaption></figure>
+<figure class="cc-pg"><img src="assets/c1a5f53b046f435de3f66ff0e3eb94ef.jpg" alt="Página 22 del cómic Cosas que sé de mí" loading="lazy"><figcaption>22</figcaption></figure>
+<figure class="cc-pg"><img src="assets/d0d44841660816f5859898ceee36c0e9.jpg" alt="Página 24 del cómic Cosas que sé de mí" loading="lazy"><figcaption>24</figcaption></figure>
+</div>
+</main>
+</div>
+</x-dc></template>
+
+<script>
+
+class Component extends DCLogic {
+  setRoot = (el) => { this.root = el; };
+
+  componentDidMount() {
+    const root = this.root;
+    if (!root) return;
+    const pgs = Array.from(root.querySelectorAll('.cc-pg'));
+    // cada página aparece al llegar a la pantalla
+    const watch = () => {
+      if (!('IntersectionObserver' in window)) { pgs.forEach((p) => p.classList.add('in')); return; }
+      this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); this.io.unobserve(e.target); } }), { root, rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+      pgs.forEach((p) => this.io.observe(p));
+    };
+    watch();
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    root.scrollTop = 0;
+    // al volver a esta pestaña empieza de nuevo desde arriba
+    const tick = () => {
+      const visible = root.clientHeight > 0 && root.getClientRects().length > 0;
+      if (!visible) this.wasHidden = true;
+      else if (this.wasHidden) { this.wasHidden = false; root.scrollTop = 0; pgs.forEach((p) => p.classList.remove('in')); if (this.io) this.io.disconnect(); watch(); }
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    if (this.io) this.io.disconnect();
+  }
+
+  renderVals() {
+    return { setRoot: this.setRoot };
+  }
+}
+
+DCBoot(Component, {});
+</script>
+</body>
+</html>
