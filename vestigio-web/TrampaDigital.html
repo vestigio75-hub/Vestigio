@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La trampa digital · Vestigio</title>
+<link rel="icon" href="assets/a08a2729465d42bf4d55ea6c95c53547.png">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<template id="dc-template"><x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
+#trampa{--bar:52px;position:relative;height:100vh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:#D9C7B1;color:#6B564C;font-family:Inter,sans-serif}
+#trampa *{box-sizing:border-box}
+.td-bar{position:fixed;top:0;left:0;right:0;height:var(--bar);z-index:30;display:flex;align-items:center;padding:0 clamp(12px,3vw,28px);background:rgba(217,199,177,.95);border-bottom:1px solid rgba(107,86,76,.3)}
+.td-back{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 4px;color:#6B564C;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.td-back:hover{text-decoration:underline;text-underline-offset:4px}
+.td-back:focus-visible{outline:2px solid #6B564C;outline-offset:3px}
+.td-wrap{padding:calc(var(--bar) + clamp(20px,5vh,56px)) clamp(10px,3vw,40px) clamp(40px,8vh,90px)}
+.td-info{position:relative;width:100%;max-width:880px;margin:0 auto;aspect-ratio:1440/3733;background:#EFEEE7;border-radius:clamp(8px,1.4vw,16px);overflow:hidden;box-shadow:0 24px 60px rgba(60,40,30,.22)}
+.pz{position:absolute;display:block;height:auto;opacity:0;transition:opacity .8s ease,transform .9s cubic-bezier(.2,.75,.2,1);will-change:opacity,transform}
+.pz.up{transform:translateY(46px)}
+.pz.pop{transform:scale(.86)}
+.pz.slide{transform:translateX(-36px)}
+.pz.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.pz{opacity:1;transform:none;transition:none}}
+</style>
+</helmet>
+<div id="trampa" ref="{{ setRoot }}">
+<div class="td-bar"><a class="td-back" href="Informate.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Volver a Raíz</a></div>
+<main class="td-wrap">
+<div class="td-info" role="img" aria-label="Infografía La trampa digital. Los grupos armados también buscan niños, niñas y adolescentes en las redes sociales de Colombia. En promedio, cada 48 horas un niño, niña o adolescente es reclutado por grupos armados ilegales en Colombia; el 44 % de los menores reclutados en 2025 fueron captados a través de redes sociales; 146 cuentas de TikTok y Facebook se usaron para captar menores (fuente: UIA de la JEP). 1. ¿Por dónde llegan? Perfiles falsos, juegos en línea y mensajes directos. 2. ¿Qué te ofrecen? Vida de lujo, un lugar al que pertenecer, falso amor y promesas falsas. 3. Así avanza el engaño: ves, te escriben, te prometen, te alejan. Si alguien que no conoces te ofrece dinero, regalos o amor por mensaje, no respondas, cuéntaselo a un adulto de confianza y reporta el perfil. Prevenir es cosa de todos.">
+<img class="pz fade" data-g="hdr" src="assets/5e372c80663cd7c1cd4a5fb69cf9e93e.webp" alt="" style="left:0.0000%;top:0.0000%;width:100.0000%;transition-delay:0.00s">
+<img class="pz pop" data-g="hdr" src="assets/1efc61aa9a39108b2c70c2de717bb933.webp" alt="" style="left:3.7500%;top:1.8752%;width:92.5000%;transition-delay:0.14s">
+<img class="pz up" data-g="hdr" src="assets/083546c0f76276db91d9d39bfda1afba.webp" alt="" style="left:4.1667%;top:8.0364%;width:91.6667%;transition-delay:0.28s">
+<img class="pz up" data-g="stats" src="assets/75bcd935702c26d1f8a6b2f1325844b4.webp" alt="" style="left:5.5556%;top:14.2781%;width:27.7778%;transition-delay:0.00s">
+<img class="pz up" data-g="stats" src="assets/ffaabd73f91a612a1cc9a4be66d8cdde.webp" alt="" style="left:36.1111%;top:14.2781%;width:27.7778%;transition-delay:0.14s">
+<img class="pz up" data-g="stats" src="assets/4f853034c36c2b501ef92ca3a30072ca.webp" alt="" style="left:66.6667%;top:14.2781%;width:27.7778%;transition-delay:0.28s">
+<img class="pz fade" data-g="src1" src="assets/7e0efa9c6b41440a4909428bed790653.webp" alt="" style="left:4.1667%;top:29.1990%;width:76.3889%;transition-delay:0.00s">
+<img class="pz up" data-g="s1" src="assets/416fea878a8ddd26ef4da52370ec14f4.webp" alt="" style="left:3.6806%;top:31.0742%;width:92.6389%;transition-delay:0.00s">
+<img class="pz up" data-g="s1" src="assets/75448f1c9503921a89f7b745646759ea.webp" alt="" style="left:5.2083%;top:31.7439%;width:90.2778%;transition-delay:0.14s">
+<img class="pz pop" data-g="s1" src="assets/d29a00881a02c618f2060e62fe36727d.webp" alt="" style="left:4.1667%;top:35.3603%;width:30.6944%;transition-delay:0.28s">
+<img class="pz pop" data-g="s1" src="assets/9a78d64d304af63780778b32c28a24bb.webp" alt="" style="left:34.8611%;top:35.3603%;width:30.6944%;transition-delay:0.42s">
+<img class="pz pop" data-g="s1" src="assets/0228dea28286a57cb645440c41a91ddf.webp" alt="" style="left:65.5556%;top:35.3603%;width:30.2778%;transition-delay:0.56s">
+<img class="pz fade" data-g="src2" src="assets/02e1dfdbe89ac0ac1dde6334a4791af3.webp" alt="" style="left:4.1667%;top:46.7988%;width:76.3889%;transition-delay:0.00s">
+<img class="pz up" data-g="s2" src="assets/8fbc7470285e92961becb7b2aec83dc4.webp" alt="" style="left:3.6806%;top:48.5668%;width:92.6389%;transition-delay:0.00s">
+<img class="pz up" data-g="s2" src="assets/4bb950c5099a6230abfb1708c2093040.webp" alt="" style="left:5.2083%;top:49.2901%;width:90.2778%;transition-delay:0.14s">
+<img class="pz pop" data-g="s2" src="assets/f944bb24955f248f4373d4a6c784ca3f.webp" alt="" style="left:6.5278%;top:53.2280%;width:41.5972%;transition-delay:0.28s">
+<img class="pz pop" data-g="s2" src="assets/8ce0e9bc7db018d6e294ca257ecf8189.webp" alt="" style="left:51.8750%;top:53.2280%;width:41.5972%;transition-delay:0.42s">
+<img class="pz pop" data-g="s2" src="assets/f1ab2362cc51dbd45e478b3f5192135d.webp" alt="" style="left:6.5278%;top:62.5234%;width:41.5972%;transition-delay:0.56s">
+<img class="pz pop" data-g="s2" src="assets/7af946ef5508ed3976eff818b72ffe26.webp" alt="" style="left:51.8750%;top:62.5234%;width:41.5972%;transition-delay:0.70s">
+<img class="pz fade" data-g="src3" src="assets/e34596e102f4b9dc008ce98a7b223125.webp" alt="" style="left:4.1667%;top:71.8725%;width:76.3889%;transition-delay:0.00s">
+<img class="pz up" data-g="s3" src="assets/a236887a1158a8e8275c5db398b6673f.webp" alt="" style="left:3.6806%;top:73.5601%;width:92.6389%;transition-delay:0.00s">
+<img class="pz up" data-g="s3" src="assets/76d5b3faae33b82cbb540e5b79976a9f.webp" alt="" style="left:5.2083%;top:74.3370%;width:90.2778%;transition-delay:0.14s">
+<img class="pz slide" data-g="s3" src="assets/8abac9405ab9d60a9529867043a265a8.webp" alt="" style="left:4.1667%;top:77.5516%;width:22.9167%;transition-delay:0.28s">
+<img class="pz slide" data-g="s3" src="assets/088ba39d4e56a4339f145024b3e36f50.webp" alt="" style="left:27.0833%;top:77.5516%;width:22.9167%;transition-delay:0.42s">
+<img class="pz slide" data-g="s3" src="assets/aa5bd4216c5a63c793ab9e1241025286.webp" alt="" style="left:50.0000%;top:77.5516%;width:22.9167%;transition-delay:0.56s">
+<img class="pz slide" data-g="s3" src="assets/aa899f22d762a2d5ddd594647461ceae.webp" alt="" style="left:72.9167%;top:77.5516%;width:22.9167%;transition-delay:0.70s">
+<img class="pz pop" data-g="cta" src="assets/a84db901ca9896820cd8c1620f1ee0d1.webp" alt="" style="left:3.6806%;top:89.9812%;width:92.6389%;transition-delay:0.00s">
+<img class="pz fade" data-g="foot" src="assets/f52169388eea11acb105d7d2a84800ff.webp" alt="" style="left:0.0000%;top:96.7854%;width:100.0000%;transition-delay:0.00s">
+</div>
+</main>
+</div>
+</x-dc></template>
+
+<script>
+
+class Component extends DCLogic {
+  setRoot = (el) => { this.root = el; };
+
+  componentDidMount() {
+    const root = this.root;
+    if (!root) return;
+    const pieces = Array.from(root.querySelectorAll('.pz'));
+    const groups = {};
+    pieces.forEach((p) => { const g = p.getAttribute('data-g'); (groups[g] = groups[g] || []).push(p); });
+    // cada bloque de la infografía aparece cuando llega a la pantalla; sus partes salen una tras otra
+    const show = (g) => groups[g].forEach((p) => p.classList.add('in'));
+    this.io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting) { show(e.target.getAttribute('data-g')); this.io.unobserve(e.target); }
+    }), { root: root, rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+    const watch = () => Object.keys(groups).forEach((g) => this.io.observe(groups[g][0]));
+    watch();
+    // al volver a esta pestaña todo empieza de nuevo desde arriba
+    const restart = () => {
+      root.scrollTop = 0;
+      pieces.forEach((p) => p.classList.remove('in'));
+      this.io.disconnect(); watch();
+    };
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    root.scrollTop = 0;
+    this.forceTopUntil = performance.now() + 1000;
+    const tick = () => {
+      const visible = root.clientHeight > 0 && root.getClientRects().length > 0;
+      if (!visible) this.wasHidden = true;
+      else if (this.wasHidden) { this.wasHidden = false; restart(); this.forceTopUntil = performance.now() + 600; }
+      if (performance.now() < this.forceTopUntil && root.scrollTop !== 0) root.scrollTop = 0;
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    if (this.io) this.io.disconnect();
+  }
+
+  renderVals() {
+    return { setRoot: this.setRoot };
+  }
+}
+
+DCBoot(Component, {});
+</script>
+</body>
+</html>

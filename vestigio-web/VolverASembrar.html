@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volver a sembrar · Vestigio</title>
+<link rel="icon" href="assets/a08a2729465d42bf4d55ea6c95c53547.png">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<template id="dc-template"><x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
+#relato{--bg:#D9C7B1;--ink:#6B564C;--card:#F4EFE6;--bar:52px;position:relative;height:100vh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif}
+#relato *{box-sizing:border-box}
+.rp-bar{position:fixed;top:0;left:0;right:0;height:var(--bar);z-index:30;display:flex;align-items:center;padding:0 clamp(12px,3vw,28px);background:rgba(217,199,177,.95);border-bottom:1px solid rgba(107,86,76,.3)}
+.rp-back{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 4px;color:var(--ink);text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.rp-back:hover{text-decoration:underline;text-underline-offset:4px}
+.rp-in{max-width:1060px;margin:0 auto;padding:calc(var(--bar) + clamp(40px,8vh,90px)) clamp(16px,4vw,48px) clamp(60px,10vh,110px)}
+.rp-kick{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;margin:0 0 18px}
+.rp-t{margin:0 0 20px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,64px);line-height:1.02;letter-spacing:-.02em;max-width:940px}
+.rp-p{margin:0 0 clamp(28px,5vh,48px);font-size:clamp(16px,1.5vw,19px);line-height:1.7;max-width:820px}
+.rp-box{background:var(--card);border-radius:18px;padding:clamp(14px,2.2vw,26px);box-shadow:0 20px 50px rgba(60,40,30,.18)}
+.rs-player{display:flex;flex-direction:column;gap:16px}
+.rs-wave{position:relative;height:clamp(220px,30vw,380px);border-radius:12px;background:#EFE8DC;overflow:hidden}
+.rs-wave canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.rs-ctrl{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.rs-play{width:56px;height:56px;border-radius:50%;border:0;background:#6B564C;color:#F4EFE6;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s ease,background-color .2s ease;flex:0 0 auto}
+.rs-play:hover{transform:scale(1.06);background:#574437}
+.rs-skip{position:relative;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(107,86,76,.45);background:transparent;color:#6B564C;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto}
+.rs-skip span{position:absolute;font:600 8px Inter,sans-serif;top:50%;left:50%;transform:translate(-50%,-38%)}
+.rs-skip:hover{background:rgba(107,86,76,.1)}
+.rs-play:focus-visible,.rs-skip:focus-visible,.rs-seek:focus-visible,.rp-back:focus-visible{outline:2px solid #6B564C;outline-offset:3px}
+.rs-time{font:500 13px Inter,sans-serif;color:#6B564C;font-variant-numeric:tabular-nums;min-width:44px}
+.rs-seek{flex:1 1 200px;min-width:120px;accent-color:#6B564C;height:28px;cursor:pointer}
+@media (max-width:560px){.rs-ctrl{gap:8px}.rs-seek{order:5;flex-basis:100%}.rs-play{width:52px;height:52px}}
+</style>
+</helmet>
+<div id="relato" ref="{{ setRoot }}">
+<div class="rp-bar"><a class="rp-back" href="Informate.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Volver a Raíz</a></div>
+<main class="rp-in">
+<p class="rp-kick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"></path></svg>Relato</p>
+<h1 class="rp-t">Volver a sembrar</h1>
+<p class="rp-p">La guerra irrumpe en la vida de una niña y la obliga a dejar atrás su hogar, su familia y sus sueños. En medio del reclutamiento forzado y las violencias que enfrenta, unas semillas se convierten en el recuerdo de todo lo que una vez tuvo. Al regresar a casa, comienza a sanar sus heridas y a descubrir que todavía es posible volver a soñar.</p>
+<div class="rp-box">
+<div class="rs-player">
+<div class="rs-wave"><canvas id="rs-canvas" aria-hidden="true"></canvas></div>
+<div class="rs-ctrl">
+<button type="button" id="rs-back" class="rs-skip" aria-label="Retroceder 15 segundos"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"></path><path d="M3 4v5h5"></path></svg><span>15</span></button>
+<button type="button" id="rs-play" class="rs-play" aria-label="Reproducir el relato"><svg id="rs-ic-play" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="currentColor"></path></svg><svg id="rs-ic-pause" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="display: none"><rect x="6" y="4.5" width="4.2" height="15" rx="1" fill="currentColor"></rect><rect x="13.8" y="4.5" width="4.2" height="15" rx="1" fill="currentColor"></rect></svg></button>
+<button type="button" id="rs-fwd" class="rs-skip" aria-label="Adelantar 15 segundos"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 4v5h-5"></path></svg><span>15</span></button>
+<span id="rs-cur" class="rs-time">00:00</span>
+<input id="rs-seek" class="rs-seek" type="range" min="0" max="404" step="1" value="0" aria-label="Posición del relato">
+<span id="rs-dur" class="rs-time">06:43</span>
+</div>
+<audio id="rs-audio" preload="metadata" src="assets/d67438b37b35c821aac367dbe4599547.mp4"></audio>
+</div>
+</div>
+</main>
+</div>
+</x-dc></template>
+
+<script>
+
+class Component extends DCLogic {
+  setRoot = (el) => { this.root = el; };
+
+  // ===== ondas del reportaje sonoro: tinta de colores superpuesta, movimiento continuo =====
+  makeWaves(cv) {
+    const W8 = { W: 0, H: 0, dpr: 1, sm: null, fps: 20, nb: 4, frames: 0 };
+    const INK = [
+      { c: 'rgba(142,163,238,0.85)', o: -0.35 }, // azul
+      { c: 'rgba(168,196,80,0.85)', o: 0.2 },    // verde
+      { c: 'rgba(222,206,98,0.9)', o: 0.55 },    // amarillo
+      { c: 'rgba(107,86,76,0.5)', o: -0.1 },     // café
+    ];
+    const ROWS = [
+      { y: 0.2, a: 0.13, m: [2, 3, 0, 1] },
+      { y: 0.5, a: 0.24, m: [0, 1, 2, 3] },
+      { y: 0.8, a: 0.13, m: [1, 0, 3, 2] },
+    ];
+    W8.load = () => fetch('assets/f60a5db41a6196ff26cbfeb1a4c7530e.json').then((r) => r.json()).then((j) => {
+      const bin = atob(j.data), n = bin.length, nb = j.bands, fr = Math.floor(n / nb);
+      // suavizado gaussiano por banda (≈0,35 s) para que las ondas respiren sin temblar
+      const sig = 7, R = sig * 3, ker = [];
+      let ks = 0; for (let d = -R; d <= R; d++) { const w = Math.exp(-(d * d) / (2 * sig * sig)); ker.push(w); ks += w; }
+      const sm = [];
+      for (let k = 0; k < nb; k++) {
+        const raw = new Float32Array(fr); for (let i = 0; i < fr; i++) raw[i] = bin.charCodeAt(i * nb + k) / 255;
+        const out = new Float32Array(fr);
+        for (let i = 0; i < fr; i++) { let a = 0; for (let d = -R; d <= R; d++) { const q = Math.min(fr - 1, Math.max(0, i + d)); a += raw[q] * ker[d + R]; } out[i] = a / ks; }
+        sm.push(out);
+      }
+      W8.sm = sm; W8.fps = j.fps; W8.nb = nb; W8.frames = fr;
+    });
+    const val = (k, t) => {
+      if (!W8.sm || t < 0) return 0;
+      const f = t * W8.fps, i = Math.floor(f), a = f - i, s = W8.sm[k];
+      if (i >= W8.frames - 1) return 0;
+      return s[i] * (1 - a) + s[i + 1] * a;
+    };
+    W8.size = () => {
+      const r = cv.getBoundingClientRect(); W8.dpr = Math.min(2, window.devicePixelRatio || 1);
+      W8.W = Math.max(1, r.width); W8.H = Math.max(1, r.height);
+      cv.width = Math.round(W8.W * W8.dpr); cv.height = Math.round(W8.H * W8.dpr);
+    };
+    W8.draw = (T, opts) => {
+      opts = opts || {};
+      if (!W8.W) W8.size();
+      const W = W8.W, H = W8.H, ctx = cv.getContext('2d'); if (!ctx) return;
+      ctx.setTransform(W8.dpr, 0, 0, W8.dpr, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      const SPAN = Math.max(6, Math.min(14, W / 85));
+      const start = T - SPAN / 2, N = Math.ceil(W / 7) + 2, dt = SPAN / (N - 2);
+      const i0 = Math.floor(start / dt) - 1; // la rejilla va pegada al tiempo: la forma se desliza entera, no tiembla
+      ctx.globalCompositeOperation = 'multiply';
+      ROWS.forEach((row) => {
+        const y0 = row.y * H, A = row.a * H * 1.2;
+        INK.forEach((ink, li) => {
+          const k = row.m[li], pts = [];
+          for (let i = 0; i <= N + 1; i++) {
+            const t = (i0 + i) * dt, x = (t - start) / SPAN * W;
+            const v = Math.pow(val(k, t + ink.o), 1.3);
+            pts.push([x, Math.max(0.5, v * A * (0.8 + 0.2 * Math.sin(t * 0.7 + li * 1.7)))]);
+          }
+          ctx.beginPath(); ctx.moveTo(pts[0][0], y0 - pts[0][1]);
+          for (let i = 1; i < pts.length; i++) { const p = pts[i - 1], q = pts[i]; ctx.quadraticCurveTo(p[0], y0 - p[1], (p[0] + q[0]) / 2, y0 - (p[1] + q[1]) / 2); }
+          ctx.lineTo(pts[pts.length - 1][0], y0 + pts[pts.length - 1][1]);
+          for (let i = pts.length - 1; i > 0; i--) { const p = pts[i], q = pts[i - 1]; ctx.quadraticCurveTo(p[0], y0 + p[1], (p[0] + q[0]) / 2, y0 + (p[1] + q[1]) / 2); }
+          ctx.closePath(); ctx.fillStyle = ink.c; ctx.fill();
+        });
+      });
+      ctx.globalCompositeOperation = 'source-over';
+      if (opts.playhead !== false) {
+        ctx.fillStyle = 'rgba(239,232,220,0.5)'; ctx.fillRect(W / 2, 0, W / 2, H);
+        ctx.fillStyle = 'rgba(107,86,76,0.75)'; ctx.fillRect(Math.round(W / 2), 0, 1.5, H);
+      }
+    };
+    return W8;
+  }
+
+  componentDidMount() {
+    const $ = (id) => document.getElementById(id);
+    const audio = $('rs-audio'), cv = $('rs-canvas');
+    if (!audio || !cv) return;
+    this.audio = audio;
+    const waves = this.makeWaves(cv);
+    const play = $('rs-play'), icP = $('rs-ic-play'), icS = $('rs-ic-pause');
+    const seek = $('rs-seek'), cur = $('rs-cur'), dur = $('rs-dur');
+    const fmt = (t) => { t = Math.max(0, Math.floor(t || 0)); const m = Math.floor(t / 60), x = t % 60; return String(m).padStart(2, '0') + ':' + String(x).padStart(2, '0'); };
+    // reloj propio: el navegador actualiza currentTime "a saltos"; aquí se interpola para un movimiento continuo
+    let clockT = 0, clockAt = performance.now(), lastCT = -1;
+    const now = () => {
+      const ct = audio.currentTime || 0;
+      if (audio.paused) { clockT = ct; clockAt = performance.now(); lastCT = ct; return ct; }
+      const est = clockT + (performance.now() - clockAt) / 1000 * (audio.playbackRate || 1);
+      if (ct !== lastCT) { lastCT = ct; if (Math.abs(ct - est) > 0.35) { clockT = ct; clockAt = performance.now(); return ct; } clockT = est + (ct - est) * 0.08; clockAt = performance.now(); return clockT; }
+      return est;
+    };
+    const ui = () => {
+      const playing = !audio.paused && !audio.ended;
+      icP.style.display = playing ? 'none' : ''; icS.style.display = playing ? '' : 'none';
+      play.setAttribute('aria-label', playing ? 'Pausar el relato' : 'Reproducir el relato');
+      cur.textContent = fmt(audio.currentTime);
+      if (!this.seeking) seek.value = String(Math.floor(audio.currentTime || 0));
+    };
+    const redraw = () => waves.draw(now());
+    const loop = () => { redraw(); ui(); if (!audio.paused) this.raf = requestAnimationFrame(loop); };
+    waves.load().then(redraw).catch(() => {});
+    audio.addEventListener('loadedmetadata', () => { if (isFinite(audio.duration)) { seek.max = String(Math.floor(audio.duration)); dur.textContent = fmt(audio.duration); } ui(); });
+    audio.addEventListener('play', () => { clockT = audio.currentTime || 0; clockAt = performance.now(); cancelAnimationFrame(this.raf); this.raf = requestAnimationFrame(loop); ui(); });
+    ['pause', 'ended', 'seeked'].forEach((ev) => audio.addEventListener(ev, () => { clockT = audio.currentTime || 0; clockAt = performance.now(); ui(); redraw(); }));
+    play.addEventListener('click', () => { if (audio.paused) { const p = audio.play(); if (p && p.catch) p.catch(() => {}); } else audio.pause(); });
+    $('rs-back').addEventListener('click', () => { audio.currentTime = Math.max(0, audio.currentTime - 15); });
+    $('rs-fwd').addEventListener('click', () => { audio.currentTime = Math.min(audio.duration || 1e9, audio.currentTime + 15); });
+    seek.addEventListener('input', () => { this.seeking = true; audio.currentTime = Number(seek.value); cur.textContent = fmt(seek.value); redraw(); });
+    seek.addEventListener('change', () => { this.seeking = false; });
+    this.onResize = () => { waves.size(); redraw(); };
+    window.addEventListener('resize', this.onResize);
+    requestAnimationFrame(() => { waves.size(); redraw(); });
+    // al salir de esta página el audio se pausa; al volver empieza arriba
+    const root = this.root;
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    if (root) root.scrollTop = 0;
+    const tick = () => {
+      const visible = root && root.clientHeight > 0 && root.getClientRects().length > 0;
+      if (!visible) { this.wasHidden = true; if (!audio.paused) audio.pause(); }
+      else if (this.wasHidden) { this.wasHidden = false; root.scrollTop = 0; waves.size(); redraw(); }
+      this.vis = requestAnimationFrame(tick);
+    };
+    this.vis = requestAnimationFrame(tick);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf); cancelAnimationFrame(this.vis);
+    if (this.audio) this.audio.pause();
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  renderVals() {
+    return { setRoot: this.setRoot };
+  }
+}
+
+DCBoot(Component, {});
+</script>
+</body>
+</html>

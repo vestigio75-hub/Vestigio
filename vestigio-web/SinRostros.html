@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sin rostros · Vestigio</title>
+<link rel="icon" href="assets/a08a2729465d42bf4d55ea6c95c53547.png">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<template id="dc-template"><x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Inter:ital,wght@0,400;0,600;0,800;1,400&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
+/* Todo el estilo de esta pestaña vive dentro de #sinrostros para no chocar con otras secciones */
+#sinrostros{
+  --bg:#D9C7B1;--ink:#6B564C;--soft:#6B564C;--muted:#6B564C;--line:rgba(107,86,76,.3);--accent:#e07b45; /* fondo beige y letras café de Vestigio */
+  --bar:52px; /* alto de la barra de arriba ("Volver a Desarraigo"); la infografía resta este alto */
+  position:relative;height:100vh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;
+  scroll-behavior:smooth;scroll-snap-type:y proximity;scroll-padding-top:var(--bar);
+  margin:0;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',sans-serif
+}
+#sinrostros *{box-sizing:border-box}
+#sinrostros .sr-bar{position:fixed;top:0;left:0;right:0;height:var(--bar);z-index:30;display:flex;align-items:center;padding:0 clamp(12px,3vw,28px);background:rgba(217,199,177,.95);border-bottom:1px solid var(--line)}
+#sinrostros .sr-back{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 4px;color:var(--soft);text-decoration:none;font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+#sinrostros .sr-back:hover{color:var(--ink)}
+#sinrostros .kicker{font-family:Inter,sans-serif;font-weight:600;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--soft);display:flex;align-items:center;gap:12px}
+#sinrostros .intro{min-height:100vh;display:flex;flex-direction:column;justify-content:center;max-width:760px;margin:0 auto;padding:calc(12vh + var(--bar)) 28px 8vh}
+#sinrostros .intro h1{font-weight:400;font-size:clamp(56px,9vw,128px);line-height:.95;letter-spacing:.04em;text-transform:uppercase;margin:26px 0 14px}
+#sinrostros .dek{font-style:italic;font-size:clamp(22px,2.2vw,30px);color:var(--soft);margin:0 0 6vh}
+#sinrostros .intro p.t{font-size:21px;line-height:1.7;margin:0 0 1.1em;color:var(--ink)}
+#sinrostros .intro p.t em{color:var(--ink)}
+#sinrostros .how{margin-top:5vh;padding-top:20px;border-top:1px solid var(--line);font-family:Inter,sans-serif;font-size:15px;line-height:1.6;color:var(--muted);display:flex;gap:14px;align-items:flex-start}
+#sinrostros .how b{color:var(--ink);font-weight:600}
+#sinrostros .cue{margin:8vh auto 0;display:flex;flex-direction:column;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+#sinrostros .cue i{display:block;width:1px;height:46px;background:linear-gradient(var(--muted),transparent);animation:sr-drip 2s ease-in-out infinite}
+@keyframes sr-drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+#sinrostros .up{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s ease}
+#sinrostros .up.in{opacity:1;transform:none}
+
+/* infografía: se acerca hasta ocupar toda la pantalla (menos la barra de arriba) */
+#sinrostros .stage{scroll-snap-align:start;height:calc(100vh - var(--bar));display:flex;align-items:center;justify-content:center;position:relative;padding:clamp(10px,2.5vh,28px) clamp(14px,4vw,64px)}
+#sinrostros .frame{width:100%;height:100%;overflow:hidden;transform:scale(.86);border-radius:28px;will-change:transform,border-radius;box-shadow:0 30px 80px rgba(60,40,30,.35)}
+#sinrostros .frame iframe{display:block;width:100%;height:100%;border:0;background:#e9e4dc}
+
+#sinrostros .sr-visit{display:flex;justify-content:center;padding:9vh 28px 0}
+#sinrostros .sr-visit-btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:999px;background:var(--ink);color:#F4EFE6;text-decoration:none;font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-align:center;transition:background-color .25s ease,transform .25s ease}
+#sinrostros .sr-visit-btn:hover{background:var(--accent);color:#121212;transform:translateY(-2px)}
+@media (max-width:600px){#sinrostros .sr-visit-btn{font-size:11px;padding:0 16px;letter-spacing:.08em}}
+#sinrostros .sources{max-width:760px;margin:0 auto;padding:9vh 28px 16vh;font-family:Inter,sans-serif;font-size:14px;line-height:1.65;color:var(--muted)}
+#sinrostros .sources h2{font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
+#sinrostros .sources p{margin:0 0 .9em;overflow-wrap:anywhere}
+#sinrostros .sources .cred{margin-top:5vh;padding-top:18px;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){#sinrostros .up{opacity:1;transform:none;transition:none}#sinrostros .frame{transform:none!important;border-radius:0!important}#sinrostros .cue i{animation:none}}
+</style>
+</helmet>
+
+<div id="sinrostros" ref="{{ setRoot }}">
+
+<div class="sr-bar">
+  <a class="sr-back" href="Escucha.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Volver a Desarraigo</a>
+</div>
+
+<section class="intro">
+  <div class="kicker up"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 C12.8 8 16 11.2 23 12 C16 12.8 12.8 16 12 23 C11.2 16 8 12.8 1 12 C8 11.2 11.2 8 12 1 Z" fill="#e07b45"></path></svg>Infografía interactiva</div>
+  <h1 class="up">Sin rostros</h1>
+  <p class="dek up">Reclutamiento infantil en Colombia</p>
+  <p class="t up">Una muñeca, un balón, unos colores, un cuaderno. Sobre la misma mesa, unas botas, un casco, un uniforme, unas balas. En la guerra, los objetos de la infancia y los del combate terminan compartiendo el mismo espacio, hasta que cuesta distinguir unos de otros.</p>
+  <p class="t up">Entre 1990 y 2017, al menos 16.238 niños, niñas y adolescentes fueron reclutados por grupos armados en Colombia, y la cifra real podría llegar a 40.828. Detrás de cada número hay alguien que dejó de ser niño antes de tiempo. Esta infografía cubre de concreto los objetos de esa historia: cada uno guarda <em>un dato o un testimonio</em> de quienes lo vivieron.</p>
+  <div class="how up"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e07b45" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-.6a6 6 0 0 1-4.6-2.2L4.3 15.6a1.6 1.6 0 0 1 2.4-2.1L9 15.5"></path></svg><span><b>Cómo explorarla:</b> baja hasta la mesa, presiona "Empezar" y haz clic en cada objeto para quitarle el concreto. Algunos testimonios describen violencia sexual y muertes.</span></div>
+  <a class="cue up" href="#infografia" onClick="{{ goTable }}"><span>Baja a la mesa</span><i></i></a>
+</section>
+
+<section class="stage" id="infografia">
+  <div class="frame"><iframe title="Infografía interactiva Sin rostros"></iframe></div>
+</section>
+
+<div class="sr-visit">
+  <a class="sr-visit-btn" href="https://infografia-reclutamiento-infantil.netlify.app/" target="_blank" rel="noopener noreferrer">Visitar la infografía en la web<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
+</div>
+
+<section class="sources">
+  <h2>Fuentes</h2>
+  <p>Human Rights Watch. (2026, 24 de agosto). “Pensé que nunca volvería a ver a mi mamá”: Reclutamiento y uso de niños, niñas y adolescentes por parte de grupos armados en Colombia.</p>
+  <p>Comisión de la Verdad. (2021, 20 de febrero). Te vuelves insensible [Video]. YouTube. https://youtu.be/sezNzP7nBDM</p>
+  <p>Comisión de la Verdad. (2021, 15 de febrero). Me perdí en un mundo oscuro [Video]. YouTube. https://youtu.be/Qhhxc6AoSxA</p>
+  <p class="cred">Infografía: Valentina Casas<br>Ilustraciones de los objetos generadas con inteligencia artificial.</p>
+</section>
+
+</div>
+</x-dc></template>
+
+<script>
+
+class Component extends DCLogic {
+  setRoot = (el) => { this.root = el; };
+
+  // "Baja a la mesa": baja suave hasta la infografía (dentro del contenedor de esta pestaña)
+  goTable = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const root = this.root; if (!root) return;
+    const stage = root.querySelector('.stage'); if (!stage) return;
+    root.scrollTo({ top: stage.offsetTop - this.bar(), behavior: 'smooth' });
+  };
+
+  bar() {
+    const v = this.root ? parseFloat(getComputedStyle(this.root).getPropertyValue('--bar')) : 52;
+    return isNaN(v) ? 52 : v;
+  }
+
+  componentDidMount() {
+    const root = this.root;
+    if (!root) return;
+    const $$ = (s) => Array.from(root.querySelectorAll(s));
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    const toTop = () => { root.style.scrollBehavior = 'auto'; root.scrollTop = 0; root.style.scrollBehavior = ''; };
+    toTop();
+
+    // la introducción aparece suave al bajar (y se oculta al salir, como en el archivo original)
+    const ups = $$('.up');
+    this.io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting) e.target.classList.add('in');
+      else e.target.classList.remove('in');
+    }), { root: root, threshold: 0.2 });
+    ups.forEach((el, i) => { el.style.transitionDelay = (el.closest('.intro') ? Math.min(i, 6) * 0.12 : 0) + 's'; this.io.observe(el); });
+
+    // acercamiento de la infografía: de escala 0.86 con bordes redondeados a pantalla completa
+    const frame = root.querySelector('.frame'), stage = root.querySelector('.stage');
+    const onScroll = () => {
+      const bar = this.bar();
+      const r = stage.getBoundingClientRect(), vh = (root.clientHeight || window.innerHeight) - bar;
+      const p = Math.min(1, Math.max(0, 1 - (r.top - bar) / vh));
+      const e = p * p * (3 - 2 * p);
+      frame.style.transform = 'scale(' + (0.86 + 0.14 * e).toFixed(4) + ')';
+      frame.style.borderRadius = (16 + 12 * (1 - e)).toFixed(1) + 'px'; // siempre con bordes redondeados y margen alrededor
+    };
+    this.onScroll = onScroll;
+    root.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+
+    // al volver a esta pestaña empieza desde arriba y la infografía vuelve a su portada
+    // la infografía es una página aparte (sin-rostros.html) que se muestra en el iframe
+    const iframe = root.querySelector('iframe');
+    this.loadInfo = async () => {
+      if (!iframe) return;
+      if (this.infoUrl) { iframe.src = this.infoUrl; return; }
+      const here = new URL('.', document.baseURI).href;
+      const cands = [here + 'sin-rostros.html', here + 'project/sin-rostros.html', location.origin + '/project/sin-rostros.html'];
+      for (const u of cands) {
+        try { const r = await fetch(u, { method: 'GET', cache: 'no-store' }); if (r.ok && /Sin rostros/.test(await r.text())) { this.infoUrl = u; iframe.src = u; return; } } catch (e) {}
+      }
+      // respaldo: la misma página, guardada dentro de esta pestaña
+      const holder = document.getElementById('sr-doc');
+      if (holder) iframe.srcdoc = holder.textContent.replace(/<\\\/script/gi, '</' + 'script');
+    };
+    this.loadInfo();
+    const restart = () => {
+      toTop();
+      ups.forEach((el) => { el.classList.remove('in'); this.io.unobserve(el); this.io.observe(el); });
+      if (iframe) { if (iframe.getAttribute('srcdoc')) { const d = iframe.srcdoc; iframe.srcdoc = d; } else this.loadInfo(); }
+      onScroll();
+    };
+    this.restart = restart;
+    this.onPageShow = (e) => { if (e && e.persisted) restart(); };
+    window.addEventListener('pageshow', this.onPageShow);
+    this.forceTopUntil = performance.now() + 1000;
+    const tick = () => {
+      const visible = root.clientHeight > 0 && root.getClientRects().length > 0;
+      if (!visible) this.wasHidden = true;
+      else if (this.wasHidden) { this.wasHidden = false; restart(); this.forceTopUntil = performance.now() + 600; }
+      if (performance.now() < this.forceTopUntil && root.scrollTop !== 0) toTop();
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    if (this.io) this.io.disconnect();
+    if (this.root && this.onScroll) this.root.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    window.removeEventListener('pageshow', this.onPageShow);
+  }
+
+  renderVals() {
+    return { setRoot: this.setRoot, goTable: this.goTable };
+  }
+}
+
+DCBoot(Component, {});
+</script>
+</body>
+</html>

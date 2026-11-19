@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huellas del desarraigo · Vestigio</title>
+<link rel="icon" href="assets/a08a2729465d42bf4d55ea6c95c53547.png">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<template id="dc-template"><x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Inter:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
+/* colores del reportaje (los mismos de la crónica) */
+#huellas{--paper:#D9C7B1;--ink:#2a221d;--brown:#6B564C;--night:#6A564B;--nightink:#F4EFE6;--hl:rgba(233,224,138,.85);--accent:#8a3b2a;
+  position:relative;height:100vh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:var(--paper);color:var(--ink);font-family:Inter,sans-serif;transition:background-color .9s ease,color .9s ease}
+#huellas.dark{background:var(--night);color:var(--nightink)}
+#huellas *{box-sizing:border-box}
+.hu-prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:40}
+.hu-back{position:fixed;top:14px;left:16px;z-index:30;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:999px;background:rgba(244,239,230,.9);color:#1d1b18;text-decoration:none;font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.hu-back:focus-visible{outline:2px solid var(--brown);outline-offset:3px}
+.hu-cover{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:90px clamp(18px,5vw,60px) 110px;overflow:hidden}
+.hu-kick{margin:0 0 22px;font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--brown);opacity:0;animation:hu-in .9s .2s ease forwards}
+.hu-t{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(52px,10vw,150px);line-height:.95;letter-spacing:-.035em;color:var(--brown);max-width:1100px}
+.hu-t .wd{display:inline-block;white-space:nowrap}
+.hu-t .ch{display:inline-block;opacity:0;transform:translateY(.45em) rotate(4deg);animation:hu-ch .8s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.35s + var(--i) * .045s)}
+.hu-fp{position:absolute;width:clamp(70px,9vw,130px);opacity:0;animation:hu-fp 1.6s ease forwards;pointer-events:none}
+.hu-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:600;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--brown);opacity:0;animation:hu-in 1s 1.6s ease forwards;transition:opacity .4s}
+.hu-cue svg{animation:hu-bob 1.8s ease-in-out infinite}
+@keyframes hu-in{to{opacity:1}}
+@keyframes hu-ch{to{opacity:1;transform:none}}
+@keyframes hu-fp{to{opacity:.85}}
+@keyframes hu-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.hu-body{max-width:700px;margin:0 auto;padding:6vh clamp(22px,5vw,40px) 10vh}
+.par{margin:0 0 1.5em;font-size:clamp(17px,1.35vw,20px);line-height:1.78}
+.sent{opacity:.16;transition:opacity .9s ease}
+.sent.lit{opacity:1}
+mark.hl{color:inherit;background:linear-gradient(var(--hl),var(--hl)) no-repeat 0 85%/0% 42%;transition:background-size 1.1s .35s ease;padding:0 .08em}
+.sent.lit mark.hl{background-size:100% 42%}
+#huellas.dark mark.hl{--hl:rgba(233,224,138,.4)}
+.quote{margin:12vh -8vw 12vh;padding:0;text-align:left}
+.quote p{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4.6vw,60px);line-height:1.08;letter-spacing:-.02em}
+.quote .w{opacity:.14;transition:opacity .35s ease}
+.quote .w.on{opacity:1}
+.quote figcaption{margin-top:18px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.7}
+.noche{padding:6vh 0 2vh}
+.hu-end{display:flex;justify-content:center;padding:4vh 0 14vh}
+.hu-end img{width:46px;opacity:.8}
+@media (max-width:760px){.quote{margin:9vh 0}.par{font-size:16.5px}.hu-back{top:10px;left:10px;min-height:34px;padding:0 11px;font-size:10px}}
+@media (prefers-reduced-motion:reduce){.hu-t .ch,.hu-kick,.hu-fp,.hu-cue{animation:none;opacity:1;transform:none}.sent{opacity:1}.quote .w{opacity:1}}
+.ul{background:linear-gradient(currentColor,currentColor) no-repeat 0 100%/0% 2px;transition:background-size 1.2s .5s ease;padding-bottom:1px}
+.sent.lit .ul{background-size:100% 2px}
+.hu-src{margin:6vh 0 0;padding-top:18px;border-top:1px solid rgba(107,86,76,.35);font-size:13px;line-height:1.65;color:#6B564C}
+</style>
+</helmet>
+<div id="huellas" ref="{{ setRoot }}">
+<div class="hu-prog" aria-hidden="true"></div>
+<a class="hu-back" href="Conoce.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Volver a Memoria</a>
+<header class="hu-cover">
+<img class="hu-fp" src="assets/938e0fe04062dd82ddf5317c634e613e.svg" alt="" style="left:7%;top:16%;transform:rotate(-24deg);animation-delay:.6s">
+<img class="hu-fp" src="assets/5c87599a3d6033a60d92a3efca2f7cdd.svg" alt="" style="right:9%;top:22%;transform:rotate(18deg);animation-delay:.9s">
+<img class="hu-fp" src="assets/b3dbf2d64e106609fd1a75480214a93e.svg" alt="" style="left:14%;bottom:14%;transform:rotate(12deg);animation-delay:1.2s">
+<img class="hu-fp" src="assets/c6a89babf29de3812a62b25923f13180.svg" alt="" style="right:15%;bottom:12%;transform:rotate(-14deg);animation-delay:1.5s">
+<p class="hu-kick">Reportaje</p>
+<h1 class="hu-t" aria-label="Huellas del desarraigo"><span class="wd"><span class="ch" style="--i:1">H</span><span class="ch" style="--i:2">u</span><span class="ch" style="--i:3">e</span><span class="ch" style="--i:4">l</span><span class="ch" style="--i:5">l</span><span class="ch" style="--i:6">a</span><span class="ch" style="--i:7">s</span></span> <span class="wd"><span class="ch" style="--i:8">d</span><span class="ch" style="--i:9">e</span><span class="ch" style="--i:10">l</span></span> <span class="wd"><span class="ch" style="--i:11">d</span><span class="ch" style="--i:12">e</span><span class="ch" style="--i:13">s</span><span class="ch" style="--i:14">a</span><span class="ch" style="--i:15">r</span><span class="ch" style="--i:16">r</span><span class="ch" style="--i:17">a</span><span class="ch" style="--i:18">i</span><span class="ch" style="--i:19">g</span><span class="ch" style="--i:20">o</span></span></h1>
+<div class="hu-cue" aria-hidden="true">Desliza<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg></div>
+</header>
+<article class="hu-body">
+<p class="par"><span class="sent">El reclutamiento de niños, niñas y adolescentes (NNA) por parte de grupos armados ilegales en Colombia es "una práctica lesiva y atroz de vieja data", tal como se explica en el informe del Observatorio de Derechos Humanos de la Comisión Nacional de los Derechos Humanos de México.</span> <span class="sent">Este mismo informe explica que esta práctica pone en riesgo la vida, vulnera la integridad física y psicológica de los menores y se convierte en una barrera para su educación, salud, recreación, acceso a la cultura y sus proyectos de vida.</span></p>
+<p class="par"><span class="sent">El reclutamiento de un menor siempre es un acto coercitivo, donde el menor es víctima de una forma criminal de manipulación psicológica y social en una etapa del desarrollo en la que está mayormente expuesto a ser engañado de distintas formas.</span></p>
+<p class="par"><span class="sent">La psicóloga Melissa Camargo Ospina, de la Universidad Nacional de Colombia, quien ha trabajado durante más de 20 años en políticas públicas con enfoque poblacional, diferencial y de género y un énfasis en niñez y juventud, lo dice rotundamente: <span class="ul">el reclutamiento siempre es forzado, incluso cuando hoy parezca menos violento</span>.</span></p>
+<p class="par"><span class="sent">De acuerdo con el documento de la Universidad Autónoma del Estado de Hidalgo, las secuelas incluyen <mark class="hl">miedo</mark>, desconfianza, problemas de comunicación, baja autoestima y depresión, que se agravan por la separación de sus familias durante su desarrollo.</span> <span class="sent">Las experiencias violentas pueden dar lugar a traumas psíquicos o a estrés postraumático.</span></p>
+<p class="par"><span class="sent">Estos trastornos son especialmente peligrosos para los niños y niñas porque pueden afectar su desarrollo psicosocial y dificultar su reintegración a la vida civil.</span> <span class="sent">Además, los niños pronto normalizan la violencia como parte de su realidad cotidiana, derivada de un entorno tan violento como la guerra.</span></p>
+<p class="par"><span class="sent">Melissa coincide en que las huellas son profundas con relación al miedo y a la posibilidad de tomar decisiones, y menciona que hay una afectación profunda en la autonomía en ese momento de la vida.</span></p>
+<p class="par"><span class="sent">El documento de la Universidad de Hidalgo describe abusos que no solo dejan secuelas físicas permanentes, sino que afectan profundamente la autoestima y las relaciones interpersonales, y los califica como una forma común de tortura en conflictos armados.</span></p>
+<p class="par"><span class="sent">El artículo del Comité Internacional de la Cruz Roja (CICRC) enumera las consecuencias del reclutamiento, desde uso y utilización de menores, separación familiar, pérdida de sus proyectos de vida, afectaciones psicológicas, violencia sexual, mutilaciones, heridas y muertes en combate, y especifica que las consecuencias son profundas y multidimensionales afectando el desarrollo físico, emocional, social y educativo, y se agravan con el tiempo por la vulnerabilidad de las víctimas y por las barreras para acceder a una atención integral.</span></p>
+<p class="par"><span class="sent">Para Melissa, además del miedo existe otra huella profunda, "<span class="ul">un gran <mark class="hl">duelo</mark>, que es el <mark class="hl">desarraigo</mark></span>", es decir, el desarraigo de su familia, de su entorno, de sus sueños y de sus usos y costumbres en su territorio.</span></p>
+<p class="par"><span class="sent">Dicho desarraigo tiene huellas profundas en la construcción de la <mark class="hl">identidad</mark> de niñas y niños, y puede provocar una interrupción absolutamente violenta y agresiva en la construcción de la identidad, de la autonomía y del proyecto de vida.</span></p>
+<p class="par"><span class="sent">La psicóloga insiste en que el impacto no es igual para todos.</span> <span class="sent">No es lo mismo un niño, niña o adolescente de una cultura indígena, al que sacar de su cosmovisión tiene implicaciones y una huella psicológica propias, que uno de un contexto urbano que es "instrumentalizado" por un grupo armado.</span> <span class="sent">Todo eso, aclara, hace parte de lo que se conoce como reclutamiento, uso y utilización.</span> <span class="sent">También recalca la importancia de reconocer las capacidades de afrontamiento y los rasgos culturales que dan la posibilidad de enfrentar estas situaciones.</span></p>
+<p class="par"><span class="sent">Según Melissa, no tener identidad, o que se interrumpa el proceso de identidad ligado al territorio y al contexto cultural, social y familiar, tiene consecuencias profundas en la vida adulta, dificultades en las relaciones familiares, para tramitar las diferencias y para generar relaciones de confianza.</span> <span class="sent">También describe como una dificultad, la de reconocerse como parte de un todo.</span></p>
+<p class="par"><span class="sent">Además, explica que el hecho de portar un arma o una insignia da, de alguna manera, una identidad agresiva y violenta, que se trasciende a los demás escenarios de la cotidianidad.</span> <span class="sent">A eso suma que el contexto militar irregular genera dinámicas relacionales de imposición, no de diálogo, y de jerarquía.</span> <span class="sent">Esto deja una huella profunda para la vida diaria, con dificultades para desarrollar otro tipo de actividades o cuando logran ser desvinculados con el conflicto.</span></p>
+<p class="par"><span class="sent">Uno de los puntos más delicados es que, según Melissa, en el reclutamiento se dan situaciones muy complejas, y es que junto a los efectos negativos también se generan relaciones de amor, de confianza y una noción de familia.</span> <span class="sent">Las acciones violentas empiezan a ser parte de una cotidianidad que en principio no se asume como propia, pero que luego va generando relaciones de confianza y la posibilidad de ascender y de "tener un nombre", lo que para las personas que hacen parte de estos grupos parece atractivo y puede llegar a comprometerlos con quedarse ahí.</span></p>
+<p class="par"><span class="sent">Ella misma reconoce que es difícil de entender, pero es algo que sucede, y esas relaciones también determinan el día a día de quienes fueron víctimas.</span> <span class="sent">Esto conecta con lo que señala el informe del Observatorio de Derechos Humanos de la Comisión Nacional de los Derechos Humanos de México: la manipulación ocurre en una etapa en la que el menor es más vulnerable al engaño y estas situaciones o escenarios hacen que puedan caer en estas dinámicas con más facilidad.</span></p>
+<p class="par"><span class="sent">Aunque todavía existan formas muy violentas de reclutar, sobre todo en pueblos indígenas, la modalidad más utilizada hoy en día es el <mark class="hl">enamoramiento</mark>, la manipulación y la seducción.</span> <span class="sent">Los grupos se aprovechan de factores de riesgo familiares, económicos y sociales para convencerlos que con su integración al grupo tendrán una mejor vida, prometen dinero para la familia y relaciones amorosas.</span></p>
+<p class="par"><span class="sent">Entre los factores de riesgo están las relaciones familiares, las posibilidades de crecimiento personal y educativo y las posibilidades económicas.</span> <span class="sent">Melissa lo resume con frases que reflejan lo que piensan quienes terminan reclutados:</span> <span class="sent">"<span class="ul">no hay con qué comer, toca irse porque pagan, porque la persona que yo amo está allá, porque mis primos son de allá</span>".</span></p>
+<section class="noche" data-dark="1">
+<p class="par"><span class="sent">Este impacto es una situación complicada para las familias, porque los niños se van o se los llevan y no se sabe de ellos.</span> <span class="sent">Para ellos, es básicamente como tener un hijo desaparecido, otro hecho victimizante y supremamente doloroso.</span> <span class="sent">En el caso de la niñez, es como un secuestro, una sensación inaprensible.</span> <span class="sent">Melissa lo asimila a la <mark class="hl">desaparición forzada</mark>, a la que se suma la angustia permanente de que el hijo esté en peligro y de no saber si está vivo o muerto.</span></p>
+<p class="par"><span class="sent">A eso se suma el terror de denunciar y que la situación empeore, por lo que muchas familias no denuncian y viven "<span class="ul">pesadillas de búsqueda</span>".</span> <span class="sent">Hay también culpa en las familias, por maltrato, pobreza o desesperación, y una huella muy dolorosa al interior de las comunidades.</span></p>
+</section>
+<p class="par"><span class="sent">El reclutamiento forzado es una exigencia colectiva, mientras no existan entornos protectores para la niñez, no será posible acabar con estas situaciones ni con la violencia en el país.</span> <span class="sent">Para Melissa todos somos corresponsables y hace falta tomar conciencia de que las niñeces y adolescencias son sujetos y actores fundamentales de la sociedad, a quienes hay que brindar toda la protección, como lo dice la Constitución.</span></p>
+<p class="hu-src">Fuentes: Consejería Presidencial para los derechos humanos y asuntos internacionales - Comité Internacional de la Cruz Roja - Universidad Autónoma del Estado de Hidalgo - Melissa Camargo Ospina.</p>
+<div class="hu-end" aria-hidden="true"><img src="assets/c6a89babf29de3812a62b25923f13180.svg" alt=""></div>
+</article>
+</div>
+</x-dc></template>
+
+<script>
+
+class Component extends DCLogic {
+  setRoot = (el) => { this.root = el; };
+
+  componentDidMount() {
+    const root = this.root;
+    if (!root) return;
+    const sents = Array.from(root.querySelectorAll('.sent'));
+    const quotes = Array.from(root.querySelectorAll('.quote')).map((q) => ({ el: q, w: Array.from(q.querySelectorAll('.w')) }));
+    const noches = Array.from(root.querySelectorAll('[data-dark]'));
+    const prog = root.querySelector('.hu-prog'), cue = root.querySelector('.hu-cue');
+    const paint = () => {
+      const vh = root.clientHeight || window.innerHeight, y = root.scrollTop;
+      const max = root.scrollHeight - vh;
+      prog.style.width = (max > 0 ? y / max * 100 : 0) + '%';
+      if (cue) cue.style.opacity = y > 60 ? '0' : '';
+      // las frases se van desvelando a medida que bajas
+      for (const s of sents) { if (!s.classList.contains('lit') && s.getBoundingClientRect().top < vh * 0.8) s.classList.add('lit'); }
+      // citas: se iluminan palabra por palabra con el scroll
+      for (const q of quotes) {
+        const r = q.el.getBoundingClientRect();
+        const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.35)));
+        const n = Math.round(p * q.w.length);
+        q.w.forEach((w, i) => w.classList.toggle('on', i < n));
+      }
+      // la parte de las familias se lee "de noche"
+      let dark = false;
+      for (const s of noches) { const r = s.getBoundingClientRect(); if (r.top < vh * 0.55 && r.bottom > vh * 0.45) dark = true; }
+      // (sin cambio de fondo: el fondo se queda siempre igual)
+    };
+    this.onScroll = () => { if (!this.pending) { this.pending = true; requestAnimationFrame(() => { this.pending = false; paint(); }); } };
+    root.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    // al volver a esta pestaña el reportaje empieza de nuevo desde arriba
+    const restart = () => {
+      root.scrollTop = 0;
+      sents.forEach((s) => s.classList.remove('lit'));
+      root.querySelectorAll('.hu-t .ch, .hu-kick, .hu-fp, .hu-cue').forEach((el) => { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; });
+      paint();
+    };
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    root.scrollTop = 0; paint();
+    this.forceTopUntil = performance.now() + 1000;
+    const tick = () => {
+      const visible = root.clientHeight > 0 && root.getClientRects().length > 0;
+      if (!visible) this.wasHidden = true;
+      else if (this.wasHidden) { this.wasHidden = false; restart(); this.forceTopUntil = performance.now() + 600; }
+      if (performance.now() < this.forceTopUntil && root.scrollTop !== 0) { root.scrollTop = 0; }
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    if (this.root) this.root.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+
+  renderVals() {
+    return { setRoot: this.setRoot };
+  }
+}
+
+DCBoot(Component, {});
+</script>
+</body>
+</html>

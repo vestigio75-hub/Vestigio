@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sobre nosotros</title>
+<link rel="icon" href="assets/a08a2729465d42bf4d55ea6c95c53547.png">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<template id="dc-template"><x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#050202}
+a{color:#F4EFE6}a:hover{color:#FFFFFF}
+.menu{text-decoration:none;text-underline-offset:6px;text-decoration-thickness:2px}
+.menu:hover{text-decoration:underline}
+.menu:focus-visible,article a:focus-visible{outline:2px solid #E0402E;outline-offset:3px}
+article a:hover{background:#6A564B !important}
+@keyframes rebote{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@media (max-width:700px){.vh-hdr{flex-wrap:nowrap !important;gap:12px !important;padding:10px 14px !important;align-items:center !important}.vh-hdr > a,.vh-hdr > button{min-height:34px !important;flex:0 0 auto}.vh-logo{height:clamp(17px,4.8vw,24px) !important}.vh-nav{flex:1 1 auto;min-width:0;flex-wrap:nowrap !important;justify-content:space-between !important;gap:0 4px !important;white-space:nowrap}.vh-nav > *{font-size:clamp(8.5px,2.45vw,13px) !important;min-height:34px !important;padding:0 !important;letter-spacing:0 !important}}
+.t-touch{display:none}@media (hover:none){.t-mouse{display:none}.t-touch{display:inline}}
+</style>
+</helmet>
+<main ref="{{ setScroller }}" style="height: 100vh; overflow-y: auto; overflow-x: hidden; background: #050202; color: #F4EFE6; font-family: Inter, system-ui, sans-serif">
+<div style="position: relative">
+<div ref="{{ setStage }}" onMouseMove="{{ onMove }}" style="position: sticky; top: 0; min-height: 100vh; padding-bottom: 80px; box-sizing: border-box; overflow: hidden; background: radial-gradient(ellipse at 50% 45%, #2B2624 0%, #151211 70%, #090606 100%)">
+
+<header class="vh-hdr" style="position: relative; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 12px 28px; flex-wrap: wrap; padding: 22px clamp(16px, 4vw, 48px)">
+<a href="index.html" aria-label="Vestigio, volver al inicio" style="display: inline-flex; min-height: 44px; align-items: center"><img class="vh-logo" src="assets/a08a2729465d42bf4d55ea6c95c53547.png" alt="Vestigio" style="display: block; height: 38px; width: auto"></a>
+<nav class="vh-nav" aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px 26px"><a href="index.html" class="menu" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 16px">Inicio</a><a href="Informate.html" class="menu" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 16px">Raíz</a><a href="Escucha.html" class="menu" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 16px">Desarraigo</a><a href="Conoce.html" class="menu" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 16px">Memoria</a><a href="SobreNosotros.html" class="menu" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 16px; text-decoration: underline" aria-current="page">Sobre nosotros</a></nav>
+</header>
+
+<section aria-labelledby="equipo" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px)">
+<div style="position: relative; z-index: 60; text-align: center; margin-bottom: clamp(80px, 12vh, 140px)">
+<h1 ref="{{ setTitle }}" id="equipo" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 76px); line-height: 1; color: #F4EFE6; opacity: 0; transform: translateY(40px) scale(0.85); letter-spacing: 0.3em; will-change: transform, opacity, letter-spacing">Sobre nosotros</h1>
+<p ref="{{ setSub }}" style="margin: 10px 0 0; font-size: 15px; color: #E6A49B; opacity: 0"><span class="t-mouse">Pasa la luz roja sobre cada foto para revelarla</span><span class="t-touch">Mantén el dedo sobre cada foto para alumbrarla y revelarla</span></p>
+</div>
+<div ref="{{ setRow1 }}" style="position: relative; padding-top: 14px; opacity: 0; top: -60px">
+<div aria-hidden="true" style="position: absolute; left: -10vw; right: -10vw; top: 31px; height: 2px; background: #D9D2C6; opacity: 0.7"></div>
+<div style="position: relative; display: flex; justify-content: center; align-items: flex-start; gap: clamp(32px, 7vw, 120px); flex-wrap: wrap">
+<div style="position: relative; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; z-index: {{c0.z}}">
+<div aria-hidden="true" style="width: 14px; height: 38px; margin-bottom: -18px; position: relative; z-index: 2; border-radius: 3px; background: linear-gradient(90deg, #8A6A47, #B08B62 50%, #7C5E3E); box-shadow: 0 2px 4px rgba(0,0,0,0.5)"><span style="display: block; width: 6px; height: 6px; margin: 15px auto 0; border-radius: 50%; background: #5A4430"></span></div>
+<article onClick="{{ reveal0 }}" style="width: clamp(180px, 15vw, 230px); background: #EEEBE5; padding: 10px 10px 12px; box-sizing: border-box; box-shadow: 0 18px 40px rgba(0,0,0,0.6); cursor: pointer; color: #1B1B1B; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none">
+<div ref="{{ setPhoto0 }}" style="position: relative; aspect-ratio: 1 / 1; background: #121110; overflow: hidden">
+<div style="position: absolute; inset: 0; padding: 14px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 8px; background: #2A2622; color: #F1ECE2; opacity: {{c0.ph}}; transition: opacity 1.4s ease">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.1">Samuel Suárez</h2>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #D6CFC4">[Párrafo sobre Samuel]</p>
+</div>
+<p style="position: absolute; inset: 0; margin: 0; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 2.6vw, 40px); color: #F4EFE6; opacity: {{c0.nm}}; transition: opacity 0.8s ease">Samuel</p>
+<div aria-hidden="true" style="position: absolute; left: 0; bottom: 0; height: 4px; width: 100%; background: rgba(255,255,255,0.12)"><div ref="{{ setBar0 }}" style="height: 100%; width: 0%; background: #E0402E"></div></div>
+</div>
+<div style="max-height: {{c0.mh}}px; overflow: hidden; transition: max-height 1s ease">
+<div style="padding-top: 10px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap"><a href="https://www.linkedin.com/in/samuel-suarezrueda/" aria-label="LinkedIn de Samuel Suárez" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"></path></svg></a><a href="https://www.instagram.com/samuel.suarezr" aria-label="Instagram de Samuel Suárez" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle></svg></a><button type="button" onClick="{{ copy0 }}" aria-label="Copiar correo de Samuel Suárez" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none; border: 0; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></button></div>
+</div>
+</article>
+</div><div style="position: relative; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; z-index: {{c1.z}}">
+<div aria-hidden="true" style="width: 14px; height: 38px; margin-bottom: -18px; position: relative; z-index: 2; border-radius: 3px; background: linear-gradient(90deg, #8A6A47, #B08B62 50%, #7C5E3E); box-shadow: 0 2px 4px rgba(0,0,0,0.5)"><span style="display: block; width: 6px; height: 6px; margin: 15px auto 0; border-radius: 50%; background: #5A4430"></span></div>
+<article onClick="{{ reveal1 }}" style="width: clamp(180px, 15vw, 230px); background: #EEEBE5; padding: 10px 10px 12px; box-sizing: border-box; box-shadow: 0 18px 40px rgba(0,0,0,0.6); cursor: pointer; color: #1B1B1B; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none">
+<div ref="{{ setPhoto1 }}" style="position: relative; aspect-ratio: 1 / 1; background: #121110; overflow: hidden">
+<div style="position: absolute; inset: 0; padding: 14px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 8px; background: #2A2622; color: #F1ECE2; opacity: {{c1.ph}}; transition: opacity 1.4s ease">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.1">Gabriela García</h2>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #D6CFC4">[Párrafo sobre Gaby]</p>
+</div>
+<p style="position: absolute; inset: 0; margin: 0; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 2.6vw, 40px); color: #F4EFE6; opacity: {{c1.nm}}; transition: opacity 0.8s ease">Gaby</p>
+<div aria-hidden="true" style="position: absolute; left: 0; bottom: 0; height: 4px; width: 100%; background: rgba(255,255,255,0.12)"><div ref="{{ setBar1 }}" style="height: 100%; width: 0%; background: #E0402E"></div></div>
+</div>
+<div style="max-height: {{c1.mh}}px; overflow: hidden; transition: max-height 1s ease">
+<div style="padding-top: 10px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap"><a href="https://www.linkedin.com/in/gabriela-garc%C3%ADa-p%C3%A9rez/" aria-label="LinkedIn de Gabriela García" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"></path></svg></a><a href="https://www.instagram.com/gabrielaa_g_" aria-label="Instagram de Gabriela García" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle></svg></a><button type="button" onClick="{{ copy3 }}" aria-label="Copiar correo de Gabriela García" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none; border: 0; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></button></div>
+</div>
+</article>
+</div><div style="position: relative; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; z-index: {{c2.z}}">
+<div aria-hidden="true" style="width: 14px; height: 38px; margin-bottom: -18px; position: relative; z-index: 2; border-radius: 3px; background: linear-gradient(90deg, #8A6A47, #B08B62 50%, #7C5E3E); box-shadow: 0 2px 4px rgba(0,0,0,0.5)"><span style="display: block; width: 6px; height: 6px; margin: 15px auto 0; border-radius: 50%; background: #5A4430"></span></div>
+<article onClick="{{ reveal2 }}" style="width: clamp(180px, 15vw, 230px); background: #EEEBE5; padding: 10px 10px 12px; box-sizing: border-box; box-shadow: 0 18px 40px rgba(0,0,0,0.6); cursor: pointer; color: #1B1B1B; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none">
+<div ref="{{ setPhoto2 }}" style="position: relative; aspect-ratio: 1 / 1; background: #121110; overflow: hidden">
+<div style="position: absolute; inset: 0; padding: 14px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 8px; background: #2A2622; color: #F1ECE2; opacity: {{c2.ph}}; transition: opacity 1.4s ease">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.1">Valentina Martínez</h2>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #D6CFC4">[Párrafo sobre Vale]</p>
+</div>
+<p style="position: absolute; inset: 0; margin: 0; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 2.6vw, 40px); color: #F4EFE6; opacity: {{c2.nm}}; transition: opacity 0.8s ease">Vale</p>
+<div aria-hidden="true" style="position: absolute; left: 0; bottom: 0; height: 4px; width: 100%; background: rgba(255,255,255,0.12)"><div ref="{{ setBar2 }}" style="height: 100%; width: 0%; background: #E0402E"></div></div>
+</div>
+<div style="max-height: {{c2.mh}}px; overflow: hidden; transition: max-height 1s ease">
+<div style="padding-top: 10px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap"><a href="https://www.linkedin.com/in/valentina-mart%C3%ADnez-c%C3%A1rdenas/" aria-label="LinkedIn de Valentina Martínez" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"></path></svg></a><a href="https://www.instagram.com/valentina.mc28" aria-label="Instagram de Valentina Martínez" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle></svg></a><button type="button" onClick="{{ copy4 }}" aria-label="Copiar correo de Valentina Martínez" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none; border: 0; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></button></div>
+</div>
+</article>
+</div>
+</div>
+</div>
+<div style="height: clamp(56px, 9vh, 110px)"></div>
+<div ref="{{ setRow2 }}" style="position: relative; padding-top: 14px; opacity: 0; top: -60px">
+<div aria-hidden="true" style="position: absolute; left: -10vw; right: -10vw; top: 31px; height: 2px; background: #D9D2C6; opacity: 0.7"></div>
+<div style="position: relative; display: flex; justify-content: center; align-items: flex-start; gap: clamp(32px, 7vw, 120px); flex-wrap: wrap">
+<div style="position: relative; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; z-index: {{c3.z}}">
+<div aria-hidden="true" style="width: 14px; height: 38px; margin-bottom: -18px; position: relative; z-index: 2; border-radius: 3px; background: linear-gradient(90deg, #8A6A47, #B08B62 50%, #7C5E3E); box-shadow: 0 2px 4px rgba(0,0,0,0.5)"><span style="display: block; width: 6px; height: 6px; margin: 15px auto 0; border-radius: 50%; background: #5A4430"></span></div>
+<article onClick="{{ reveal3 }}" style="width: clamp(180px, 15vw, 230px); background: #EEEBE5; padding: 10px 10px 12px; box-sizing: border-box; box-shadow: 0 18px 40px rgba(0,0,0,0.6); cursor: pointer; color: #1B1B1B; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none">
+<div ref="{{ setPhoto3 }}" style="position: relative; aspect-ratio: 1 / 1; background: #121110; overflow: hidden">
+<div style="position: absolute; inset: 0; padding: 14px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 8px; background: #2A2622; color: #F1ECE2; opacity: {{c3.ph}}; transition: opacity 1.4s ease">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.1">Valentina Casas</h2>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #D6CFC4">[Párrafo sobre Casas]</p>
+</div>
+<p style="position: absolute; inset: 0; margin: 0; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 2.6vw, 40px); color: #F4EFE6; opacity: {{c3.nm}}; transition: opacity 0.8s ease">Casas</p>
+<div aria-hidden="true" style="position: absolute; left: 0; bottom: 0; height: 4px; width: 100%; background: rgba(255,255,255,0.12)"><div ref="{{ setBar3 }}" style="height: 100%; width: 0%; background: #E0402E"></div></div>
+</div>
+<div style="max-height: {{c3.mh}}px; overflow: hidden; transition: max-height 1s ease">
+<div style="padding-top: 10px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap"><a href="https://www.linkedin.com/in/valentina-casas-" aria-label="LinkedIn de Valentina Casas" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"></path></svg></a><a href="https://www.instagram.com/vv.casass.c" aria-label="Instagram de Valentina Casas" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle></svg></a><button type="button" onClick="{{ copy1 }}" aria-label="Copiar correo de Valentina Casas" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none; border: 0; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></button></div>
+</div>
+</article>
+</div><div style="position: relative; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; z-index: {{c4.z}}">
+<div aria-hidden="true" style="width: 14px; height: 38px; margin-bottom: -18px; position: relative; z-index: 2; border-radius: 3px; background: linear-gradient(90deg, #8A6A47, #B08B62 50%, #7C5E3E); box-shadow: 0 2px 4px rgba(0,0,0,0.5)"><span style="display: block; width: 6px; height: 6px; margin: 15px auto 0; border-radius: 50%; background: #5A4430"></span></div>
+<article onClick="{{ reveal4 }}" style="width: clamp(180px, 15vw, 230px); background: #EEEBE5; padding: 10px 10px 12px; box-sizing: border-box; box-shadow: 0 18px 40px rgba(0,0,0,0.6); cursor: pointer; color: #1B1B1B; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none">
+<div ref="{{ setPhoto4 }}" style="position: relative; aspect-ratio: 1 / 1; background: #121110; overflow: hidden">
+<div style="position: absolute; inset: 0; padding: 14px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 8px; background: #2A2622; color: #F1ECE2; opacity: {{c4.ph}}; transition: opacity 1.4s ease">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.1">Gabriela Serrano</h2>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #D6CFC4">[Párrafo sobre Gabo]</p>
+</div>
+<p style="position: absolute; inset: 0; margin: 0; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 2.6vw, 40px); color: #F4EFE6; opacity: {{c4.nm}}; transition: opacity 0.8s ease">Gabo</p>
+<div aria-hidden="true" style="position: absolute; left: 0; bottom: 0; height: 4px; width: 100%; background: rgba(255,255,255,0.12)"><div ref="{{ setBar4 }}" style="height: 100%; width: 0%; background: #E0402E"></div></div>
+</div>
+<div style="max-height: {{c4.mh}}px; overflow: hidden; transition: max-height 1s ease">
+<div style="padding-top: 10px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap"><a href="https://www.linkedin.com/in/maria-gabriela-serrano-rodr%C3%ADguez-66a82937b/" aria-label="LinkedIn de Gabriela Serrano" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"></path></svg></a><a href="https://www.instagram.com/mgabs.sr" aria-label="Instagram de Gabriela Serrano" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle></svg></a><button type="button" onClick="{{ copy2 }}" aria-label="Copiar correo de Gabriela Serrano" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1B1B1B; color: #F4EFE6; text-decoration: none; border: 0; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></button></div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<div ref="{{ setLight }}" aria-hidden="true" style="position: absolute; inset: 0; z-index: 50; pointer-events: none; background: radial-gradient(circle 330px at 50% 45%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 50%, rgba(3,0,0,0.9) 100%)"></div>
+<div aria-hidden="true" style="position: absolute; inset: 0; z-index: 51; pointer-events: none; background: #E8301E; mix-blend-mode: multiply; opacity: 0.85"></div>
+
+<div role="status" aria-live="polite" style="position: fixed; z-index: 70; left: 50%; bottom: 84px; transform: translateX(-50%) translateY({{toastY}}px); opacity: {{toastOp}}; transition: opacity 0.3s ease, transform 0.3s ease; pointer-events: none; background: #F4EFE6; color: #1B1B1B; padding: 10px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,0.4)">{{toastText}}</div>
+<div ref="{{ setHint }}" style="position: fixed; z-index: 60; left: 0; right: 0; bottom: 24px; display: flex; justify-content: center; pointer-events: none">
+<p style="margin: 0; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #F4EFE6">Desliza<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: rebote 1.8s ease-in-out infinite"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg></p>
+</div>
+</div>
+<div aria-hidden="true" style="height: 130vh"></div>
+</div>
+</main>
+</x-dc></template>
+
+<script>
+
+class Component extends DCLogic {
+  setScroller = (el) => { this.scroller = el; };
+  setStage = (el) => { this.stage = el; };
+  setLight = (el) => { this.light = el; };
+  setTitle = (el) => { this.title = el; };
+  setSub = (el) => { this.sub = el; };
+  setHint = (el) => { this.hint = el; };
+  setRow1 = (el) => { this.row1 = el; };
+  setRow2 = (el) => { this.row2 = el; };
+  photos = [null, null, null, null, null];
+  bars = [null, null, null, null, null];
+  setPhoto0 = (el) => { this.photos[0] = el; };
+  setBar0 = (el) => { this.bars[0] = el; };
+  reveal0 = () => { if (!this.isTouch()) this.reveal(0); };
+  setPhoto1 = (el) => { this.photos[1] = el; };
+  setBar1 = (el) => { this.bars[1] = el; };
+  reveal1 = () => { if (!this.isTouch()) this.reveal(1); };
+  setPhoto2 = (el) => { this.photos[2] = el; };
+  setBar2 = (el) => { this.bars[2] = el; };
+  reveal2 = () => { if (!this.isTouch()) this.reveal(2); };
+  setPhoto3 = (el) => { this.photos[3] = el; };
+  setBar3 = (el) => { this.bars[3] = el; };
+  reveal3 = () => { if (!this.isTouch()) this.reveal(3); };
+  setPhoto4 = (el) => { this.photos[4] = el; };
+  setBar4 = (el) => { this.bars[4] = el; };
+  reveal4 = () => { if (!this.isTouch()) this.reveal(4); };
+
+  copy0 = (e) => this.copyMail(e, 'samuelsuarezrueda01@gmail.com');
+  copy1 = (e) => this.copyMail(e, 'valentina.casascc@gmail.com');
+  copy2 = (e) => this.copyMail(e, 'gabiserranorodriguez@gmail.com');
+  copy3 = (e) => this.copyMail(e, 'gabrielagarcialiceo@gmail.com');
+  copy4 = (e) => this.copyMail(e, 'valen.mc221@gmail.com');
+  // copia el correo y muestra "Correo copiado"
+  copyMail(e, mail) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    const done = () => {
+      this.setState({ toast: true });
+      clearTimeout(this.toastT);
+      this.toastT = setTimeout(() => this.setState({ toast: false }), 1800);
+    };
+    const fallback = () => {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = mail; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      } catch (err) {}
+      done();
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(mail).then(done, fallback);
+      else fallback();
+    } catch (err) { fallback(); }
+  }
+
+  // en celular la foto no se revela con un toque: hay que dejar la luz (el dedo) encima 2 segundos
+  isTouch() { return this.lastTouch && performance.now() - this.lastTouch < 1500; }
+
+  reveal(i) {
+    const r = (this.state && this.state.rev) || [false, false, false, false, false];
+    if (r[i]) return;
+    const n = r.slice(); n[i] = true;
+    this.setState({ rev: n });
+  }
+
+  // la luz roja sigue al mouse
+  onMove = (e) => {
+    this.mx = e.clientX; this.my = e.clientY;
+    this.paintLight();
+  };
+  paintLight() {
+    if (!this.light || !this.stage || this.mx == null) return;
+    const b = this.stage.getBoundingClientRect();
+    const rad = Math.round(Math.min(330, Math.max(150, (this.stage.clientWidth || 1200) * 0.42)));
+    this.light.style.background = 'radial-gradient(circle ' + rad + 'px at ' + (this.mx - b.left).toFixed(0) + 'px ' + (this.my - b.top).toFixed(0) + 'px, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 50%, rgba(3,0,0,0.9) 100%)';
+  }
+
+  componentDidMount() {
+    // linterna también con el dedo (celular / tableta)
+    this.onTouch = (e) => {
+      const t = e.touches && e.touches[0];
+      if (!t) return;
+      this.lastTouch = performance.now();
+      this.mx = t.clientX; this.my = t.clientY;
+      this.paintLight();
+    };
+    this.onTouchEnd = () => { this.lastTouch = performance.now(); };
+    if (this.stage) {
+      this.stage.addEventListener('touchstart', this.onTouch, { passive: true });
+      this.stage.addEventListener('touchmove', this.onTouch, { passive: true });
+      this.stage.addEventListener('touchend', this.onTouchEnd, { passive: true });
+    }
+    // al entrar a la sección todo empieza de cero (también en Windows)
+    this.reset = () => {
+      if (this.scroller) this.scroller.scrollTop = 0;
+      this.su = 0; this.lastU = null; this.hold = [0, 0, 0, 0, 0]; this.mx = null; this.pmax = 0; this.introStart = performance.now();
+      if (this.light) this.light.style.background = 'radial-gradient(circle 330px at 50% 45%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 50%, rgba(3,0,0,0.9) 100%)';
+      this.setState({ rev: [false, false, false, false, false] });
+    };
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    this.forceTopUntil = performance.now() + 1000;
+    this.reset();
+    this.onVis = () => { this.reset(); this.forceTopUntil = performance.now() + 600; };
+    document.addEventListener('visibilitychange', this.onVis);
+    window.addEventListener('pageshow', this.reset);
+    if (window.IntersectionObserver && this.scroller) {
+      this.io = new IntersectionObserver((entries) => { entries.forEach((e) => { if (!e.isIntersecting) this.reset(); }); });
+      this.io.observe(this.scroller);
+    }
+    let last = performance.now();
+    const clamp = (v) => Math.min(1, Math.max(0, v));
+    const ease = (t) => 0.5 - 0.5 * Math.cos(Math.PI * t);
+    const tick = (now) => {
+      const dt = Math.min(100, now - last); last = now;
+      const el = this.scroller;
+      if (el) {
+        const visible = el.clientHeight > 0 && el.getClientRects().length > 0;
+        if (!visible) this.wasHidden = true;
+        else if (this.wasHidden) { this.wasHidden = false; this.reset(); this.forceTopUntil = performance.now() + 600; }
+        if (performance.now() < this.forceTopUntil && el.scrollTop !== 0) { el.scrollTop = 0; this.su = 0; }
+        const vh = el.clientHeight || 900;
+        const target = el.scrollTop;
+        this.su = this.su == null ? target : this.su + (target - this.su) * 0.12;
+        if (Math.abs(target - this.su) < 0.2) this.su = target;
+        {
+          this.lastU = this.su;
+          // lo que ya apareció no se esconde al volver a subir
+          this.pmax = Math.max(this.pmax || 0, clamp(this.su / (1.1 * vh)));
+          const p = this.pmax;
+          // 1) el título aparece solo, con animación, apenas se entra
+          const t = ease(clamp((performance.now() - (this.introStart || 0) - 300) / 1400));
+          if (this.title) {
+            this.title.style.opacity = t.toFixed(3);
+            this.title.style.transform = 'translateY(' + (40 * (1 - t)).toFixed(1) + 'px) scale(' + (0.85 + 0.15 * t).toFixed(3) + ')';
+            this.title.style.letterSpacing = (0.3 * (1 - t)).toFixed(3) + 'em';
+          }
+          if (this.sub) this.sub.style.opacity = ease(clamp((performance.now() - (this.introStart || 0) - 1300) / 800)).toFixed(3);
+          // 2) al deslizar bajan las fotos de arriba y luego las de abajo
+          const r1 = ease(clamp((p - 0.03) / 0.35)), r2 = ease(clamp((p - 0.35) / 0.35));
+          if (this.row1) { this.row1.style.opacity = r1.toFixed(3); this.row1.style.top = (-60 * (1 - r1)).toFixed(1) + 'px'; }
+          if (this.row2) { this.row2.style.opacity = r2.toFixed(3); this.row2.style.top = (-60 * (1 - r2)).toFixed(1) + 'px'; }
+          if (this.hint) this.hint.style.opacity = (1 - clamp((p - 0.6) / 0.15)).toFixed(3);
+          this.ready = p > 0.72;
+          this.paintLight();
+        }
+      }
+      // alumbrar una foto 2 segundos la revela
+      const rev = (this.state && this.state.rev) || [];
+      this.photos.forEach((ph, i) => {
+        if (!ph || rev[i]) return;
+        const r = ph.getBoundingClientRect();
+        const inside = this.ready && this.mx != null && this.mx > r.left && this.mx < r.right && this.my > r.top && this.my < r.bottom;
+        this.hold[i] = inside ? this.hold[i] + dt : Math.max(0, this.hold[i] - dt * 2);
+        if (this.bars[i]) this.bars[i].style.width = Math.min(100, this.hold[i] / 20).toFixed(1) + '%';
+        if (this.hold[i] >= 2000) this.reveal(i);
+      });
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  componentWillUnmount() {
+    if (this.stage) {
+      this.stage.removeEventListener('touchstart', this.onTouch);
+      this.stage.removeEventListener('touchmove', this.onTouch);
+      this.stage.removeEventListener('touchend', this.onTouchEnd);
+    }
+    document.removeEventListener('visibilitychange', this.onVis);
+    window.removeEventListener('pageshow', this.reset);
+    if (this.io) this.io.disconnect();
+    cancelAnimationFrame(this.raf);
+  }
+
+  renderVals() {
+    const rev = (this.state && this.state.rev) || [];
+    const c = (i) => ({ z: rev[i] ? 55 : 1, ph: rev[i] ? 1 : 0, nm: rev[i] ? 0 : 1, mh: rev[i] ? 80 : 0 });
+    const st = this.state || {};
+    return {
+      toastText: 'Correo copiado', toastOp: st.toast ? 1 : 0, toastY: st.toast ? 0 : 10,
+      copy0: this.copy0,
+      copy1: this.copy1,
+      copy2: this.copy2,
+      copy3: this.copy3,
+      copy4: this.copy4,
+      setScroller: this.setScroller, setStage: this.setStage, setLight: this.setLight, onMove: this.onMove,
+      setTitle: this.setTitle, setSub: this.setSub, setHint: this.setHint, setRow1: this.setRow1, setRow2: this.setRow2,
+      setPhoto0: this.setPhoto0, setBar0: this.setBar0, reveal0: this.reveal0, c0: c(0),
+      setPhoto1: this.setPhoto1, setBar1: this.setBar1, reveal1: this.reveal1, c1: c(1),
+      setPhoto2: this.setPhoto2, setBar2: this.setBar2, reveal2: this.reveal2, c2: c(2),
+      setPhoto3: this.setPhoto3, setBar3: this.setBar3, reveal3: this.reveal3, c3: c(3),
+      setPhoto4: this.setPhoto4, setBar4: this.setBar4, reveal4: this.reveal4, c4: c(4),
+    };
+  }
+}
+
+DCBoot(Component, {});
+</script>
+</body>
+</html>

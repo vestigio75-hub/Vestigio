@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La ausencia, un motivo para seguir</title>
+<link rel="icon" href="assets/a08a2729465d42bf4d55ea6c95c53547.png">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<template id="dc-template"><x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&amp;family=Inter:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
+#cronica{
+  /* colores de la crónica: cámbialos aquí */
+  --paper:#D9C7B1;   /* fondo claro (mismo del home) */
+  --ink:#1d1b18;     /* texto */
+  --muted:#5a5048;
+  --line:#b9a68f;
+  --night:#6A564B;   /* fondo oscuro (café de Vestigio) */
+  --nightink:#F4EFE6;
+  --warm:#efe2cf;    /* fondo cálido */
+  --accent:#8a3b2a;
+  --hl:rgba(201,151,28,.32);
+  --c-amarilla:#c9971c;--c-roja:#b3322a;--c-verde:#3f7d3a;--c-azul:#2f5f9e;
+}
+#cronica,#cronica *{box-sizing:border-box}
+#cronica{position:relative;height:100vh;overflow-y:auto;overflow-x:hidden;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:20px;line-height:1.68;transition:background-color 1.2s ease,color 1.2s ease}
+#cronica.dark{background:var(--night);color:var(--nightink);--hl:rgba(213,138,116,.32)}
+#cronica.warm{background:var(--warm);color:var(--ink)}
+#cronica .mono{font-family:Inter,system-ui,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+#cronica .muted{color:var(--muted)}
+#cronica.dark .muted{color:#E3D6C6}
+#cronica .topbar{transition:opacity .6s ease;position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:16px 28px;z-index:20;mix-blend-mode:difference;color:#fff;pointer-events:none}
+#cronica .progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0;z-index:21}
+#cronica .cover{height:100vh;min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:0 24px}
+#cronica .vf{position:absolute;width:46px;height:46px;border-color:var(--ink);border-style:solid;opacity:.55}
+#cronica .vf.tl{top:70px;left:40px;border-width:1.5px 0 0 1.5px}
+#cronica .vf.tr{top:70px;right:40px;border-width:1.5px 1.5px 0 0}
+#cronica .vf.bl{bottom:40px;left:40px;border-width:0 0 1.5px 1.5px}
+#cronica .vf.br{bottom:40px;right:40px;border-width:0 1.5px 1.5px 0}
+#cronica .rec{position:absolute;top:78px;left:100px;display:flex;align-items:center;gap:8px;color:var(--accent)}
+#cronica .rec i{width:9px;height:9px;border-radius:50%;background:var(--accent);animation:cr-blink 1.4s infinite}
+@keyframes cr-blink{50%{opacity:.15}}
+#cronica .kicker{color:var(--muted);margin-bottom:28px}
+#cronica h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:400;font-size:clamp(52px,min(9vw,13.95vh),109px);line-height:.95;margin:0}
+#cronica h1 .ch{display:inline-block;opacity:0}
+#cronica h1.on .ch{animation:cr-focusIn 1.8s ease forwards}
+@keyframes cr-focusIn{from{opacity:0;filter:blur(18px);transform:scale(1.15) translateY(10px)}to{opacity:1;filter:none;transform:none}}
+#cronica .dek{max-width:620px;margin:34px auto 0;font-style:italic;color:var(--muted);font-size:22px;line-height:1.5;opacity:0}
+#cronica .byline{margin-top:24px;opacity:0}
+#cronica .cover.on .dek{animation:cr-riseIn 1.6s ease 2.2s forwards}
+#cronica .cover.on .byline{animation:cr-riseIn 1.4s ease 2.8s forwards}
+@keyframes cr-riseIn{from{opacity:0;filter:blur(6px);transform:translateY(14px)}to{opacity:1;filter:none;transform:none}}
+#cronica .scrollcue{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);color:var(--muted);animation:cr-bob 2s infinite}
+@keyframes cr-bob{50%{transform:translate(-50%,6px)}}
+#cronica .body{max-width:680px;margin:0 auto;padding:0 24px}
+#cronica .body p{margin:0 0 1.1em}
+#cronica .drop:first-letter{font-family:'Bricolage Grotesque',sans-serif;float:left;font-size:5.2em;line-height:.8;padding:8px 10px 0 0;color:var(--accent)}
+#cronica .gap{height:10vh}
+#cronica .fade-up{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
+#cronica .fade-up.in{opacity:1;transform:none}
+#cronica .sent .s{opacity:.15;transition:opacity .7s ease}
+#cronica .sent .s.in{opacity:1}
+#cronica .hl{background-image:linear-gradient(var(--hl),var(--hl));background-repeat:no-repeat;background-size:0% 100%;background-position:0 88%;transition:background-size 2.2s cubic-bezier(.4,0,.2,1);padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+#cronica .hl.on{background-size:100% 100%}
+#cronica .reveal-wrap{height:190vh;margin:-12vh 0 0;position:relative}
+#cronica .reveal-sticky{position:sticky;top:0;min-height:100vh;box-sizing:border-box;padding-top:6vh;padding-bottom:6vh;display:flex;align-items:center;justify-content:center;padding:0 6vw}
+#cronica .reveal-text{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(28px,min(3.7vw,5.74vh),46px);line-height:1.24;max-width:1200px;margin:0}
+#cronica .reveal-text .w{opacity:.12;transition:opacity .4s linear,color .6s ease}
+#cronica .reveal-text .w.lit{opacity:1}
+#cronica .reveal-text .w[data-c]{font-style:italic}
+#cronica .reveal-text .w.lit[data-c="amarilla"]{color:var(--c-amarilla)}
+#cronica .reveal-text .w.lit[data-c="roja"]{color:var(--c-roja)}
+#cronica .reveal-text .w.lit[data-c="verde"]{color:var(--c-verde)}
+#cronica .reveal-text .w.lit[data-c="azul"]{color:var(--c-azul)}
+#cronica .reveal-text.done .w.vanish{opacity:.1;transition:opacity 2.4s ease}
+#cronica .frame-in{min-height:36vh;margin:0;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10vw;overflow:hidden}
+#cronica .frame-in .c{position:absolute;width:40px;height:40px;border:0 solid currentColor;opacity:0;transition:all 1.4s cubic-bezier(.2,.7,.2,1) .1s}
+#cronica .frame-in .tl{top:4%;left:4%;border-width:1.5px 0 0 1.5px}
+#cronica .frame-in .tr{top:4%;right:4%;border-width:1.5px 1.5px 0 0}
+#cronica .frame-in .bl{bottom:4%;left:4%;border-width:0 0 1.5px 1.5px}
+#cronica .frame-in .br{bottom:4%;right:4%;border-width:0 1.5px 1.5px 0}
+#cronica .frame-in.in .c{opacity:.6}
+#cronica .frame-in.in .tl{top:12%;left:9%}
+#cronica .frame-in.in .tr{top:12%;right:9%}
+#cronica .frame-in.in .bl{bottom:12%;left:9%}
+#cronica .frame-in.in .br{bottom:12%;right:9%}
+#cronica .frame-in p{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(34px,min(4.6vw,7.13vh),56px);line-height:1.2;max-width:900px;margin:0;opacity:0;transform:scale(1.06);transition:opacity 1.6s ease 1.3s,transform 2s ease 1.3s}
+#cronica .frame-in.in p{opacity:1;transform:none;animation:cr-glowBold 2.6s ease 2.6s forwards}
+@keyframes cr-glowBold{0%{-webkit-text-stroke:0 currentColor;text-shadow:0 0 0 rgba(255,214,150,0)}45%{-webkit-text-stroke:.9px currentColor;text-shadow:0 0 22px rgba(255,200,120,.75),0 0 4px rgba(255,200,120,.5)}100%{-webkit-text-stroke:.9px currentColor;text-shadow:0 0 10px rgba(255,200,120,.25)}}
+#cronica .noanim,#cronica .noanim *{transition:none!important;animation:none!important}
+#cronica .quote{max-width:1100px;margin:2.5em auto 2.2em;padding:0 6vw;text-align:center}
+#cronica .quote p{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-style:italic;font-size:clamp(36px,min(5vw,7.75vh),61px);line-height:1.2}
+#cronica .quote .w{opacity:0;display:inline-block;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease}
+#cronica .quote .w.in{opacity:1;transform:none}
+#cronica .split{margin:4vh auto 4vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:6vw;max-width:1200px;margin:0 auto;padding:0 6vw}
+#cronica .stick{position:sticky;top:28vh;height:fit-content}
+#cronica .flow p{margin:0 0 1.1em}
+#cronica .flow p:last-child{margin-bottom:6vh}
+#cronica .verb{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(70px,min(10vw,15.5vh),128px);line-height:1;position:relative;height:1.1em}
+#cronica .verb span{position:absolute;left:0;top:0;transition:opacity .9s ease,filter .9s ease}
+#cronica .verb .off{opacity:0;filter:blur(8px)}
+#cronica .verb-cap{margin-top:16px}
+#cronica .places div{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(30px,min(3.4vw,5.27vh),41px);line-height:1.25;opacity:.22;transition:opacity .6s ease,color .6s ease}
+#cronica .places div.act{opacity:1;color:var(--accent)}
+#cronica .places small{display:block;font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+#cronica .place-h{display:flex;align-items:baseline;gap:14px;margin:0 0 .5em;color:var(--accent)}
+#cronica .place-h b{font-family:'Bricolage Grotesque',sans-serif;font-weight:400;font-size:34px;letter-spacing:0;text-transform:none;color:var(--ink)}
+#cronica #placesSplit{margin:6vh auto 18vh}
+#cronica #placesSplit .block:last-child{margin-bottom:0}
+#cronica .block{margin-bottom:2.2em}
+#cronica .bloom{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 6vw}
+#cronica .bloom p{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(36px,min(5.2vw,8.06vh),68px);line-height:1.15;margin:0;max-width:1150px}
+#cronica .bloom .ch{display:inline-block;opacity:0;transform:translateY(40px) rotate(4deg);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1.2)}
+#cronica .bloom.in .ch{opacity:1;transform:none}
+#cronica .bloom .ac{color:var(--accent);font-style:italic}
+#cronica .desliza{display:none;position:fixed;left:0;right:0;bottom:22px;z-index:21;justify-content:center;pointer-events:none;transition:opacity .5s ease}
+#cronica .desliza span{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:rgba(29,27,24,.86);color:#F4EFE6;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+#cronica .desliza svg{animation:cr-rebote 1.8s ease-in-out infinite}
+@keyframes cr-rebote{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+#cronica .credits{max-width:680px;margin:0 auto;padding:12vh 24px 18vh;border-top:1px solid var(--line);color:var(--muted);font-size:16px;line-height:1.7}
+#cronica .credits .mono{color:var(--ink);display:block;margin-bottom:10px}@media (max-width:760px){
+#cronica body{font-size:18px}
+#cronica .split{grid-template-columns:1fr}
+#cronica .stick{position:relative;top:0;margin-bottom:36px}
+#cronica .verb{font-size:64px}
+#cronica .places{display:flex;gap:16px;flex-wrap:wrap}
+#cronica #placesSplit{margin-bottom:8vh}
+#cronica .places div{font-size:22px}
+#cronica .rec{left:90px;top:66px}
+#cronica .vf.tl,#cronica .vf.tr{top:60px}
+#cronica{font-size:16.5px;line-height:1.65}
+#cronica .body{padding:0 26px}
+#cronica .split{padding:0 26px}
+#cronica h1{font-size:44px}
+#cronica .dek{font-size:17px;margin-top:24px}
+#cronica .reveal-wrap{margin-top:0}
+#cronica .reveal-sticky{padding:0 26px}
+#cronica .reveal-text{font-size:23px}
+#cronica .frame-in{padding:0 19vw;min-height:30vh}
+#cronica .frame-in p{font-size:21px}
+#cronica .quote{padding:0 26px}
+#cronica .quote p{font-size:26px}
+#cronica .bloom{padding:0 26px}
+#cronica .bloom p{font-size:29px}
+#cronica .verb{font-size:50px}
+#cronica .place-h b{font-size:22px}
+#cronica #placesSplit .stick.places{display:none}
+#cronica .scrollcue{display:none}
+#cronica .desliza{display:flex}
+#cronica .volver{top:10px!important;left:10px!important;min-height:32px!important;padding:0 11px!important;font-size:10px!important;gap:6px!important}
+}@media (prefers-reduced-motion:reduce){
+#cronica *{transition:none!important;animation:none!important}
+#cronica h1 .ch,#cronica .reveal-text .w,#cronica .quote .w,#cronica .bloom .ch,#cronica .fade-up,#cronica .dek,#cronica .byline,#cronica .sent .s,#cronica .frame-in p{opacity:1!important;filter:none!important;transform:none!important}
+}
+
+</style>
+</helmet>
+<div id="cronica" ref="{{ setRoot }}">
+<div class="progress" id="progress"></div>
+<a href="Conoce.html" class="mono volver" style="position: fixed; top: 14px; left: 16px; z-index: 22; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; background: rgba(244,239,230,0.88); color: #1d1b18; text-decoration: none; box-shadow: 0 2px 10px rgba(0,0,0,0.12)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Volver a Memoria</a>
+
+
+<div class="desliza" aria-hidden="true"><span>Desliza<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg></span></div>
+<section class="cover" id="cover">
+  <span class="vf tl"></span><span class="vf tr"></span><span class="vf bl"></span><span class="vf br"></span>
+  <span class="rec mono"><i></i>Rec</span>
+  <div class="kicker mono">Crónica</div>
+  <h1 id="title"><span class="wd" style="display: inline-block; white-space: nowrap"><span class="ch" style="animation-delay: 0.20s">L</span><span class="ch" style="animation-delay: 0.27s">a</span></span> <span class="wd" style="display: inline-block; white-space: nowrap"><span class="ch" style="animation-delay: 0.41s">a</span><span class="ch" style="animation-delay: 0.48s">u</span><span class="ch" style="animation-delay: 0.55s">s</span><span class="ch" style="animation-delay: 0.62s">e</span><span class="ch" style="animation-delay: 0.69s">n</span><span class="ch" style="animation-delay: 0.76s">c</span><span class="ch" style="animation-delay: 0.83s">i</span><span class="ch" style="animation-delay: 0.90s">a</span><span class="ch" style="animation-delay: 0.97s">,</span></span> <span class="wd" style="display: inline-block; white-space: nowrap"><span class="ch" style="animation-delay: 1.11s">u</span><span class="ch" style="animation-delay: 1.18s">n</span></span> <span class="wd" style="display: inline-block; white-space: nowrap"><span class="ch" style="animation-delay: 1.32s">m</span><span class="ch" style="animation-delay: 1.39s">o</span><span class="ch" style="animation-delay: 1.46s">t</span><span class="ch" style="animation-delay: 1.53s">i</span><span class="ch" style="animation-delay: 1.60s">v</span><span class="ch" style="animation-delay: 1.67s">o</span></span> <span class="wd" style="display: inline-block; white-space: nowrap"><span class="ch" style="animation-delay: 1.81s">p</span><span class="ch" style="animation-delay: 1.88s">a</span><span class="ch" style="animation-delay: 1.95s">r</span><span class="ch" style="animation-delay: 2.02s">a</span></span> <span class="wd" style="display: inline-block; white-space: nowrap"><span class="ch" style="animation-delay: 2.16s">s</span><span class="ch" style="animation-delay: 2.23s">e</span><span class="ch" style="animation-delay: 2.30s">g</span><span class="ch" style="animation-delay: 2.37s">u</span><span class="ch" style="animation-delay: 2.44s">i</span><span class="ch" style="animation-delay: 2.51s">r</span></span></h1>
+  <p class="dek">Cuando alguien desaparece, ¿recuerdas el rostro del desaparecido o de la persona detrás de su búsqueda?</p>
+  <p class="byline mono">Por Valentina Casas</p>
+  <span class="scrollcue mono">Baja ↓</span>
+</section>
+
+<div class="body">
+  <p class="drop fade-up">Seguramente, se recuerda una fotografía. En algunas ocasiones un rostro que se repite en carteles, ropa, redes, etc., un rostro que se vuelve familiar incluso para quienes jamás lo conocieron. Pero detrás de esa fotografía, siempre hay alguien que la sostiene, que la pública, la imprime y la cuenta. Alguien que ha desarrollado, sin darse cuenta, una habilidad para reconocer a su familiar entre miles. A nunca olvidar, después de tanto contar, quién es esa persona, qué llevaba puesto o sus marcas corporales reconocibles. Alguien que sigue hablando de él, a pesar de que mucha gente dude sobre la conjugación verbal para mencionarlos. <span class="hl">Para esa persona que sostiene la foto, la conjugación será en presente hasta que se demuestre lo contrario.</span></p>
+</div>
+<section class="reveal-wrap">
+  <div class="reveal-sticky">
+    <p class="reveal-text" data-colors="1"><span class="w">Aunque,</span> <span class="w">a</span> <span class="w">veces,</span> <span class="w">ni</span> <span class="w">siquiera</span> <span class="w">hay</span> <span class="w">una</span> <span class="w">fotografía.</span> <span class="w">Así</span> <span class="w">que</span> <span class="w">volvemos</span> <span class="w">a</span> <span class="w">una</span> <span class="w">descripción:</span> <span class="w">Camisa</span> <span class="w" data-c="amarilla">amarilla,</span> <span class="w">o</span> <span class="w" data-c="roja">roja,</span> <span class="w">o</span> <span class="w" data-c="verde">verde,</span> <span class="w">o</span> <span class="w" data-c="azul">azul.</span> <span class="w">Pantalones,</span> <span class="w">o</span> <span class="w">quizá,</span> <span class="w">pantaloneta,</span> <span class="w">falda,</span> <span class="w">vestido.</span> <span class="w">Una</span> <span class="w">cicatriz</span> <span class="w">en</span> <span class="w">la</span> <span class="w">mano</span> <span class="w">derecha,</span> <span class="w">o</span> <span class="w">en</span> <span class="w">el</span> <span class="w">pie</span> <span class="w">izquierdo,</span> <span class="w">o</span> <span class="w">en</span> <span class="w">ambos</span> <span class="w">brazos.</span> <span class="w">Una</span> <span class="w">voz…mejor</span> <span class="w">no,</span> <span class="w">esa</span> <span class="w">pudo</span> <span class="w">haber</span> <span class="w">cambiado,</span> <span class="w">no</span> <span class="w">lo</span> <span class="w">recuerdo.</span> <span class="w">Pero</span> <span class="w">con</span> <span class="w">esto</span> <span class="w">inicia</span> <span class="w">una</span> <span class="w">búsqueda,</span> <span class="w">con</span> <span class="w">la</span> <span class="w">descripción</span> <span class="w">de</span> <span class="w">alguien</span> <span class="w">que,</span> <span class="w">para</span> <span class="w">quien</span> <span class="w">escuche,</span> <span class="w">debe</span> <span class="w">convertirse</span> <span class="w">en</span> <span class="w">un</span> <span class="w">rostro.</span></p>
+  </div>
+</section>
+
+<div class="body">
+  <p class="fade-up">Panamá Díaz, fotógrafa, llegó a Colombia desde Málaga, España, mediante una beca de cooperación internacional con el colectivo Orlando Fals. Allí conoció a algunos de esos alguien: mujeres que buscaban a sus familiares desaparecidos. Al principio ella llevaba una cámara con el propósito de fotografiarlas, pero se dio cuenta que una foto podía mostrar sus rostros, pero no necesariamente todo lo que había detrás. Ellas cargaban con otros nombres, con lugares que habían tenido que olvidar o que las obligaron a dejar, con hijos, con hermanos, con vidas que no cabían en la palabra “búsqueda”.</p>
+  <p class="fade-up">Las fotografías tomaron una nueva dirección: si las imágenes eran el mejor recurso para encontrar a quienes faltan, ¿por qué no hacer fotografías de quienes seguían ahí? De las mujeres buscadoras que también querían tener un lugar en la memoria de otros. <span class="hl">Ser reconocidas.</span></p>
+</div>
+
+
+<section class="frame-in"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+  <p>Frente a la cámara de Panamá comenzaron a llegar mujeres con distintas historias.</p>
+</section>
+
+<div class="body">
+  <p class="fade-up">No todas habían llegado a ser buscadoras por el mismo camino. Tampoco todas habían tenido tiempo de detenerse a pensar qué había ocurrido con sus propias vidas mientras intentaban reconstruir las de quienes ya no estaban.</p>
+  
+  <p class="sent"><span class="s">Una de ellas, a sus ocho años, había visto la sangre de su tío a lo largo del suelo.</span> <span class="s">Lo habían asesinado frente a ella.</span> <span class="s">Después, tuvo que vivir el desplazamiento forzado tras recibir amenazas por tener cierto apellido.</span> <span class="s">Ella no termina de entenderlo, porque nadie le explica a una niña lo que es tener que correr de tu hogar por ser quien eres, ni mucho menos lo que sucede cuando tu hermano desaparece forzosamente y al no saber nada de él, tu madre empieza a comportarse raro, parece estar triste, pero ella no sabe que su madre está deprimida porque es solo una niña, ¿no?, después habrá tiempo de explicárselo.</span></p>
+  <p class="fade-up">Efectivamente, después entendió lo que pasaba. Y la vida quiso estar segura de ello cuando al ser mayor su esposo también desapareció. Ya no era una niña. Pero en su vida la violencia no apareció una sola vez, volvió, mutó de forma y la obligó a moverse nuevamente. <span class="hl">Jamás ha parado, su vida jamás quedó detenida.</span> Esta mujer se formó para acompañar a otras mujeres como ella, eligió el camino contrario al estático, porque sabía lo que significaba quedarse en él, y ahora estaba sentada frente a Panamá contando su historia.</p>
+  <p class="fade-up">En este punto, se despertarían, no solo en Panamá, sensaciones de tristeza o de dolor. Pero, hay algo más allá de entender lo que genera la continuidad de los hechos, no porque una persona no pueda encontrar una reflexión o enseñanza, sino porque a veces hay que ver que <span class="hl">la vida es tan intensa que insiste en seguir ocurriendo.</span></p>
+  <p class="sent"><span class="s">Igualmente, la cámara no se apaga, sigue tomando fotos.</span> <span class="s">Y la persona que la sostiene sigue escuchando, sintiendo, opinando internamente, acompañada de esa sensación en el estómago que es extraña, pero que reconoces en las situaciones en las que aparece.</span> <span class="s">Quizá era impotencia.</span> <span class="s">Quizá una mezcla de tristeza y enojo.</span></p>
+</div>
+
+
+<section class="frame-in"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+  <p>Pero la cámara seguía ahí, y otra mujer acababa de sentarse frente a ella.</p>
+</section>
+
+<div class="body">
+  <p class="fade-up">No todas las historias tienen como punto de partida la infancia, algunas comienzan tiempo después, cuando una mujer ya ha construido una vida, familia y hasta una rutina, pero llega un día en el que esa rutina deja de seguir un paso a paso, pues algo o alguien empieza a faltar.</p>
+  <p class="fade-up">En San José del Guaviare una mujer busca a su hija. Tenía nueve años cuando se la llevaron. Panamá recuerda que cuando la conoció, la mujer llevaba puesta una camiseta con la fotografía de la niña. Su rostro estaba ahí, impreso sobre la tela.</p>
+</div>
+<section class="quote"><p class="wbw"><span class="w">¿A</span> <span class="w">quién</span> <span class="w">debía</span> <span class="w">mirar?</span></p></section>
+<div class="body">
+  <p class="fade-up">La foto de la niña no estaba sobre un cartel o una pared, estaba sobre su propio cuerpo, allí se hacía visible. <span class="hl">Las miraba a ambas, reconoció a ambas.</span></p>
+</div>
+<section class="split" id="timeSplit">
+  <div class="stick">
+    <div class="verb"><span id="v1">está</span><span id="v2" class="off">estaba</span></div>
+    <div class="verb-cap mono muted">Presente · pasado</div>
+  </div>
+  <div class="flow">
+    <p class="fade-up">Es extraño cómo actúa el tiempo cuando alguien desaparece. Para muchos, lo ocurrido hace parte del pasado. Para quienes buscan, no necesariamente. Por eso el tiempo verbal hace dudar: a veces se habla de esa persona en presente y a veces en pasado. No porque se acepte la ausencia, sino porque la incertidumbre ocupa un lugar sin pedir permiso. El tiempo avanza sin preguntarte si estás lista, y hay que acomodar las cosas de alguna forma. La camiseta es eso: una manera de seguir y de decidir qué espacio ocupa la incertidumbre.</p>
+    <p class="fade-up">Con el tiempo, Panamá encontró objetos como ese en muchas de las historias: fotos, cartas, velas, camisetas. Cosas que vistas desde afuera parecen ordinarias, pero que para quien las guarda son de las pocas formas que quedan de relacionarse con quien ya no está. Algunas mujeres cuidan una fotografía como lo más valioso que tienen. Otras no tienen ninguna: el desplazamiento, la pobreza o el simple paso del tiempo hicieron que se perdieran, o que nunca existieran.</p>
+  </div>
+</section>
+
+
+<section class="reveal-wrap" id="darkStart">
+  <div class="reveal-sticky">
+    <p class="reveal-text" data-vanish="donde debería estar la cara."><span class="w">Es</span> <span class="w">en</span> <span class="w">esos</span> <span class="w">casos</span> <span class="w">cuando</span> <span class="w">la</span> <span class="w">descripción</span> <span class="w">tiene</span> <span class="w">que</span> <span class="w">hacer</span> <span class="w">el</span> <span class="w">trabajo</span> <span class="w">de</span> <span class="w">la</span> <span class="w">foto.</span> <span class="w">Algunas</span> <span class="w">buscan</span> <span class="w">con</span> <span class="w">una</span> <span class="w">plantilla:</span> <span class="w">unos</span> <span class="w">hombros,</span> <span class="w">una</span> <span class="w">cabeza</span> <span class="w">y</span> <span class="w">un</span> <span class="w">espacio</span> <span class="w">vacío</span> <span class="w vanish">donde</span> <span class="w vanish">debería</span> <span class="w vanish">estar</span> <span class="w vanish">la</span> <span class="w vanish">cara.</span></p>
+  </div>
+</section>
+
+<div class="body">
+  <p class="fade-up">Por eso también hace falta alguien que escuche. Aunque escuchar no siempre significa encontrar una respuesta, porque hay búsquedas que se extienden tanto que terminan ocupando espacios que pertenecían a otras personas.</p>
+</div>
+
+
+<section class="frame-in"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+  <p>Otra mujer se sienta frente a la cámara.</p>
+</section>
+
+<div class="body">
+  <p class="sent"><span class="s">Panamá recuerda, especialmente, la sensación de culpa que acompañaba lo que contaba la mujer, la forma en la que describía cómo, después de la desaparición de uno de sus hijos, el otro comenzó a consumir marihuana.</span> <span class="s">Y cada vez sentía más que a él también lo estaba perdiendo.</span> <span class="s">Se juzgaba por no haber estado pendiente, no haber visto lo que ocurría mientras su atención estaba puesta en encontrar a su otro hijo.</span> <span class="s"><span class="hl">Sentía que, en su búsqueda, seguía perdiendo.</span></span></p>
+  <p class="fade-up">Panamá pensó en que hay algo injusto en la responsabilidad que parece recaer sobre las mujeres. No solo es buscar, preguntar, contar una y otra vez una historia y recorrer lugares con esperanza. También, tienen que preguntarse si están haciendo lo suficiente, y no solo por la persona desaparecida, sino por ellas y por los demás. <span class="hl">Quizá no habría que preguntarles a estas mujeres qué han hecho por sus familias, sino qué no han hecho.</span> Porque, aun después de todo, probablemente sentirían que pudieron hacer algo más.</p>
+</div>
+<section class="quote"><p class="wbw"><span class="w">Nuevamente,</span> <span class="w">qué</span> <span class="w">injusto.</span></p></section>
+
+
+<section class="frame-in" id="warmStart"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+  <p>Pero, ni las mujeres que fotografiaba Panamá ni sus historias terminaban ahí.</p>
+</section>
+
+<div class="body">
+  <p class="fade-up">Ella había llegado a conocerlas a través de sus búsquedas, pero con el tiempo reconoció los otros espacios en los que también estaban presentes. Lugares en los que no tenían que repetir su historia mil veces esperando que a alguien le importara, y donde podían dejar de hablar de quienes faltaban sin sentir que por eso los abandonaban.</p>
+</div>
+<section class="split" id="placesSplit">
+  <div class="stick places">
+    <div><small>Villavicencio</small>La escuela</div>
+    <div><small>San José del Guaviare</small>Las orquídeas</div>
+    <div><small>Tumaco</small>Las cantoras</div>
+  </div>
+  <div class="flow">
+    <div class="block" data-block><div class="place-h mono">Villavicencio</div>
+      <p class="fade-up">En Villavicencio, algunas mujeres habían creado una escuela de alfabetización. Aprender a leer y escribir era mucho más que reconocer letras o formar palabras. Era poder leer aquello que durante tanto tiempo otras personas habían tenido que explicarles, escribir o firmar una denuncia por sí mismas. Tener la posibilidad de hacer con sus propias manos algo que antes dependía de alguien más.</p></div>
+    <div class="block" data-block><div class="place-h mono">San José del Guaviare</div>
+      <p class="fade-up">Panamá conoció también lo que había nacido de estas mujeres. En San José del Guaviare, algunas recogían orquídeas que encontraban maltratadas a un lado de la carretera. Se las llevaban, las cuidaban y después las volvían a sembrar. Pero esto no se trataba solo de flores. Era un tiempo compartido que no tenía que girar alrededor de lo que habían vivido, era un espacio para encontrarse, ocuparse de algo distinto y, quizá, descansar un momento.</p></div>
+    <div class="block" data-block><div class="place-h mono">Tumaco</div>
+      <p class="fade-up">En Tumaco, un territorio golpeado por el abandono y el racismo, están las cantoras de Esperanza y Paz. Panamá recuerda a una de ellas, que había vivido búsquedas muy duras y violencias desde niña, y que aun así decidió unirse al grupo. Allí, el canto se volvió una forma de sanar en colectivo. No olvidan lo que pasó, claro, pero lo enfrentan juntas.</p></div>
+  </div>
+</section>
+
+<div class="body">
+  <p class="sent"><span class="s">Lo más llamativo, si es que se le puede denominar de esa forma, es que estos encuentros no borraban lo que había ocurrido.</span> <span class="s">Las mujeres no dejaban de ser buscadoras por asistir a una escuela, recoger orquídeas o cantar.</span> <span class="s">Pero, tampoco tenían que dejar de lado sus historias para encontrar esos espacios.</span></p>
+</div>
+<section class="quote"><p class="wbw"><span class="w">Panamá</span> <span class="w">descubrió</span> <span class="w">que</span> <span class="w">el</span> <span class="w">dolor</span> <span class="w">tenía</span> <span class="w">voz.</span></p></section>
+<div class="body">
+  <p class="fade-up">Y no una voz que pesaba y gritaba por ayuda. Sino una que sabía qué era lo que quería y debía hacer.</p>
+  
+  <p class="fade-up">Al comienzo preguntaba qué rostro se recuerda cuando alguien desaparece. Quizá no haya una respuesta correcta. Está el rostro de quien falta, el que se repite en fotografías para poder encontrarlo. Pero también está el de quienes buscan, el de quien pasa años esperando reconocer y ser reconocida, mientras intenta seguir con una aparente normalidad. Se suele esperar ver el dolor en estas historias, por morbo o por una forma de buscar sentir empatía, pero ellas no quieren que les tengan lástima. No quieren que su vida se reduzca a esperar. <span class="hl">Nadie puede decirte cómo vivir el dolor, y mucho menos enseñarte a hacerlo mientras eres tú quien lo vive.</span></p>
+  <p class="fade-up">Con las mujeres buscadoras vemos y entendemos que recordar una desaparición también debería significar recordar a quienes siguen aquí. No solo por lo que hacen o a quién buscan, sino por lo que, empujadas por la fuerza de una ausencia, han sido y logrado ser.</p>
+</div>
+<section class="bloom" id="bloom">
+  <p id="bloomText"><span style="white-space: nowrap"><span class="ch" style="transition-delay: 0.000s">P</span><span class="ch" style="transition-delay: 0.030s">o</span><span class="ch" style="transition-delay: 0.060s">r</span><span class="ch" style="transition-delay: 0.090s">q</span><span class="ch" style="transition-delay: 0.120s">u</span><span class="ch" style="transition-delay: 0.150s">e</span><span class="ch" style="transition-delay: 0.180s">,</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 0.210s">p</span><span class="ch" style="transition-delay: 0.240s">a</span><span class="ch" style="transition-delay: 0.270s">r</span><span class="ch" style="transition-delay: 0.300s">a</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 0.330s">e</span><span class="ch" style="transition-delay: 0.360s">l</span><span class="ch" style="transition-delay: 0.390s">l</span><span class="ch" style="transition-delay: 0.420s">a</span><span class="ch" style="transition-delay: 0.450s">s</span><span class="ch" style="transition-delay: 0.480s">,</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 0.510s">a</span><span class="ch" style="transition-delay: 0.540s">q</span><span class="ch" style="transition-delay: 0.570s">u</span><span class="ch" style="transition-delay: 0.600s">e</span><span class="ch" style="transition-delay: 0.630s">l</span><span class="ch" style="transition-delay: 0.660s">l</span><span class="ch" style="transition-delay: 0.690s">o</span><span class="ch" style="transition-delay: 0.720s">s</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 0.750s">q</span><span class="ch" style="transition-delay: 0.780s">u</span><span class="ch" style="transition-delay: 0.810s">e</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 0.840s">f</span><span class="ch" style="transition-delay: 0.870s">a</span><span class="ch" style="transition-delay: 0.900s">l</span><span class="ch" style="transition-delay: 0.930s">t</span><span class="ch" style="transition-delay: 0.960s">a</span><span class="ch" style="transition-delay: 0.990s">n</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 1.020s">n</span><span class="ch" style="transition-delay: 1.050s">u</span><span class="ch" style="transition-delay: 1.080s">n</span><span class="ch" style="transition-delay: 1.110s">c</span><span class="ch" style="transition-delay: 1.140s">a</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 1.170s">f</span><span class="ch" style="transition-delay: 1.200s">u</span><span class="ch" style="transition-delay: 1.230s">e</span><span class="ch" style="transition-delay: 1.260s">r</span><span class="ch" style="transition-delay: 1.290s">o</span><span class="ch" style="transition-delay: 1.320s">n</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 1.350s">u</span><span class="ch" style="transition-delay: 1.380s">n</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 1.410s">m</span><span class="ch" style="transition-delay: 1.440s">o</span><span class="ch" style="transition-delay: 1.470s">t</span><span class="ch" style="transition-delay: 1.500s">i</span><span class="ch" style="transition-delay: 1.530s">v</span><span class="ch" style="transition-delay: 1.560s">o</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 1.590s">p</span><span class="ch" style="transition-delay: 1.620s">a</span><span class="ch" style="transition-delay: 1.650s">r</span><span class="ch" style="transition-delay: 1.680s">a</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 1.710s">d</span><span class="ch" style="transition-delay: 1.740s">e</span><span class="ch" style="transition-delay: 1.770s">t</span><span class="ch" style="transition-delay: 1.800s">e</span><span class="ch" style="transition-delay: 1.830s">n</span><span class="ch" style="transition-delay: 1.860s">e</span><span class="ch" style="transition-delay: 1.890s">r</span><span class="ch" style="transition-delay: 1.920s">s</span><span class="ch" style="transition-delay: 1.950s">e</span><span class="ch" style="transition-delay: 1.980s">,</span></span> <span style="white-space: nowrap"><span class="ch" style="transition-delay: 2.010s">s</span><span class="ch" style="transition-delay: 2.040s">i</span><span class="ch" style="transition-delay: 2.070s">n</span><span class="ch" style="transition-delay: 2.100s">o</span></span> <span style="white-space: nowrap"><span class="ch ac" style="transition-delay: 2.130s">u</span><span class="ch ac" style="transition-delay: 2.160s">n</span><span class="ch ac" style="transition-delay: 2.190s">o</span></span> <span style="white-space: nowrap"><span class="ch ac" style="transition-delay: 2.220s">p</span><span class="ch ac" style="transition-delay: 2.250s">a</span><span class="ch ac" style="transition-delay: 2.280s">r</span><span class="ch ac" style="transition-delay: 2.310s">a</span></span> <span style="white-space: nowrap"><span class="ch ac" style="transition-delay: 2.340s">s</span><span class="ch ac" style="transition-delay: 2.370s">e</span><span class="ch ac" style="transition-delay: 2.400s">g</span><span class="ch ac" style="transition-delay: 2.430s">u</span><span class="ch ac" style="transition-delay: 2.460s">i</span><span class="ch ac" style="transition-delay: 2.490s">r</span><span class="ch ac" style="transition-delay: 2.520s">.</span></span></p>
+</section>
+
+<footer class="credits">
+  <span class="mono">Créditos</span>
+  Texto: Valentina Casas<br/>
+  Testimonio y recuerdos: Panamá Díaz, fotógrafa
+</footer>
+</div>
+</x-dc></template>
+
+<script>
+
+class Component extends DCLogic {
+  setRoot = (el) => { this.root = el; };
+
+  componentDidMount() {
+    const root = this.root;
+    if (!root) return;
+    const $ = (s) => root.querySelector(s);
+    const $$ = (s) => Array.from(root.querySelectorAll(s));
+    const clamp = (x) => Math.min(1, Math.max(0, x));
+    const vh = () => root.clientHeight || window.innerHeight;
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    const toTop = () => { root.style.scrollBehavior = 'auto'; root.scrollTop = 0; root.style.scrollBehavior = ''; };
+    toTop();
+
+    // portada
+    const t = $('#title'), cover = $('#cover');
+    let coverShown = false;
+    const coverOn = () => { if (coverShown) return; coverShown = true; t.classList.remove('on'); cover.classList.remove('on'); void cover.offsetWidth; t.classList.add('on'); cover.classList.add('on'); };
+    const coverOff = () => { coverShown = false; t.classList.remove('on'); cover.classList.remove('on'); };
+    const go = () => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(coverOn, 250)));
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(go);
+    this.t0 = setTimeout(coverOn, 2500);
+    const onCoverScroll = () => { const r = cover.getBoundingClientRect(); if (r.bottom < vh() * 0.2) coverOff(); else if (r.top > -vh() * 0.1 && !coverShown) coverOn(); };
+
+    // párrafos grandes
+    const reveals = $$('.reveal-wrap').map((wrap) => { const p = wrap.querySelector('.reveal-text'); return { wrap, p, ws: Array.from(p.querySelectorAll('.w')) }; });
+    // oración por oración
+    $$('.sent').forEach((p) => { p._s = Array.from(p.querySelectorAll('.s')); });
+    const later = (el, fn, ms) => { (el._t = el._t || []).push(setTimeout(fn, ms)); };
+    const playSent = (p) => { if (p._done) return; p._done = true; p._s.forEach((s, i) => later(p, () => s.classList.add('in'), i * 320)); };
+    // palabra por palabra
+    $$('.wbw').forEach((el) => { el._ws = Array.from(el.querySelectorAll('.w')); });
+    const play = (el) => { if (el._done) return; el._done = true; let d = 0; el._ws.forEach((w) => { later(el, () => w.classList.add('in'), d); d += 230; if (/[.,:;!?]$/.test(w.textContent)) d += 450; }); };
+
+    // se reinicia cada vez que el elemento sale por completo de la pantalla
+    const reset = (el) => {
+      (el._t || []).forEach(clearTimeout); el._t = []; el._done = false;
+      el.classList.add('noanim'); el.classList.remove('in', 'on');
+      el.querySelectorAll('.in,.on').forEach((x) => x.classList.remove('in', 'on'));
+      void el.offsetWidth; el.classList.remove('noanim');
+    };
+    this.io = new IntersectionObserver((es) => es.forEach((e) => {
+      const el = e.target;
+      if (!e.isIntersecting) { if (el._done || el.classList.contains('in')) reset(el); return; }
+      if (e.intersectionRatio < 0.15) return;
+      if (el.classList.contains('sent')) { playSent(el); return; }
+      if (el._done) return; el._done = true;
+      el.classList.add('in');
+      if (el.classList.contains('wbw')) { el._done = false; play(el); }
+    }), { threshold: [0, 0.15] });
+    $$('.fade-up,.frame-in,.bloom,.wbw,.sent').forEach((el) => this.io.observe(el));
+
+    this.hlIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { const el = e.target; (el._t || []).forEach(clearTimeout); el._t = [setTimeout(() => el.classList.add('on'), el.closest('.sent') ? 1400 : 300)]; } }), { rootMargin: '0px 0px -42% 0px', threshold: 1 });
+    this.hlOut = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) { const el = e.target; (el._t || []).forEach(clearTimeout); el._t = []; el.classList.add('noanim'); el.classList.remove('on'); void el.offsetWidth; el.classList.remove('noanim'); } }), { threshold: 0 });
+    $$('.hl').forEach((el) => { this.hlIO.observe(el); this.hlOut.observe(el); });
+
+    const placeLabels = $$('.places div'), blocks = $$('[data-block]');
+    const prog = $('#progress');
+    const darkStart = $('#darkStart'), warmStart = $('#warmStart');
+    const timeSplit = $('#timeSplit'), v1 = $('#v1'), v2 = $('#v2');
+
+    const onScroll = () => {
+      const h = vh(), y = root.scrollTop, max = root.scrollHeight - h;
+      prog.style.width = (max > 0 ? y / max * 100 : 0) + '%';
+      if (!this.dz) this.dz = root.querySelector('.desliza');
+      if (this.dz) this.dz.style.opacity = y > 80 ? '0' : '1';
+      reveals.forEach(({ wrap, p, ws }) => { const r = wrap.getBoundingClientRect(); const pr = clamp(-r.top / (r.height - h)); const n = Math.round(pr * ws.length * 1.15); ws.forEach((w, i) => w.classList.toggle('lit', i < n)); p.classList.toggle('done', n >= ws.length + 2); });
+      const ts = timeSplit.getBoundingClientRect(); const tp = clamp((h * 0.6 - ts.top) / ts.height);
+      const past = Math.floor(tp * 6) % 2 === 1; v1.classList.toggle('off', past); v2.classList.toggle('off', !past);
+      let act = 0; blocks.forEach((b, i) => { if (b.getBoundingClientRect().top < h * 0.55) act = i; });
+      placeLabels.forEach((l, i) => l.classList.toggle('act', i === act));
+      const darkOn = darkStart.getBoundingClientRect().top < h * 0.3;
+      const warmOn = warmStart.getBoundingClientRect().top < h * 0.3;
+      root.classList.toggle('dark', darkOn && !warmOn);
+      root.classList.toggle('warm', warmOn);
+      onCoverScroll();
+    };
+    this.onScroll = onScroll;
+    root.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+
+    // al volver a esta pestaña (o recargar) empieza desde arriba, también en Windows
+    const restart = () => { toTop(); coverOff(); onScroll(); setTimeout(coverOn, 400); };
+    this.restart = restart;
+    this.onVis = () => { if (!document.hidden) restart(); };
+    document.addEventListener('visibilitychange', this.onVis);
+    window.addEventListener('pageshow', restart);
+    this.forceTopUntil = performance.now() + 1000;
+    const tick = () => {
+      const visible = root.clientHeight > 0 && root.getClientRects().length > 0;
+      if (!visible) this.wasHidden = true;
+      else if (this.wasHidden) { this.wasHidden = false; restart(); this.forceTopUntil = performance.now() + 600; }
+      if (performance.now() < this.forceTopUntil && root.scrollTop !== 0) toTop();
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf); clearTimeout(this.t0);
+    if (this.io) this.io.disconnect(); if (this.hlIO) this.hlIO.disconnect(); if (this.hlOut) this.hlOut.disconnect();
+    if (this.root && this.onScroll) this.root.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    document.removeEventListener('visibilitychange', this.onVis);
+    window.removeEventListener('pageshow', this.restart);
+  }
+
+  renderVals() {
+    return { setRoot: this.setRoot };
+  }
+}
+
+DCBoot(Component, {});
+</script>
+</body>
+</html>

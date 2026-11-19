@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colombia en tres partes</title>
+<link rel="icon" href="assets/a08a2729465d42bf4d55ea6c95c53547.png">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<template id="dc-template"><x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden}
+a{color:#F4EFE6}a:hover{color:#FFFFFF}
+@keyframes caer1{0%{transform:translate(0,-8px) rotate(0deg);opacity:0}8%{opacity:1}50%{transform:translate(22px,300px) rotate(160deg)}90%{opacity:1}100%{transform:translate(-6px,600px) rotate(340deg);opacity:0}}
+@keyframes caer2{0%{transform:translate(0,-8px) rotate(0deg);opacity:0}8%{opacity:1}50%{transform:translate(-20px,300px) rotate(-150deg)}90%{opacity:1}100%{transform:translate(8px,600px) rotate(-320deg);opacity:0}}
+@keyframes tierra{0%{transform:translateY(-4px);opacity:0}10%{opacity:0.9}100%{transform:translateY(600px);opacity:0}}
+@keyframes mecer{0%,100%{transform:skewX(-1.4deg)}50%{transform:skewX(1.4deg)}}
+.lianas{animation:mecer 5s ease-in-out infinite}
+.menu{text-underline-offset:6px;text-decoration-thickness:2px}
+.menu:hover{text-decoration:underline;color:#4A3A30 !important}
+.letrero:hover img{filter:drop-shadow(0 14px 18px rgba(40,25,10,0.35)) brightness(1.08)}
+.letrero:focus-visible{outline:3px solid #3B2F27;outline-offset:4px;border-radius:8px}
+.menu:focus-visible{outline:2px solid #6A564B;outline-offset:4px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){.particula,.lianas{animation:none !important}}
+@keyframes rebote{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@media (max-width:700px){.ctx p,.ctx a{font-size:13.5px !important;line-height:1.5 !important}.ctx a{min-height:36px !important}}
+@media (max-width:700px){.vh-hdr{flex-wrap:nowrap !important;gap:12px !important;padding:10px 14px !important;align-items:center !important}.vh-hdr > a,.vh-hdr > button{min-height:34px !important;flex:0 0 auto}.vh-logo{height:clamp(17px,4.8vw,24px) !important}.vh-nav{flex:1 1 auto;min-width:0;flex-wrap:nowrap !important;justify-content:space-between !important;gap:0 4px !important;white-space:nowrap}.vh-nav > *{font-size:clamp(8.5px,2.45vw,13px) !important;min-height:34px !important;padding:0 !important;letter-spacing:0 !important}}
+.redes{position:relative;background:#D9C7B1;color:#6B564C;border-top:1px solid rgba(107,86,76,.35);font-family:Inter,sans-serif}
+.redes *{box-sizing:border-box}
+.rd-in{max-width:1080px;margin:0 auto;padding:clamp(72px,12vh,128px) clamp(16px,4vw,48px) clamp(72px,11vh,120px)}
+.rd-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px 40px;flex-wrap:wrap;margin-bottom:clamp(28px,4vh,44px)}
+.rd-kick{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#6B564C;opacity:.85}
+.rd-t{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.02;letter-spacing:-.02em;color:#6B564C}
+.rd-prof{display:flex;align-items:center;gap:16px;max-width:430px;text-decoration:none;color:#6B564C}
+.rd-av{flex:0 0 auto;width:74px;height:74px;border-radius:50%;background:#6B564C;display:flex;align-items:center;justify-content:center;transition:transform .3s ease}
+.rd-av img{width:80%;height:auto;display:block}
+.rd-prof:hover .rd-av{transform:scale(1.06)}
+.rd-pt{display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.45}
+.rd-pt b{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:700}
+.rd-prof:hover .rd-pt b{text-decoration:underline;text-underline-offset:3px}
+.rd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(6px,1.3vw,16px)}
+.rd-post{position:relative;display:block;aspect-ratio:621/828;border-radius:10px;overflow:hidden;background:#6B564C;box-shadow:0 10px 26px rgba(60,40,30,.16);transition:transform .35s ease,box-shadow .35s ease}
+.rd-post img{width:100%;height:100%;object-fit:cover;display:block}
+.rd-over{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(60,45,38,.5);color:#F4EFE6;opacity:0;transition:opacity .3s ease}
+.rd-post:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(60,40,30,.24)}
+.rd-post:hover .rd-over,.rd-post:focus-visible .rd-over{opacity:1}
+.rd-post:focus-visible,.rd-btn:focus-visible,.rd-prof:focus-visible{outline:2px solid #6B564C;outline-offset:4px}
+.rd-cta{display:flex;justify-content:center;margin-top:clamp(28px,4vh,44px)}
+.rd-btn{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 24px;border-radius:999px;background:#6B564C;color:#F4EFE6;text-decoration:none;font-weight:600;font-size:14px;transition:background-color .25s ease,transform .25s ease}
+.rd-btn:hover{background:#574437;transform:translateY(-2px)}
+@media (max-width:700px){.rd-head{align-items:flex-start}.rd-av{width:58px;height:58px}.rd-pt{font-size:13px}.rd-pt b{font-size:17px}.rd-post{border-radius:6px}}
+.equipo{background:#6B564C;color:#F4EFE6;font-family:Inter,sans-serif}
+.equipo *{box-sizing:border-box}
+.eq-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.eq-c{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;min-height:clamp(260px,30vw,400px);padding:clamp(20px,2.6vw,36px);background:#6B564C;color:#F4EFE6;overflow:hidden;text-decoration:none}
+.eq-grid > :nth-child(even){background:#D8C46A;color:#4E3E36}
+.eq-n{position:absolute;top:clamp(16px,2vw,28px);left:clamp(20px,2.6vw,36px);font-size:12px;font-weight:600;letter-spacing:.2em;opacity:.8}
+.eq-fp{position:absolute;top:clamp(44px,4.5vw,64px);left:50%;width:clamp(110px,12vw,180px);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;display:flex;align-items:center;justify-content:center;background:#F4EFE6;box-shadow:0 10px 28px rgba(40,28,22,.22);transition:transform .5s ease}
+.eq-fp img{width:52%;height:auto;display:block;opacity:.95}
+.eq-c:hover .eq-fp{transform:translateX(-50%) rotate(-8deg) scale(1.04)}
+.eq-name{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(20px,2vw,28px);line-height:1.05;text-transform:uppercase;letter-spacing:.01em}
+.eq-line{display:block;width:min(100%,230px);height:1.5px;background:currentColor;margin:12px 0 10px;opacity:.85}
+.eq-role{font-size:14px;opacity:.85}
+.eq-go{cursor:pointer;justify-content:space-between}
+.eq-go-t{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(26px,2.8vw,40px);line-height:1.05;margin-top:clamp(18px,3vw,36px)}
+.eq-go-b{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 22px;border-radius:999px;background:#4E3E36;color:#F4EFE6;font-weight:600;font-size:14px;transition:transform .25s ease,background-color .25s ease}
+.eq-go:hover .eq-go-b{transform:translateX(4px);background:#2f241f}
+.eq-go:focus-visible{outline:3px solid #F4EFE6;outline-offset:-6px}
+.eq-title{position:relative;padding:clamp(40px,6vw,80px) clamp(20px,5vw,72px) clamp(48px,7vw,96px)}
+.eq-br{position:absolute;left:clamp(14px,3vw,40px);top:clamp(30px,4.6vw,62px);width:clamp(40px,6vw,84px);height:clamp(40px,6vw,84px);border-left:3px solid #F4EFE6;border-top:3px solid #F4EFE6}
+.eq-title h2{margin:0;display:flex;align-items:baseline;flex-wrap:wrap;gap:0 .25em;font-weight:400}
+.eq-a{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(56px,10vw,150px);line-height:1;letter-spacing:-.03em;color:#F4EFE6}
+.eq-b{font-family:Caveat,cursive;font-weight:700;font-size:clamp(64px,11vw,170px);line-height:.8;color:#D8C46A;transform:rotate(-6deg);display:inline-block}
+@media (max-width:700px){.eq-grid{grid-template-columns:repeat(2,1fr)}.eq-grid > :nth-child(even){background:#6B564C;color:#F4EFE6}.eq-grid > :nth-child(4n+2),.eq-grid > :nth-child(4n+3){background:#D8C46A;color:#4E3E36}.eq-c{min-height:250px;padding:16px}.eq-fp{width:88px;top:40px}.eq-name{font-size:17px}.eq-role{font-size:12px}.eq-go-t{font-size:22px}.eq-go-b{font-size:12px;padding:0 14px;min-height:40px}}
+.pie{display:flex;align-items:flex-start;justify-content:space-between;gap:24px 48px;flex-wrap:wrap;padding:28px clamp(16px,4vw,48px);background:#3B2E28;color:#F4EFE6;font-family:Inter,sans-serif;box-sizing:border-box}
+.ft-left{display:flex;flex-direction:column;align-items:flex-start;gap:14px;flex:0 1 auto}
+.ft-cred{flex:0 1 560px;text-align:right;font-size:12.5px;line-height:1.55;opacity:.92}
+.ft-cred p{margin:0 0 3px}
+.ft-cred .ft-u{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;margin-bottom:4px}
+.ft-cred b{font-weight:600}
+.ft-cred a{text-decoration:underline;text-underline-offset:2px}
+.pie a{color:#F4EFE6;text-decoration:none}
+.ft-cc{display:flex;flex-direction:column;gap:5px;opacity:.92}
+.ft-cc:hover{opacity:1}
+.ft-cc-top{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.02em}
+.ft-cc-ic{display:inline-flex;gap:4px}
+.ft-cc-ic svg{width:18px;height:18px;display:block}
+.ft-cc-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:14px;line-height:1.3}
+.ft-ig{display:inline-flex;align-items:center;gap:9px;min-height:40px;font-weight:600;font-size:14px;opacity:.92}
+.ft-ig:hover{opacity:1}
+.ft-ig:hover span{text-decoration:underline;text-underline-offset:3px}
+.pie a:focus-visible{outline:2px solid #F4EFE6;outline-offset:4px;border-radius:4px}
+@media (max-width:560px){.ft-cc-name{font-size:12.5px}}
+@media (max-width:760px){.ft-cred{text-align:left;flex-basis:100%}}
+</style>
+</helmet>
+<main ref="{{ setScroller }}" style="height: 100vh; overflow-y: scroll; overflow-x: hidden; background: {{bg}}; color: #1B1B1B; font-family: Inter, system-ui, sans-serif">
+<div style="position: sticky; top: 0; z-index: 20; height: 0">
+<header class="vh-hdr" style="position: absolute; top: 0; left: 0; right: 0; background: {{bg}}; display: flex; align-items: center; justify-content: space-between; gap: 12px 28px; flex-wrap: wrap; padding: 18px clamp(16px, 4vw, 48px)">
+<button type="button" onClick="{{ goTop }}" aria-label="Vestigio, volver al inicio" style="background: none; border: 0; padding: 0; cursor: pointer; display: inline-flex; min-height: 44px; align-items: center"><img class="vh-logo" src="assets/a08a2729465d42bf4d55ea6c95c53547.png" alt="Vestigio" style="display: block; height: 42px; width: auto"></button>
+<nav class="vh-nav" aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px 26px">
+<button type="button" class="menu" onClick="{{ goTop }}" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; background: none; border: 0; color: #6A564B; text-decoration: none; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 17px; cursor: pointer">Inicio</button>
+<a href="Informate.html" class="menu" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; background: none; border: 0; color: #6A564B; text-decoration: none; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 17px; cursor: pointer">Raíz</a>
+<a href="Escucha.html" class="menu" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; background: none; border: 0; color: #6A564B; text-decoration: none; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 17px; cursor: pointer">Desarraigo</a>
+<a href="Conoce.html" class="menu" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; background: none; border: 0; color: #6A564B; text-decoration: none; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 17px; cursor: pointer">Memoria</a>
+<a href="SobreNosotros.html" class="menu" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; background: none; border: 0; color: #6A564B; text-decoration: none; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 17px; cursor: pointer">Sobre nosotros</a>
+</nav>
+<div aria-hidden="true" style="position: absolute; left: clamp(16px, 4vw, 48px); right: clamp(16px, 4vw, 48px); bottom: 0; height: 1px; background: #6A564B; opacity: 0.45"></div>
+</header>
+</div>
+
+<section ref="{{ setVes }}" aria-labelledby="que-es-vestigio" style="position: relative; height: 500vh; background: {{bg}}">
+<div style="position: sticky; top: 0; height: 100vh; overflow: hidden">
+<img ref="{{ setI0 }}" src="assets/938e0fe04062dd82ddf5317c634e613e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setI1 }}" src="assets/5c87599a3d6033a60d92a3efca2f7cdd.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setI2 }}" src="assets/b3dbf2d64e106609fd1a75480214a93e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setI3 }}" src="assets/c6a89babf29de3812a62b25923f13180.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setI4 }}" src="assets/886578feb870cdf6ce97b1d3ba3edb51.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setI5 }}" src="assets/b3dbf2d64e106609fd1a75480214a93e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setI6 }}" src="assets/938e0fe04062dd82ddf5317c634e613e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setI7 }}" src="assets/5c87599a3d6033a60d92a3efca2f7cdd.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setI8 }}" src="assets/c6a89babf29de3812a62b25923f13180.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH14 }}" src="assets/938e0fe04062dd82ddf5317c634e613e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH15 }}" src="assets/886578feb870cdf6ce97b1d3ba3edb51.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH16 }}" src="assets/5c87599a3d6033a60d92a3efca2f7cdd.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH17 }}" src="assets/b3dbf2d64e106609fd1a75480214a93e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH18 }}" src="assets/c6a89babf29de3812a62b25923f13180.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH19 }}" src="assets/938e0fe04062dd82ddf5317c634e613e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH0 }}" src="assets/c6a89babf29de3812a62b25923f13180.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH1 }}" src="assets/b3dbf2d64e106609fd1a75480214a93e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH2 }}" src="assets/5c87599a3d6033a60d92a3efca2f7cdd.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH3 }}" src="assets/938e0fe04062dd82ddf5317c634e613e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH4 }}" src="assets/886578feb870cdf6ce97b1d3ba3edb51.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH5 }}" src="assets/5c87599a3d6033a60d92a3efca2f7cdd.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH6 }}" src="assets/b3dbf2d64e106609fd1a75480214a93e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH7 }}" src="assets/938e0fe04062dd82ddf5317c634e613e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH8 }}" src="assets/c6a89babf29de3812a62b25923f13180.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH9 }}" src="assets/886578feb870cdf6ce97b1d3ba3edb51.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH10 }}" src="assets/5c87599a3d6033a60d92a3efca2f7cdd.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH11 }}" src="assets/938e0fe04062dd82ddf5317c634e613e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH12 }}" src="assets/b3dbf2d64e106609fd1a75480214a93e.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<img ref="{{ setH13 }}" src="assets/c6a89babf29de3812a62b25923f13180.svg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100px; height: auto; opacity: 0; will-change: transform, opacity; pointer-events: none">
+<div style="position: relative; z-index: 2; height: 100%; max-width: 900px; margin: 0 auto; padding: 76px clamp(16px, 5vw, 48px) 84px; display: flex; flex-direction: column; justify-content: center; gap: clamp(16px, 3vh, 28px); box-sizing: border-box">
+<h2 id="que-es-vestigio" ref="{{ setT0 }}" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(44px, min(7vw, 10.5vh), 96px); line-height: 1; letter-spacing: -1.5px; color: #3B2F27; opacity: 0; transform: translateY(30px)">¿Qué es Vestigio?</h2>
+<p style="margin: 0; font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: clamp(18px, min(2.3vw, 3.4vh), 30px); line-height: 1.5; color: #3B2F27"><span ref="{{ setT1 }}" style="display: inline; opacity: 0">La guerra no se acaba cuando dejan de sonar los disparos: deja huellas.</span> <span ref="{{ setT2 }}" style="display: inline; opacity: 0">Vestigio nace de las ganas de mirarlas de cerca, de escuchar a quienes las viven y de entender que detrás de cada historia hay una persona que sigue adelante.</span> <span ref="{{ setT3 }}" style="display: inline; opacity: 0">Queremos que este sea un espacio para conocer, preguntarse y, sobre todo,</span> <span ref="{{ setT4 }}" style="display: inline; opacity: 0">recordar que el conflicto no es solo algo del pasado: es parte de lo que somos hoy.</span></p>
+</div>
+<div ref="{{ setVend }}" style="position: absolute; z-index: 3; left: 0; right: 0; bottom: 28px; display: flex; justify-content: center; pointer-events: none; opacity: 0">
+<p style="margin: 0; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3B2F27">Sigue bajando para ver el mapa<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: rebote 1.8s ease-in-out infinite"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg></p>
+</div>
+<div ref="{{ setVhint }}" style="position: absolute; z-index: 3; left: 0; right: 0; bottom: 28px; display: flex; justify-content: center; pointer-events: none">
+<p style="margin: 0; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3B2F27">Desliza para leer<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: rebote 1.8s ease-in-out infinite"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg></p>
+</div>
+</div>
+</section>
+
+<div ref="{{ setTrack }}" style="position: relative; height: {{trackH}}px">
+<div style="position: sticky; top: 0; height: 100vh; overflow: hidden">
+
+
+
+
+
+<div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: 0 auto; width: {{mw}}px">
+<div data-m="L0" style="position: absolute; left: 0; top: 0; width: 100%; z-index: 10; pointer-events: none; transform: translateY({{y1}}px); will-change: transform">
+<img src="assets/e4f0b60cdd81a33f660699faec5a8203.webp" alt="Mapa de Colombia en relieve, parte norte" style="display: block; width: 100%; height: auto; clip-path: polygon(-1.32% -1.10%, 101.32% -1.10%, 101.32% 28.78%, 101.13% 28.74%, 100.48% 28.92%, 99.67% 28.72%, 99.16% 28.69%, 98.21% 28.76%, 97.60% 28.57%, 96.59% 28.75%, 96.12% 28.73%, 95.38% 28.77%, 94.96% 28.80%, 94.18% 28.88%, 93.23% 28.82%, 92.28% 28.67%, 91.32% 28.66%, 90.81% 28.96%, 90.35% 28.71%, 89.92% 28.95%, 89.43% 28.71%, 88.64% 28.77%, 87.87% 29.03%, 87.03% 29.11%, 86.05% 29.14%, 85.12% 29.03%, 84.41% 29.06%, 83.49% 29.07%, 82.85% 28.94%, 81.87% 28.56%, 81.19% 28.35%, 80.34% 28.69%, 79.78% 28.79%, 78.92% 28.96%, 78.06% 29.10%, 77.42% 29.03%, 76.61% 29.10%, 75.96% 29.05%, 75.16% 28.86%, 74.65% 28.73%, 74.00% 28.90%, 73.23% 28.65%, 72.62% 28.63%, 71.98% 28.76%, 71.16% 28.67%, 70.55% 28.66%, 69.83% 28.58%, 68.86% 28.86%, 68.42% 28.58%, 67.94% 28.55%, 67.54% 28.78%, 66.83% 28.69%, 66.09% 28.67%, 65.51% 28.63%, 64.54% 28.87%, 64.14% 28.95%, 63.21% 29.03%, 62.29% 28.83%, 61.36% 28.98%, 60.83% 28.92%, 59.91% 28.96%, 58.95% 28.89%, 58.32% 29.01%, 57.31% 28.95%, 56.56% 29.03%, 55.97% 28.87%, 55.08% 28.84%, 54.30% 29.16%, 53.31% 29.20%, 52.45% 29.22%, 52.03% 29.20%, 51.44% 29.06%, 51.00% 28.86%, 50.38% 28.77%, 49.64% 28.76%, 48.69% 28.73%, 48.14% 28.83%, 47.12% 28.76%, 46.07% 29.00%, 45.05% 28.80%, 44.55% 29.14%, 43.88% 28.97%, 43.21% 28.92%, 42.63% 29.06%, 42.04% 28.82%, 41.42% 29.03%, 40.59% 29.01%, 40.01% 28.79%, 39.06% 28.97%, 38.54% 28.86%, 38.06% 28.75%, 37.37% 28.95%, 36.54% 28.75%, 36.03% 28.93%, 35.34% 28.93%, 34.73% 28.78%, 34.26% 28.91%, 33.58% 28.75%, 33.02% 28.97%, 32.48% 28.81%, 31.60% 28.91%, 31.18% 28.99%, 30.53% 28.84%, 29.74% 28.86%, 29.14% 28.86%, 28.53% 28.93%, 27.83% 28.83%, 26.80% 29.01%, 26.36% 28.81%, 25.48% 29.07%, 24.85% 29.09%, 24.14% 29.10%, 23.71% 29.12%, 22.90% 28.95%, 22.12% 29.10%, 21.72% 29.16%, 20.98% 29.32%, 20.38% 29.10%, 19.51% 29.19%, 18.77% 29.23%, 17.97% 28.95%, 17.18% 28.83%, 16.44% 28.63%, 15.79% 28.69%, 14.76% 28.46%, 13.79% 28.33%, 13.29% 28.50%, 12.62% 28.34%, 12.20% 28.45%, 11.76% 28.34%, 10.70% 28.36%, 9.65% 28.66%, 9.04% 28.73%, 8.61% 28.77%, 8.18% 28.94%, 7.28% 28.80%, 6.78% 28.82%, 5.86% 28.67%, 4.80% 28.87%, 4.37% 28.66%, 3.59% 28.80%, 3.05% 28.74%, 2.28% 28.78%, 1.25% 28.74%, 0.74% 28.66%, -0.31% 28.70%, -1.32% 28.61%)">
+</div>
+
+<div data-m="L1" style="position: absolute; left: 0; top: 0; width: 100%; z-index: 30; pointer-events: none; transform: translateY({{y2}}px); will-change: transform">
+<img src="assets/e4f0b60cdd81a33f660699faec5a8203.webp" alt="" aria-hidden="true" style="display: block; width: 100%; height: auto; clip-path: polygon(-1.32% 28.61%, -0.31% 28.70%, 0.74% 28.66%, 1.25% 28.74%, 2.28% 28.78%, 3.05% 28.74%, 3.59% 28.80%, 4.37% 28.66%, 4.80% 28.87%, 5.86% 28.67%, 6.78% 28.82%, 7.28% 28.80%, 8.18% 28.94%, 8.61% 28.77%, 9.04% 28.73%, 9.65% 28.66%, 10.70% 28.36%, 11.76% 28.34%, 12.20% 28.45%, 12.62% 28.34%, 13.29% 28.50%, 13.79% 28.33%, 14.76% 28.46%, 15.79% 28.69%, 16.44% 28.63%, 17.18% 28.83%, 17.97% 28.95%, 18.77% 29.23%, 19.51% 29.19%, 20.38% 29.10%, 20.98% 29.32%, 21.72% 29.16%, 22.12% 29.10%, 22.90% 28.95%, 23.71% 29.12%, 24.14% 29.10%, 24.85% 29.09%, 25.48% 29.07%, 26.36% 28.81%, 26.80% 29.01%, 27.83% 28.83%, 28.53% 28.93%, 29.14% 28.86%, 29.74% 28.86%, 30.53% 28.84%, 31.18% 28.99%, 31.60% 28.91%, 32.48% 28.81%, 33.02% 28.97%, 33.58% 28.75%, 34.26% 28.91%, 34.73% 28.78%, 35.34% 28.93%, 36.03% 28.93%, 36.54% 28.75%, 37.37% 28.95%, 38.06% 28.75%, 38.54% 28.86%, 39.06% 28.97%, 40.01% 28.79%, 40.59% 29.01%, 41.42% 29.03%, 42.04% 28.82%, 42.63% 29.06%, 43.21% 28.92%, 43.88% 28.97%, 44.55% 29.14%, 45.05% 28.80%, 46.07% 29.00%, 47.12% 28.76%, 48.14% 28.83%, 48.69% 28.73%, 49.64% 28.76%, 50.38% 28.77%, 51.00% 28.86%, 51.44% 29.06%, 52.03% 29.20%, 52.45% 29.22%, 53.31% 29.20%, 54.30% 29.16%, 55.08% 28.84%, 55.97% 28.87%, 56.56% 29.03%, 57.31% 28.95%, 58.32% 29.01%, 58.95% 28.89%, 59.91% 28.96%, 60.83% 28.92%, 61.36% 28.98%, 62.29% 28.83%, 63.21% 29.03%, 64.14% 28.95%, 64.54% 28.87%, 65.51% 28.63%, 66.09% 28.67%, 66.83% 28.69%, 67.54% 28.78%, 67.94% 28.55%, 68.42% 28.58%, 68.86% 28.86%, 69.83% 28.58%, 70.55% 28.66%, 71.16% 28.67%, 71.98% 28.76%, 72.62% 28.63%, 73.23% 28.65%, 74.00% 28.90%, 74.65% 28.73%, 75.16% 28.86%, 75.96% 29.05%, 76.61% 29.10%, 77.42% 29.03%, 78.06% 29.10%, 78.92% 28.96%, 79.78% 28.79%, 80.34% 28.69%, 81.19% 28.35%, 81.87% 28.56%, 82.85% 28.94%, 83.49% 29.07%, 84.41% 29.06%, 85.12% 29.03%, 86.05% 29.14%, 87.03% 29.11%, 87.87% 29.03%, 88.64% 28.77%, 89.43% 28.71%, 89.92% 28.95%, 90.35% 28.71%, 90.81% 28.96%, 91.32% 28.66%, 92.28% 28.67%, 93.23% 28.82%, 94.18% 28.88%, 94.96% 28.80%, 95.38% 28.77%, 96.12% 28.73%, 96.59% 28.75%, 97.60% 28.57%, 98.21% 28.76%, 99.16% 28.69%, 99.67% 28.72%, 100.48% 28.92%, 101.13% 28.74%, 101.32% 28.78%, 101.32% 52.36%, 101.06% 52.13%, 100.25% 51.94%, 99.21% 51.86%, 98.43% 51.93%, 97.98% 52.18%, 97.49% 52.18%, 96.63% 52.16%, 95.61% 52.39%, 95.19% 52.48%, 94.71% 52.70%, 93.77% 52.94%, 93.02% 52.74%, 92.44% 53.01%, 91.69% 52.96%, 90.96% 52.84%, 90.48% 52.64%, 89.63% 52.49%, 88.88% 52.67%, 88.24% 52.45%, 87.20% 52.44%, 86.19% 52.44%, 85.41% 52.38%, 84.74% 52.18%, 83.96% 52.22%, 83.52% 52.12%, 83.01% 51.92%, 82.40% 51.81%, 81.38% 52.44%, 80.37% 52.51%, 79.65% 52.76%, 78.67% 52.83%, 77.91% 52.97%, 77.02% 52.50%, 76.59% 52.13%, 75.70% 51.80%, 75.11% 51.81%, 74.65% 52.16%, 73.97% 52.15%, 73.40% 52.19%, 72.77% 52.58%, 72.30% 52.61%, 71.69% 52.68%, 71.10% 52.80%, 70.30% 52.96%, 69.37% 52.89%, 68.73% 52.74%, 67.76% 52.74%, 67.34% 52.42%, 66.51% 52.56%, 65.71% 52.16%, 64.70% 52.47%, 63.73% 52.23%, 63.28% 52.31%, 62.48% 52.03%, 61.56% 52.33%, 60.51% 52.26%, 59.68% 52.10%, 58.76% 52.28%, 58.12% 52.31%, 57.32% 52.31%, 56.76% 52.29%, 55.84% 52.34%, 55.21% 52.04%, 54.22% 51.88%, 53.49% 52.04%, 52.90% 51.76%, 51.96% 51.60%, 51.28% 51.65%, 50.40% 51.60%, 49.83% 51.97%, 49.08% 51.85%, 48.40% 51.83%, 47.60% 52.07%, 46.72% 52.16%, 45.88% 52.16%, 45.07% 51.96%, 44.47% 52.24%, 43.44% 52.09%, 42.91% 52.32%, 42.32% 52.31%, 41.29% 52.25%, 40.55% 52.35%, 39.53% 52.15%, 38.49% 52.24%, 37.90% 52.10%, 36.85% 52.38%, 35.96% 52.23%, 35.16% 51.71%, 34.34% 51.90%, 33.59% 51.56%, 33.06% 51.78%, 32.33% 51.82%, 31.30% 51.56%, 30.61% 51.70%, 30.20% 51.82%, 29.34% 51.89%, 28.87% 51.78%, 28.34% 51.70%, 27.70% 51.79%, 27.00% 51.95%, 26.12% 51.85%, 25.64% 51.87%, 24.86% 51.75%, 24.36% 51.94%, 23.63% 52.06%, 23.18% 52.03%, 22.14% 52.00%, 21.36% 52.43%, 20.46% 52.49%, 20.04% 52.48%, 19.51% 52.50%, 19.11% 52.58%, 18.48% 52.52%, 17.70% 52.42%, 17.21% 52.29%, 16.78% 52.74%, 15.91% 52.62%, 14.98% 52.70%, 14.24% 52.70%, 13.79% 52.76%, 13.20% 53.07%, 12.52% 52.89%, 11.86% 52.54%, 11.17% 52.26%, 10.55% 52.28%, 10.14% 51.93%, 9.24% 51.64%, 8.20% 51.85%, 7.69% 51.74%, 7.18% 51.97%, 6.23% 51.75%, 5.55% 51.71%, 4.93% 51.61%, 4.37% 51.71%, 3.51% 51.85%, 2.52% 51.69%, 1.78% 51.90%, 1.29% 51.77%, 0.56% 52.07%, -0.47% 52.04%, -1.32% 51.79%)">
+<img data-m="B0" src="assets/76fe2a5f48394b964f6e098362781867.webp" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: auto; opacity: {{u1.op}}">
+</div>
+
+<div data-m="L2" style="position: absolute; left: 0; top: 0; width: 100%; z-index: 50; pointer-events: none; transform: translateY({{y3}}px); will-change: transform">
+<img src="assets/e4f0b60cdd81a33f660699faec5a8203.webp" alt="" aria-hidden="true" style="display: block; width: 100%; height: auto; clip-path: polygon(-1.32% 51.79%, -0.47% 52.04%, 0.56% 52.07%, 1.29% 51.77%, 1.78% 51.90%, 2.52% 51.69%, 3.51% 51.85%, 4.37% 51.71%, 4.93% 51.61%, 5.55% 51.71%, 6.23% 51.75%, 7.18% 51.97%, 7.69% 51.74%, 8.20% 51.85%, 9.24% 51.64%, 10.14% 51.93%, 10.55% 52.28%, 11.17% 52.26%, 11.86% 52.54%, 12.52% 52.89%, 13.20% 53.07%, 13.79% 52.76%, 14.24% 52.70%, 14.98% 52.70%, 15.91% 52.62%, 16.78% 52.74%, 17.21% 52.29%, 17.70% 52.42%, 18.48% 52.52%, 19.11% 52.58%, 19.51% 52.50%, 20.04% 52.48%, 20.46% 52.49%, 21.36% 52.43%, 22.14% 52.00%, 23.18% 52.03%, 23.63% 52.06%, 24.36% 51.94%, 24.86% 51.75%, 25.64% 51.87%, 26.12% 51.85%, 27.00% 51.95%, 27.70% 51.79%, 28.34% 51.70%, 28.87% 51.78%, 29.34% 51.89%, 30.20% 51.82%, 30.61% 51.70%, 31.30% 51.56%, 32.33% 51.82%, 33.06% 51.78%, 33.59% 51.56%, 34.34% 51.90%, 35.16% 51.71%, 35.96% 52.23%, 36.85% 52.38%, 37.90% 52.10%, 38.49% 52.24%, 39.53% 52.15%, 40.55% 52.35%, 41.29% 52.25%, 42.32% 52.31%, 42.91% 52.32%, 43.44% 52.09%, 44.47% 52.24%, 45.07% 51.96%, 45.88% 52.16%, 46.72% 52.16%, 47.60% 52.07%, 48.40% 51.83%, 49.08% 51.85%, 49.83% 51.97%, 50.40% 51.60%, 51.28% 51.65%, 51.96% 51.60%, 52.90% 51.76%, 53.49% 52.04%, 54.22% 51.88%, 55.21% 52.04%, 55.84% 52.34%, 56.76% 52.29%, 57.32% 52.31%, 58.12% 52.31%, 58.76% 52.28%, 59.68% 52.10%, 60.51% 52.26%, 61.56% 52.33%, 62.48% 52.03%, 63.28% 52.31%, 63.73% 52.23%, 64.70% 52.47%, 65.71% 52.16%, 66.51% 52.56%, 67.34% 52.42%, 67.76% 52.74%, 68.73% 52.74%, 69.37% 52.89%, 70.30% 52.96%, 71.10% 52.80%, 71.69% 52.68%, 72.30% 52.61%, 72.77% 52.58%, 73.40% 52.19%, 73.97% 52.15%, 74.65% 52.16%, 75.11% 51.81%, 75.70% 51.80%, 76.59% 52.13%, 77.02% 52.50%, 77.91% 52.97%, 78.67% 52.83%, 79.65% 52.76%, 80.37% 52.51%, 81.38% 52.44%, 82.40% 51.81%, 83.01% 51.92%, 83.52% 52.12%, 83.96% 52.22%, 84.74% 52.18%, 85.41% 52.38%, 86.19% 52.44%, 87.20% 52.44%, 88.24% 52.45%, 88.88% 52.67%, 89.63% 52.49%, 90.48% 52.64%, 90.96% 52.84%, 91.69% 52.96%, 92.44% 53.01%, 93.02% 52.74%, 93.77% 52.94%, 94.71% 52.70%, 95.19% 52.48%, 95.61% 52.39%, 96.63% 52.16%, 97.49% 52.18%, 97.98% 52.18%, 98.43% 51.93%, 99.21% 51.86%, 100.25% 51.94%, 101.06% 52.13%, 101.32% 52.36%, 101.32% 73.19%, 101.14% 72.99%, 100.51% 72.83%, 99.89% 72.91%, 99.18% 72.73%, 98.38% 72.91%, 97.95% 72.70%, 97.05% 73.06%, 96.06% 72.89%, 95.28% 72.97%, 94.29% 73.49%, 93.34% 73.48%, 92.79% 73.40%, 92.13% 73.27%, 91.70% 73.44%, 90.76% 73.60%, 90.27% 73.44%, 89.29% 73.53%, 88.69% 73.40%, 87.93% 73.40%, 87.37% 73.74%, 86.57% 73.49%, 85.85% 73.52%, 84.98% 73.97%, 84.05% 73.63%, 83.02% 73.68%, 82.44% 73.72%, 81.93% 73.63%, 81.12% 73.64%, 80.42% 73.80%, 79.77% 73.51%, 78.98% 73.50%, 78.13% 73.51%, 77.17% 73.59%, 76.56% 73.84%, 76.00% 73.52%, 75.17% 73.09%, 74.64% 73.06%, 73.61% 72.59%, 72.91% 72.91%, 71.89% 72.77%, 71.44% 72.90%, 70.95% 72.86%, 70.34% 72.85%, 69.94% 73.17%, 68.91% 73.14%, 68.10% 72.97%, 67.10% 72.95%, 66.25% 73.18%, 65.29% 73.20%, 64.39% 73.11%, 63.48% 73.15%, 62.61% 72.90%, 61.89% 72.67%, 60.86% 72.82%, 60.14% 72.65%, 59.59% 72.64%, 58.71% 72.80%, 57.85% 72.56%, 57.16% 72.48%, 56.62% 72.64%, 55.96% 72.69%, 55.27% 72.75%, 54.86% 72.75%, 54.17% 72.82%, 53.24% 72.80%, 52.79% 72.94%, 51.74% 73.35%, 51.10% 73.82%, 50.17% 73.61%, 49.40% 73.64%, 48.54% 73.37%, 47.50% 73.33%, 46.77% 73.14%, 46.31% 73.21%, 45.55% 72.88%, 44.96% 72.95%, 44.36% 72.61%, 43.93% 72.51%, 43.07% 72.55%, 42.21% 72.74%, 41.30% 72.92%, 40.60% 73.07%, 39.68% 73.65%, 38.71% 73.82%, 38.28% 73.77%, 37.41% 73.72%, 36.89% 73.65%, 36.35% 73.81%, 35.74% 73.85%, 35.26% 73.92%, 34.29% 73.73%, 33.60% 73.61%, 33.14% 73.46%, 32.65% 73.62%, 31.62% 73.00%, 31.06% 72.86%, 30.10% 73.09%, 29.31% 73.00%, 28.28% 73.54%, 27.87% 73.67%, 27.29% 73.59%, 26.69% 73.67%, 25.91% 73.40%, 25.12% 73.52%, 24.20% 73.34%, 23.66% 72.87%, 22.78% 72.90%, 21.75% 72.56%, 21.04% 72.63%, 19.99% 72.84%, 19.37% 72.61%, 18.86% 72.87%, 18.27% 72.92%, 17.84% 73.26%, 17.12% 73.35%, 16.19% 73.13%, 15.69% 73.54%, 15.13% 73.37%, 14.41% 73.67%, 13.62% 73.78%, 12.57% 73.50%, 11.54% 73.55%, 10.69% 73.32%, 10.05% 73.26%, 9.11% 72.80%, 8.65% 72.83%, 7.86% 72.72%, 6.85% 72.86%, 6.34% 72.86%, 5.53% 73.14%, 4.73% 73.10%, 3.84% 73.37%, 3.12% 73.32%, 2.06% 73.27%, 1.60% 72.90%, 0.95% 73.24%, 0.30% 72.91%, -0.34% 72.81%, -1.32% 72.90%)">
+<img data-m="B1" src="assets/02af91067bdcb740038a74bb27e212ee.webp" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: auto; opacity: {{u2.op}}">
+</div>
+
+<div data-m="L3" style="position: absolute; left: 0; top: 0; width: 100%; z-index: 70; pointer-events: none; transform: translateY({{y4}}px); will-change: transform">
+<img src="assets/e4f0b60cdd81a33f660699faec5a8203.webp" alt="" aria-hidden="true" style="display: block; width: 100%; height: auto; clip-path: polygon(32.05% 73.26%, 32.65% 73.62%, 33.14% 73.46%, 33.60% 73.61%, 34.29% 73.73%, 35.26% 73.92%, 35.74% 73.85%, 36.35% 73.81%, 36.89% 73.65%, 37.41% 73.72%, 38.28% 73.77%, 38.71% 73.82%, 39.68% 73.65%, 40.60% 73.07%, 41.30% 72.92%, 42.21% 72.74%, 43.07% 72.55%, 43.93% 72.51%, 44.36% 72.61%, 44.96% 72.95%, 45.55% 72.88%, 46.31% 73.21%, 46.77% 73.14%, 47.50% 73.33%, 48.54% 73.37%, 49.40% 73.64%, 50.17% 73.61%, 51.10% 73.82%, 51.74% 73.35%, 52.79% 72.94%, 53.24% 72.80%, 54.17% 72.82%, 54.86% 72.75%, 55.27% 72.75%, 55.96% 72.69%, 56.62% 72.64%, 57.16% 72.48%, 57.85% 72.56%, 58.71% 72.80%, 59.59% 72.64%, 60.14% 72.65%, 60.86% 72.82%, 61.89% 72.67%, 62.61% 72.90%, 63.48% 73.15%, 64.39% 73.11%, 65.29% 73.20%, 66.25% 73.18%, 67.10% 72.95%, 68.10% 72.97%, 68.91% 73.14%, 69.94% 73.17%, 70.34% 72.85%, 70.95% 72.86%, 71.44% 72.90%, 71.89% 72.77%, 72.91% 72.91%, 73.61% 72.59%, 74.64% 73.06%, 75.17% 73.09%, 76.00% 73.52%, 76.56% 73.84%, 77.17% 73.59%, 78.13% 73.51%, 78.98% 73.50%, 79.77% 73.51%, 80.42% 73.80%, 81.12% 73.64%, 81.93% 73.63%, 82.44% 73.72%, 83.02% 73.68%, 84.05% 73.63%, 84.98% 73.97%, 85.85% 73.52%, 86.57% 73.49%, 87.37% 73.74%, 87.93% 73.40%, 88.69% 73.40%, 89.29% 73.53%, 90.27% 73.44%, 90.76% 73.60%, 91.70% 73.44%, 92.13% 73.27%, 92.79% 73.40%, 93.34% 73.48%, 94.29% 73.49%, 95.28% 72.97%, 96.06% 72.89%, 97.05% 73.06%, 97.95% 72.70%, 98.38% 72.91%, 99.18% 72.73%, 99.89% 72.91%, 100.51% 72.83%, 101.14% 72.99%, 101.32% 73.19%, 101.32% 101.10%, 32.05% 101.10%)">
+<img data-m="B2" src="assets/363e45602f8d03d3f58493c590961fae.webp" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: auto; opacity: {{u3.op}}">
+</div>
+
+<div data-m="E0" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; z-index: 20; pointer-events: none; transform: translateY({{y1}}px); will-change: transform; visibility: {{u1.vis}}">
+<img src="assets/926064d80b5ca1b86f583fdcee4a8744.webp" alt="" style="position: absolute; left: 0; top: 0; width: 100%; height: auto">
+</div>
+
+<div data-m="E1" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; z-index: 40; pointer-events: none; transform: translateY({{y2}}px); will-change: transform; visibility: {{u2.vis}}">
+<img src="assets/66034c037c5208d24642974e038ae91d.webp" alt="" style="position: absolute; left: 0; top: 0; width: 100%; height: auto">
+</div>
+
+<div data-m="E2" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; z-index: 60; pointer-events: none; transform: translateY({{y3}}px); will-change: transform; visibility: {{u3.vis}}">
+<img src="assets/b16e4909da1ea1b089ea682bd17eee40.webp" alt="" style="position: absolute; left: 0; top: 0; width: 100%; height: auto">
+</div>
+
+<sc-for list="{{ gaps }}" as="gap" hint-placeholder-count="3">
+<div data-m="G" aria-hidden="true" style="position: absolute; z-index: 80; pointer-events: none; left: {{gap.left}}%; width: {{gap.w}}%; top: {{gap.top}}px; height: {{gap.h}}px; opacity: {{gap.op}}; visibility: {{gap.vis}}; overflow: hidden">
+<sc-for list="{{ gap.parts }}" as="pt" hint-placeholder-count="20">
+<div class="particula" style="position: absolute; top: 0; left: {{pt.x}}%; width: {{pt.w}}px; height: {{pt.h}}px; background: {{pt.c}}; border-radius: {{pt.r}}; animation: {{pt.anim}}"></div>
+</sc-for>
+</div>
+</sc-for>
+
+
+
+
+
+
+
+<div data-m="C0" aria-hidden="false" style="position: absolute; left: 0; right: 0; z-index: 15; top: {{l1.ctop}}px; height: {{l1.ch}}px; overflow: hidden; visibility: {{l1.vis}}; pointer-events: none">
+<a data-m="A0" href="Informate.html" class="letrero" aria-label="Raíz: haz clic para saber más" style="position: absolute; left: 50%; top: 0; width: {{l1.w}}px; display: block; transform: translate(-50%, {{l1.sy}}px) rotate({{l1.rot}}deg); transform-origin: 50% 0; pointer-events: {{l1.pe}}; text-decoration: none; will-change: transform">
+<img src="assets/4cdb60bf8807831e2106b306e57e7954.webp" alt="" style="display: block; width: 100%; height: auto; filter: drop-shadow(0 14px 18px rgba(40,25,10,0.35))">
+<span data-m="S0" style="position: absolute; left: 9.1%; right: 9.2%; top: 76.9%; height: 12%; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: {{l1.fs}}px; letter-spacing: -0.5px; color: #F6EBD6; text-shadow: 0 2px 0 rgba(40,22,8,0.75), 0 4px 14px rgba(0,0,0,0.45)">Raíz</span>
+</a>
+<div data-m="X0" class="ctx" style="position: absolute; left: 50%; top: {{l1.tt}}px; width: min(470px, 84vw); transform: translateX(-50%); opacity: {{l1.op}}; text-align: center; color: #3B2F27; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<p style="margin: 0; font-size: 15px; line-height: 1.55; font-weight: 500">Toda historia del conflicto tiene un comienzo. Esta sección vuelve a ese punto de partida para entender cómo la guerra alcanza a las personas y por qué tantas terminan dentro de ella sin haberlo decidido.</p>
+<a data-m="K0" href="Informate.html" class="menu" style="pointer-events: {{l1.pe}}; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; color: #3B2F27; text-decoration: underline; text-underline-offset: 5px">Haz clic en el letrero para saber más<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+
+<div data-m="C1" aria-hidden="false" style="position: absolute; left: 0; right: 0; z-index: 35; top: {{l2.ctop}}px; height: {{l2.ch}}px; overflow: hidden; visibility: {{l2.vis}}; pointer-events: none">
+<a data-m="A1" href="Escucha.html" class="letrero" aria-label="Desarraigo: haz clic para saber más" style="position: absolute; left: 50%; top: 0; width: {{l2.w}}px; display: block; transform: translate(-50%, {{l2.sy}}px) rotate({{l2.rot}}deg); transform-origin: 50% 0; pointer-events: {{l2.pe}}; text-decoration: none; will-change: transform">
+<img src="assets/4cdb60bf8807831e2106b306e57e7954.webp" alt="" style="display: block; width: 100%; height: auto; filter: drop-shadow(0 14px 18px rgba(40,25,10,0.35))">
+<span data-m="S1" style="position: absolute; left: 9.1%; right: 9.2%; top: 76.9%; height: 12%; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: {{l2.fs}}px; letter-spacing: -0.5px; color: #F6EBD6; text-shadow: 0 2px 0 rgba(40,22,8,0.75), 0 4px 14px rgba(0,0,0,0.45)">Desarraigo</span>
+</a>
+<div data-m="X1" class="ctx" style="position: absolute; left: 50%; top: {{l2.tt}}px; width: min(470px, 84vw); transform: translateX(-50%); opacity: {{l2.op}}; text-align: center; color: #3B2F27; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<p style="margin: 0; font-size: 15px; line-height: 1.55; font-weight: 500">El conflicto contado desde adentro, mientras sucede. Aquí están las voces y las historias de quienes lo vivieron en carne propia: los testimonios, las decisiones forzadas y los momentos que marcaron un antes y un después en sus vidas.</p>
+<a data-m="K1" href="Escucha.html" class="menu" style="pointer-events: {{l2.pe}}; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; color: #3B2F27; text-decoration: underline; text-underline-offset: 5px">Haz clic en el letrero para saber más<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+
+<div data-m="C2" aria-hidden="false" style="position: absolute; left: 0; right: 0; z-index: 55; top: {{l3.ctop}}px; height: {{l3.ch}}px; overflow: hidden; visibility: {{l3.vis}}; pointer-events: none">
+<a data-m="A2" href="Conoce.html" class="letrero" aria-label="Memoria: haz clic para saber más" style="position: absolute; left: 50%; top: 0; width: {{l3.w}}px; display: block; transform: translate(-50%, {{l3.sy}}px) rotate({{l3.rot}}deg); transform-origin: 50% 0; pointer-events: {{l3.pe}}; text-decoration: none; will-change: transform">
+<img src="assets/4cdb60bf8807831e2106b306e57e7954.webp" alt="" style="display: block; width: 100%; height: auto; filter: drop-shadow(0 14px 18px rgba(40,25,10,0.35))">
+<span data-m="S2" style="position: absolute; left: 9.1%; right: 9.2%; top: 76.9%; height: 12%; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: {{l3.fs}}px; letter-spacing: -0.5px; color: #F6EBD6; text-shadow: 0 2px 0 rgba(40,22,8,0.75), 0 4px 14px rgba(0,0,0,0.45)">Memoria</span>
+</a>
+<div data-m="X2" class="ctx" style="position: absolute; left: 50%; top: {{l3.tt}}px; width: min(470px, 84vw); transform: translateX(-50%); opacity: {{l3.op}}; text-align: center; color: #3B2F27; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<p style="margin: 0; font-size: 15px; line-height: 1.55; font-weight: 500">Lo que queda cuando la guerra se aleja, y lo que se construye a pesar de ella. Esta sección habla del regreso a la vida civil, de las huellas que el conflicto deja en la mente, de quienes siguen buscando y de los nuevos proyectos que nacieron de esas historias.</p>
+<a data-m="K2" href="Conoce.html" class="menu" style="pointer-events: {{l3.pe}}; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; color: #3B2F27; text-decoration: underline; text-underline-offset: 5px">Haz clic en el letrero para saber más<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+
+</div>
+<div data-m="H" style="position: absolute; left: 0; right: 0; bottom: 24px; z-index: 90; display: flex; justify-content: center; opacity: {{hint}}; pointer-events: none">
+<p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: #1B1B1B; color: #F4EFE6; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; box-shadow: 0 6px 20px rgba(0,0,0,0.2)">Desliza<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg></p>
+</div>
+
+</div>
+</div>
+
+<section class="redes" aria-labelledby="redes-t">
+<div class="rd-in">
+<div class="rd-head">
+<div class="rd-left">
+<p class="rd-kick">Redes</p>
+<h2 id="redes-t" class="rd-t">Síguenos en Instagram</h2>
+</div>
+<a class="rd-prof" href="https://www.instagram.com/_.vestigio/" target="_blank" rel="noopener noreferrer">
+<span class="rd-av"><img src="assets/a08a2729465d42bf4d55ea6c95c53547.png" alt=""></span>
+<span class="rd-pt"><b>@_.vestigio</b><span>Memoria del conflicto armado colombiano, contada por quienes lo vivieron y hoy reconstruyen su vida</span></span>
+</a>
+</div>
+<div class="rd-grid">
+<a class="rd-post" href="https://www.instagram.com/_.vestigio/" target="_blank" rel="noopener noreferrer" aria-label="Publicación: Presentación final, jueves 19 de noviembre (abre Instagram)"><img src="assets/95cc94dab5f076a609f05fe1250d92a4.webp" alt="Publicación: Presentación final, jueves 19 de noviembre" loading="lazy"><span class="rd-over"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg></span></a>
+<a class="rd-post" href="https://www.instagram.com/_.vestigio/" target="_blank" rel="noopener noreferrer" aria-label="Publicación: La trampa digital (abre Instagram)"><img src="assets/a966eb2740ba2be9d3ab76e90f210eb5.webp" alt="Publicación: La trampa digital" loading="lazy"><span class="rd-over"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg></span></a>
+<a class="rd-post" href="https://www.instagram.com/_.vestigio/" target="_blank" rel="noopener noreferrer" aria-label="Publicación: Canciones que deberías escuchar para entender el país (abre Instagram)"><img src="assets/160db39ccd93a8bc3c1ee1000cf8aeea.webp" alt="Publicación: Canciones que deberías escuchar para entender el país" loading="lazy"><span class="rd-over"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg></span></a>
+<a class="rd-post" href="https://www.instagram.com/_.vestigio/" target="_blank" rel="noopener noreferrer" aria-label="Publicación: Un motivo para seguir (abre Instagram)"><img src="assets/8028c532a74f9c8e450613344bd633a9.webp" alt="Publicación: Un motivo para seguir" loading="lazy"><span class="rd-over"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg></span></a>
+<a class="rd-post" href="https://www.instagram.com/_.vestigio/" target="_blank" rel="noopener noreferrer" aria-label="Publicación: 10 años del Acuerdo de Paz (abre Instagram)"><img src="assets/b6f4100093526b3df8a7df5159692466.webp" alt="Publicación: 10 años del Acuerdo de Paz" loading="lazy"><span class="rd-over"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg></span></a>
+<a class="rd-post" href="https://www.instagram.com/_.vestigio/" target="_blank" rel="noopener noreferrer" aria-label="Publicación: 137.000 personas dadas por desaparecidas (abre Instagram)"><img src="assets/bfea8fb171c9fe9c5546cebc2562729a.webp" alt="Publicación: 137.000 personas dadas por desaparecidas" loading="lazy"><span class="rd-over"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg></span></a>
+</div>
+<div class="rd-cta"><a class="rd-btn" href="https://www.instagram.com/_.vestigio/" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg>Seguir a @_.vestigio</a></div>
+</div>
+</section>
+<section class="equipo" aria-labelledby="eq-t">
+<div class="eq-grid">
+<div class="eq-c"><span class="eq-n">01</span><span class="eq-fp"><img src="assets/c6a89babf29de3812a62b25923f13180.svg" alt=""></span><h3 class="eq-name">Valentina<br>Casas</h3><span class="eq-line"></span><span class="eq-role">Equipo Vestigio</span></div>
+<div class="eq-c"><span class="eq-n">02</span><span class="eq-fp"><img src="assets/b3dbf2d64e106609fd1a75480214a93e.svg" alt=""></span><h3 class="eq-name">Gabriela<br>García</h3><span class="eq-line"></span><span class="eq-role">Equipo Vestigio</span></div>
+<div class="eq-c"><span class="eq-n">03</span><span class="eq-fp"><img src="assets/5c87599a3d6033a60d92a3efca2f7cdd.svg" alt=""></span><h3 class="eq-name">Valentina<br>Martínez</h3><span class="eq-line"></span><span class="eq-role">Equipo Vestigio</span></div>
+<div class="eq-c"><span class="eq-n">04</span><span class="eq-fp"><img src="assets/938e0fe04062dd82ddf5317c634e613e.svg" alt=""></span><h3 class="eq-name">Gabriela<br>Serrano</h3><span class="eq-line"></span><span class="eq-role">Equipo Vestigio</span></div>
+<div class="eq-c"><span class="eq-n">05</span><span class="eq-fp"><img src="assets/c6a89babf29de3812a62b25923f13180.svg" alt=""></span><h3 class="eq-name">Samuel<br>Suárez</h3><span class="eq-line"></span><span class="eq-role">Equipo Vestigio</span></div>
+<a class="eq-c eq-go" href="SobreNosotros.html"><span class="eq-go-t">Conoce más<br>sobre nosotros</span><span class="eq-go-b">Ver el equipo<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></a>
+</div>
+<div class="eq-title"><span class="eq-br" aria-hidden="true"></span><h2 id="eq-t"><span class="eq-a">Sobre</span> <span class="eq-b">nosotros</span></h2></div>
+</section>
+<footer class="pie">
+<div class="ft-left">
+<a class="ft-cc" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es" target="_blank" rel="noopener noreferrer license">
+<span class="ft-cc-top"><span class="ft-cc-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle><text x="12" y="15.6" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="9.5" fill="currentColor">cc</text></svg>
+<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle><circle cx="12" cy="6.6" r="1.7" fill="currentColor"></circle><path d="M9.6 9.4h4.8v5.2h-1.2v4.4h-2.4v-4.4H9.6z" fill="currentColor"></path></svg>
+<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle><text x="12" y="16.2" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="11" fill="currentColor">$</text><path d="M5 5l14 14" stroke="currentColor" stroke-width="1.8"></path></svg>
+<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle><path d="M8 10h8M8 14h8" stroke="currentColor" stroke-width="2"></path></svg>
+</span><span>CC BY-NC-ND 4.0</span></span>
+<span class="ft-cc-name">Atribución-NoComercial-SinDerivadas 4.0 Internacional</span>
+</a>
+<a class="ft-ig" href="https://www.instagram.com/_.vestigio/" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg><span>@_.vestigio</span></a>
+</div>
+<div class="ft-cred">
+<p class="ft-u">Universidad Externado de Colombia</p>
+<p>Facultad de Comunicación Social - Periodismo</p>
+<p><b>Autores:</b> Gabriela García Pérez - Valentina Martínez Cardenas - Laura Valentina Casas Collazos - Maria Gabriela Serrano Rodriguez - Samuel Suárez Rueda</p>
+<p>Taller de Convergencia en Medios - 2026</p>
+<p>Contacto: <a href="mailto:vestigio75@gmail.com">vestigio75@gmail.com</a></p>
+</div>
+</footer>
+</main>
+</x-dc></template>
+
+<script>
+
+class Component extends DCLogic {
+  setScroller = (el) => { this.scroller = el; };
+  setVes = (el) => { this.ves = el; };
+  setTrack = (el) => { this.track = el; };
+  setVhint = (el) => { this.vhint = el; };
+  setI4 = (el) => { this.i4 = el; };
+  setI5 = (el) => { this.i5 = el; };
+  setI6 = (el) => { this.i6 = el; };
+  setI7 = (el) => { this.i7 = el; };
+  setI8 = (el) => { this.i8 = el; };
+  setH14 = (el) => { this.h14 = el; };
+  setH15 = (el) => { this.h15 = el; };
+  setH16 = (el) => { this.h16 = el; };
+  setH17 = (el) => { this.h17 = el; };
+  setH18 = (el) => { this.h18 = el; };
+  setH19 = (el) => { this.h19 = el; };
+  setVend = (el) => { this.vend = el; };
+  setI0 = (el) => { this.i0 = el; };
+  setI1 = (el) => { this.i1 = el; };
+  setI2 = (el) => { this.i2 = el; };
+  setI3 = (el) => { this.i3 = el; };
+  setH7 = (el) => { this.h7 = el; };
+  setH8 = (el) => { this.h8 = el; };
+  setH9 = (el) => { this.h9 = el; };
+  setH10 = (el) => { this.h10 = el; };
+  setH11 = (el) => { this.h11 = el; };
+  setH12 = (el) => { this.h12 = el; };
+  setH13 = (el) => { this.h13 = el; };
+  setH0 = (el) => { this.h0 = el; };
+  setH1 = (el) => { this.h1 = el; };
+  setH2 = (el) => { this.h2 = el; };
+  setH3 = (el) => { this.h3 = el; };
+  setH4 = (el) => { this.h4 = el; };
+  setH5 = (el) => { this.h5 = el; };
+  setH6 = (el) => { this.h6 = el; };
+  setT0 = (el) => { this.t0 = el; };
+  setT1 = (el) => { this.t1 = el; };
+  setT2 = (el) => { this.t2 = el; };
+  setT3 = (el) => { this.t3 = el; };
+  setT4 = (el) => { this.t4 = el; };
+  goTop = () => { if (this.scroller) this.scroller.scrollTo({ top: 0, behavior: 'smooth' }); };
+
+  componentDidMount() {
+    // la animación arranca siempre desde el principio al entrar a la sección
+    this.reset = () => {
+      if (this.scroller) this.scroller.scrollTop = 0;
+      this.su = 0; this.lastU = null; this.lastVes = null; this.vp = null; this.liveU = 0; this.lastMapU = null;
+      this.setState({ u: 0, r1: false, r2: false, seen: null });
+    };
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    // algunos navegadores (p. ej. Chrome/Edge en Windows) restauran el scroll después de montar:
+    // durante el primer segundo se fuerza volver arriba
+    this.forceTopUntil = performance.now() + 1000;
+    this.reset();
+    this.onVis = () => { if (document.hidden) this.reset(); else { this.reset(); this.forceTopUntil = performance.now() + 600; } };
+    document.addEventListener('visibilitychange', this.onVis);
+    window.addEventListener('pageshow', this.reset);
+    if (window.IntersectionObserver && this.scroller) {
+      this.io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (!e.isIntersecting) this.reset(); });
+      });
+      this.io.observe(this.scroller);
+    }
+    const tick = () => {
+      const el = this.scroller;
+      if (el) {
+        // si la sección estuvo oculta (otra sección / otra pestaña) y vuelve a verse, empieza de cero
+        const visible = el.clientHeight > 0 && el.getClientRects().length > 0;
+        if (!visible) this.wasHidden = true;
+        else if (this.wasHidden) { this.wasHidden = false; this.reset(); this.forceTopUntil = performance.now() + 600; }
+        if (performance.now() < this.forceTopUntil && el.scrollTop !== 0) { el.scrollTop = 0; this.su = 0; }
+        const vw = el.clientWidth || 1440;
+        const vh = el.clientHeight || 900;
+        // el mapa sigue al scroll con una pequeña inercia, para que se sienta fluido
+        const target = Math.max(0, el.scrollTop - (this.track ? this.track.offsetTop : 0)); // el mapa empieza después de "¿Qué es Vestigio?"
+        this.su = this.su == null ? target : this.su + (target - this.su) * 0.16;
+        if (Math.abs(target - this.su) < 0.3) this.su = target;
+        const u = this.su;
+        this.liveU = u;
+        this.paintVes(vw, vh);
+        const s = this.state || {};
+        if (s.vw !== vw || s.vh !== vh) {
+          this.setState({ u: u, vw: vw, vh: vh });
+          this.lastMapU = u;
+        } else if (this.lastMapU == null || Math.abs(this.lastMapU - u) > 0.05) {
+          // el mapa se pinta directo en cada cuadro (sin re-render): mucho más fluido, sobre todo en celular
+          this.lastMapU = u;
+          this.paintMap(this.renderVals());
+        }
+      }
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  paintMap(v) {
+    if (!this.track) return;
+    let gi = 0;
+    this.track.querySelectorAll('[data-m]').forEach((el) => {
+      const k = el.getAttribute('data-m'), t = k[0], i = +k.slice(1);
+      const st = el.style;
+      if (t === 'L') st.transform = 'translateY(' + v['y' + (i + 1)] + 'px)';
+      else if (t === 'B') st.opacity = v['u' + (i + 1)].op;
+      else if (t === 'E') { st.transform = 'translateY(' + v['y' + (i + 1)] + 'px)'; st.visibility = v['u' + (i + 1)].vis; }
+      else if (t === 'G') { const g = v.gaps[gi++]; if (g) { st.top = g.top + 'px'; st.height = g.h + 'px'; st.opacity = g.op; st.visibility = g.vis; } }
+      else if (t === 'H') st.opacity = v.hint;
+      else {
+        const l = v['l' + (i + 1)];
+        if (t === 'C') { st.top = l.ctop + 'px'; st.height = l.ch + 'px'; st.visibility = l.vis; }
+        else if (t === 'A') { st.width = l.w + 'px'; st.transform = 'translate(-50%, ' + l.sy + 'px) rotate(' + l.rot + 'deg)'; st.pointerEvents = l.pe; }
+        else if (t === 'S') st.fontSize = l.fs + 'px';
+        else if (t === 'X') { st.top = l.tt + 'px'; st.opacity = l.op; }
+        else if (t === 'K') st.pointerEvents = l.pe;
+      }
+    });
+  }
+
+  // ¿Qué es Vestigio?: huellas que ruedan y van revelando el texto (se pinta directo, sin re-render)
+  paintVes(vw, vh) {
+    if (!this.ves) return;
+    const clamp = (v) => Math.min(1, Math.max(0, v));
+    const ease = (t) => 0.5 - 0.5 * Math.cos(Math.PI * t);
+    const r = this.ves.getBoundingClientRect();
+    const target = clamp(-r.top / Math.max(1, r.height - vh));
+    // inercia suave para que las huellas rueden fluido
+    this.vp = this.vp == null ? target : this.vp + (target - this.vp) * 0.1;
+    if (Math.abs(target - this.vp) < 0.0003) this.vp = target;
+    const p = this.vp;
+    // huellas que ruedan solas mientras la persona no ha empezado a deslizar
+    const idleOp = 1 - clamp(p / 0.06);
+    const now = performance.now() / 1000;
+    const I = [[5.5, 0.0, 0.14, 0.30, -1], [4.2, 0.35, 0.06, 0.80, 1], [6.5, 0.6, 0.09, 0.62, -1], [4.8, 0.15, 0.05, 0.16, 1],
+               [5.0, 0.8, 0.07, 0.48, 1], [3.8, 0.5, 0.04, 0.90, -1], [6.0, 0.25, 0.11, 0.12, -1], [4.5, 0.7, 0.05, 0.70, 1], [5.8, 0.45, 0.08, 0.40, -1]];
+    I.forEach((h, i) => {
+      const el = this['i' + i];
+      if (!el) return;
+      const size = Math.max(50, h[2] * Math.min(vw, vh * 1.3));
+      const t = ((now / h[0]) + h[1]) % 1;
+      const from = h[4] > 0 ? -size * 1.2 : vw + size * 0.2;
+      const to = h[4] > 0 ? vw + size * 0.2 : -size * 1.2;
+      const x = from + (to - from) * t;
+      const rot = ((x - from) / (size / 2)) * (180 / Math.PI) * 0.5;
+      el.style.width = size.toFixed(0) + 'px';
+      el.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + (h[3] * vh - size * 0.64).toFixed(1) + 'px,0) rotate(' + rot.toFixed(1) + 'deg)';
+      el.style.opacity = (0.9 * idleOp).toFixed(3);
+    });
+    if (p === this.lastVes && vw === this.lastVesW) return;
+    this.lastVes = p; this.lastVesW = vw;
+    // [inicio, fin, tamaño (fracción del ancho), altura (fracción de la pantalla), dirección 1 = izq→der, -1 = der→izq]
+    const H = [
+      [0.00, 0.20, 0.20, 0.30, -1],
+      [0.06, 0.24, 0.07, 0.86, 1],
+      [0.12, 0.30, 0.05, 0.14, -1],
+      [0.20, 0.40, 0.13, 0.76, 1],
+      [0.26, 0.44, 0.06, 0.22, -1],
+      [0.32, 0.50, 0.04, 0.92, -1],
+      [0.38, 0.58, 0.11, 0.66, 1],
+      [0.44, 0.62, 0.05, 0.10, 1],
+      [0.50, 0.70, 0.15, 0.36, -1],
+      [0.56, 0.74, 0.06, 0.84, 1],
+      [0.62, 0.80, 0.05, 0.18, -1],
+      [0.68, 0.88, 0.10, 0.70, -1],
+      [0.74, 0.92, 0.04, 0.26, 1],
+      [0.80, 0.98, 0.08, 0.90, 1],
+      [0.03, 0.19, 0.05, 0.62, 1],
+      [0.16, 0.34, 0.08, 0.08, 1],
+      [0.29, 0.47, 0.06, 0.48, -1],
+      [0.41, 0.57, 0.04, 0.94, 1],
+      [0.53, 0.71, 0.09, 0.52, -1],
+      [0.65, 0.83, 0.05, 0.06, -1],
+    ];
+    H.forEach((h, i) => {
+      const el = this['h' + i];
+      if (!el) return;
+      const size = Math.max(50, h[2] * Math.min(vw, vh * 1.3));
+      const t = clamp((p - h[0]) / (h[1] - h[0]));
+      const from = h[4] > 0 ? -size * 1.2 : vw + size * 0.2;
+      const to = h[4] > 0 ? vw + size * 0.2 : -size * 1.2;
+      const x = from + (to - from) * t;   // velocidad constante: rueda parejo
+      const rot = ((x - from) / (size / 2)) * (180 / Math.PI) * 0.5;
+      const y = h[3] * vh - size * 0.64;
+      el.style.width = size.toFixed(0) + 'px';
+      el.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0) rotate(' + rot.toFixed(1) + 'deg)';
+      el.style.opacity = (t > 0 && t < 1 ? 0.9 : 0).toString();
+    });
+    // primero el título y después, en orden, cada frase
+    const T = [[0.02, 0.12], [0.18, 0.30], [0.34, 0.46], [0.50, 0.62], [0.66, 0.78]];
+    T.forEach((w, i) => {
+      const el = this['t' + i];
+      if (!el) return;
+      const k = ease(clamp((p - w[0]) / (w[1] - w[0])));
+      el.style.opacity = k.toFixed(3);
+      if (i === 0) el.style.transform = 'translateY(' + (30 * (1 - k)).toFixed(1) + 'px)';
+    });
+    if (this.vhint) this.vhint.style.opacity = (1 - clamp((p - 0.74) / 0.06)).toFixed(3);
+    if (this.vend) this.vend.style.opacity = clamp((p - 0.82) / 0.06).toFixed(3); // al terminar el texto: invita a seguir al mapa
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('visibilitychange', this.onVis);
+    window.removeEventListener('pageshow', this.reset);
+    if (this.io) this.io.disconnect();
+    cancelAnimationFrame(this.raf);
+  }
+
+  // hojas y tierra que caen en cada abertura (fijas, para que no cambien en cada render)
+  particles(seed) {
+    let n = seed * 9301 + 49297;
+    const rnd = () => { n = (n * 9301 + 49297) % 233280; return n / 233280; };
+    const greens = ['#5c8a2e', '#79a83f', '#4b7526', '#8db54a'];
+    const browns = ['#5a4330', '#3b3129', '#7a5c3a'];
+    const out = [];
+    for (let i = 0; i < 26; i++) {
+      const leaf = rnd() < 0.6;
+      const dur = leaf ? 3.5 + rnd() * 3 : 1.6 + rnd() * 1.6;
+      const delay = -rnd() * dur;
+      if (leaf) {
+        out.push({
+          x: (2 + rnd() * 96).toFixed(1), w: (8 + rnd() * 7).toFixed(0), h: (5 + rnd() * 3).toFixed(0),
+          c: greens[Math.floor(rnd() * greens.length)], r: '0 100% 0 100%',
+          anim: (rnd() < 0.5 ? 'caer1 ' : 'caer2 ') + dur.toFixed(2) + 's linear ' + delay.toFixed(2) + 's infinite',
+        });
+      } else {
+        const s = (2 + rnd() * 3).toFixed(1);
+        out.push({
+          x: (2 + rnd() * 96).toFixed(1), w: s, h: s,
+          c: browns[Math.floor(rnd() * browns.length)], r: '50%',
+          anim: 'tierra ' + dur.toFixed(2) + 's ease-in ' + delay.toFixed(2) + 's infinite',
+        });
+      }
+    }
+    return out;
+  }
+
+  renderVals() {
+    const st = this.state || {};
+    const vw = st.vw || 1440;
+    const vh = st.vh || 900;
+    const u = this.liveU != null ? this.liveU : (st.u || 0);
+    const mob = vw < 700; // celular
+    const clamp = (v) => Math.min(1, Math.max(0, v));
+    const ease = (t) => t * t * (3 - 2 * t);
+
+    // el mapa en relieve ocupa todo el ancho (imagen de 1512 x 1824)
+    const MW = mob ? vw : Math.min(vw, Math.max(720, vh * 1.25)); // ancho del mapa: igual proporción en pantallas anchas
+    const k = MW / 1512;
+    const mapH = 1824 * k;
+    // altura de cada grieta en la imagen
+    const yc = [525, 955, 1335].map((y) => y * k);
+    // ancho de la abertura donde caen hojas (en % del ancho)
+    const spans = [[13, 75], [11, 95], [27, 77]];
+    const G = Math.max(260, (this.props.apertura ?? 0.62) * vh); // cuánto se abre
+    const O = 0.85 * vh; // cuánto scroll dura la apertura
+    const PAD = mob ? 74 : (vw < 760 ? 150 : 130); // alto del menú superior + espacio antes del mapa
+
+    const T = [];
+    for (let i = 0; i < 3; i++) {
+      let t = yc[i] + PAD + i * (G / 2 + O) - vh / 2;
+      t = i === 0 ? Math.max(t, 80) : Math.max(t, T[i - 1] + O + 80);
+      T.push(t);
+    }
+    const tt = T.map((t) => clamp((u - t) / O));
+    const g = tt.map(ease);
+
+    // cuánto sube la cámara al abrirse cada grieta: nunca tanto que la tierra de arriba quede debajo del menú
+    const shift = [];
+    for (let i = 0; i < 3; i++) {
+      let camAt = T[i] - PAD;
+      for (let j = 0; j < i; j++) camAt += -O + shift[j];
+      const startTop = yc[i] + G * i - camAt;
+      shift.push(Math.min(G / 2, Math.max(0, startTop - (PAD + 10))));
+    }
+    let cam = u - PAD; // el mapa empieza debajo del menú
+    for (let i = 0; i < 3; i++) cam += -O * tt[i] + shift[i] * g[i];
+
+    const off = [0, G * g[0], G * (g[0] + g[1]), G * (g[0] + g[1] + g[2])];
+    const y = off.map((o) => (o - cam).toFixed(1));
+
+    // tierra colgando bajo cada pedazo de arriba: crece a medida que se abre
+    // la tierra está completa desde el inicio, escondida detrás del pedazo de abajo:
+    // al separarse, sale desde la ruptura
+    const under = g.map((v) => ({ vis: v > 0.001 ? 'visible' : 'hidden', op: clamp(v / 0.2).toFixed(3) }));
+
+    if (!this.parts) this.parts = [this.particles(3), this.particles(11), this.particles(29)];
+    const gaps = [0, 1, 2].map((i) => {
+      const op = clamp((g[i] - 0.15) / 0.4);
+      return {
+        left: spans[i][0], w: spans[i][1] - spans[i][0],
+        top: (yc[i] + off[i] - cam).toFixed(1),
+        h: Math.max(1, G * g[i]).toFixed(1),
+        op: op.toFixed(3), vis: op > 0.01 ? 'visible' : 'hidden',
+        parts: this.parts[i],
+      };
+    });
+
+    const btn = [0, 1, 2].map((i) => {
+      const yy = yc[i] + off[i] + G * 0.8 * g[i] - cam;
+      const op = clamp((g[i] - 0.3) / 0.6);
+      return {
+        y: yy.toFixed(1),
+        s: (0.25 + 0.75 * ease(clamp(g[i] / 0.9))).toFixed(3),
+        op: op.toFixed(3),
+        vis: op > 0.02 ? 'visible' : 'hidden',
+        pe: op > 0.6 ? 'auto' : 'none',
+      };
+    });
+
+    // imagen de fondo + espacio para el contexto de cada sección, con la misma animación de los botones
+    // letreros de madera que caen desde la tierra colgante al abrirse cada grieta
+    const bounce = (t) => {
+      const n1 = 7.5625, d1 = 2.75;
+      if (t < 1 / d1) return n1 * t * t;
+      if (t < 2 / d1) { t -= 1.5 / d1; return n1 * t * t + 0.75; }
+      if (t < 2.5 / d1) { t -= 2.25 / d1; return n1 * t * t + 0.9375; }
+      t -= 2.625 / d1; return n1 * t * t + 0.984375;
+    };
+    // el letrero cuelga de lianas largas que salen de la ruptura; cae apenas empieza a abrirse el mapa
+    const LR = 2438 / 900;                 // alto/ancho de la imagen (lianas + tablero)
+    const BOARD_TOP = 0.752;               // dónde empieza la madera dentro de la imagen
+    const lw = mob ? Math.max(104, Math.min(124, vw * 0.3)) : Math.max(150, Math.min(230, MW * 0.18, (G * 0.66 - 160) / (LR * (1 - BOARD_TOP))));
+    const lh = lw * LR;
+    const lets = [0, 1, 2].map((i) => {
+      const gapTop = yc[i] + off[i] - cam;
+      const f = clamp(g[i] / 0.55);       // empieza con la primera grieta
+      const rest = G * 0.3 - lh * BOARD_TOP; // lianas largas: la madera cuelga a un tercio del hueco // la madera queda arriba en el hueco, las lianas suben hasta la tierra
+      const sy = rest - (1 - bounce(f)) * lh * 0.7;
+      const rot = 6 * Math.pow(1 - f, 1.2) * Math.sin(f * Math.PI * 4);
+      const op = clamp((f - 0.7) / 0.3);
+      return {
+        ctop: gapTop.toFixed(1), ch: (G * 2).toFixed(1), // solo recorta arriba: las lianas salen de debajo de la tierra colgante
+        w: lw.toFixed(0), fs: (lw * 0.14).toFixed(0),
+        sy: sy.toFixed(1), rot: rot.toFixed(2),
+        tt: (rest + lh + 6).toFixed(1), op: op.toFixed(3),
+        vis: g[i] > 0.001 ? 'visible' : 'hidden', pe: f > 0.85 ? 'auto' : 'none',
+      };
+    });
+
+    const secs = [0, 1, 2].map((i) => {
+      const op = clamp((g[i] - 0.3) / 0.6);
+      const gapTop = yc[i] + off[i] - cam;
+      return {
+        left: spans[i][0], w: spans[i][1] - spans[i][0],
+        top: (gapTop + (G * g[i]) / 2 - G * 0.5).toFixed(1), h: G.toFixed(1),
+        ty: (gapTop + G * 0.52 * g[i]).toFixed(1),
+        s: (0.25 + 0.75 * ease(clamp(g[i] / 0.9))).toFixed(3),
+        op: op.toFixed(3), iop: (op * 0.4).toFixed(3),
+        vis: op > 0.02 ? 'visible' : 'hidden',
+      };
+    });
+
+    const end = Math.max(mapH + PAD + 1.5 * G + 3 * O - vh + 60, T[2] + O + 120);
+
+    return {
+      setScroller: this.setScroller,
+      setVes: this.setVes, setTrack: this.setTrack, setVhint: this.setVhint, setVend: this.setVend, setI4: this.setI4, setI5: this.setI5, setI6: this.setI6, setI7: this.setI7, setI8: this.setI8, setH14: this.setH14, setH15: this.setH15, setH16: this.setH16, setH17: this.setH17, setH18: this.setH18, setH19: this.setH19, setI0: this.setI0, setI1: this.setI1, setI2: this.setI2, setI3: this.setI3, setH7: this.setH7, setH8: this.setH8, setH9: this.setH9, setH10: this.setH10, setH11: this.setH11, setH12: this.setH12, setH13: this.setH13, setH0: this.setH0, setH1: this.setH1, setH2: this.setH2, setH3: this.setH3, setH4: this.setH4, setH5: this.setH5, setH6: this.setH6, setT0: this.setT0, setT1: this.setT1, setT2: this.setT2, setT3: this.setT3, setT4: this.setT4,
+      goTop: this.goTop,
+      bg: this.props.bg ?? '#D9C7B1',
+      trackH: Math.ceil(end + vh), mw: MW.toFixed(0),
+      y1: y[0], y2: y[1], y3: y[2], y4: y[3],
+      u1: under[0], u2: under[1], u3: under[2],
+      gaps: gaps,
+      b1: btn[0], b2: btn[1], b3: btn[2],
+      s1: secs[0], s2: secs[1], s3: secs[2],
+      l1: lets[0], l2: lets[1], l3: lets[2],
+      hint: (1 - clamp(u / 250)).toFixed(3),
+    };
+  }
+}
+
+DCBoot(Component, {"bg": "#D9C7B1", "apertura": 0.62});
+</script>
+</body>
+</html>
