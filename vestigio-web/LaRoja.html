@@ -21,13 +21,13 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 .lr-back{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 4px;color:var(--cafe);text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
 .lr-back:hover{text-decoration:underline;text-underline-offset:4px}
 .lr-back:focus-visible,.lr-end a:focus-visible,.lr-yt:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.lr-sheet{min-height:100vh;grid-auto-columns:minmax(0,1fr);padding:calc(var(--bar) + var(--g)) var(--g) var(--g);display:grid;grid-template-columns:minmax(280px,31%) 1fr;grid-template-rows:auto auto;align-content:space-between;column-gap:var(--g);row-gap:clamp(6px,1.2vh,14px)}
-.lr-side{display:flex;flex-direction:column;justify-content:flex-start;gap:clamp(18px,3.5vh,40px);min-height:0}
+.lr-sheet{min-height:100vh;grid-auto-columns:minmax(0,1fr);padding:calc(var(--bar) + var(--g)) var(--g) var(--g);display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;align-content:space-between;column-gap:var(--g);row-gap:clamp(6px,1.2vh,14px)}
+.lr-side{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(18px,3.5vh,40px);min-height:0;padding-bottom:calc(var(--lk,24px))}
 .lr-kick{margin:0 0 8px;font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
 .lr-t{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:var(--ink)}
 .lr-t1{display:block;white-space:nowrap;font-size:clamp(60px,7.4vw,140px);line-height:.84;letter-spacing:-.045em}
 .lr-t2{display:block;margin-top:clamp(8px,1.2vh,14px);font-size:clamp(22px,2.5vw,42px);line-height:1;letter-spacing:-.01em;text-transform:uppercase}
-.lr-sum{margin:0;font-size:clamp(10px,.78vw,12px);line-height:1.42;font-weight:700;text-transform:uppercase;letter-spacing:.005em;max-width:400px}
+.lr-sum{margin:0;font-size:clamp(10px,.78vw,12px);line-height:1.42;font-weight:700;text-transform:uppercase;letter-spacing:.005em;max-width:min(100%,460px)}
 .lr-by{margin:clamp(12px,2vh,20px) 0 0;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
 .lr-vcol{display:flex;flex-direction:column;align-items:flex-end;gap:10px;min-width:0}
 .lr-vbox{display:flex;flex-direction:column;gap:10px;width:100%;max-width:100%}
@@ -109,13 +109,19 @@ class Component extends DCLogic {
       if (!media) return;
       vbox.style.width = ''; media.style.height = ''; media.style.aspectRatio = '';
       if (window.innerWidth <= 820) return;
-      const cs = getComputedStyle(document.getElementById('lr-sheet'));
+      // el video manda: 16:9 (1920x1080) tan grande como quepa; la columna izquierda toma el resto
+      const sheet = document.getElementById('lr-sheet');
+      const cs = getComputedStyle(sheet);
       const padT = parseFloat(cs.paddingTop) || 0, padB = parseFloat(cs.paddingBottom) || 0, gap = parseFloat(cs.rowGap) || 0;
+      const padL = parseFloat(cs.paddingLeft) || 0, padR = parseFloat(cs.paddingRight) || 0, cgap = parseFloat(cs.columnGap) || 0;
       const lk = vcol ? vcol.querySelector('.lr-yt') : null;
-      const maxH = root.clientHeight - padT - padB - gap - big.getBoundingClientRect().height - (lk ? lk.getBoundingClientRect().height + 10 : 0);
-      const mw = media.getBoundingClientRect().width;
-      // recuadro siempre en proporción 16:9 (1920x1080)
-      if (maxH > 120 && mw * 9 / 16 > maxH) vbox.style.width = Math.floor(maxH * 16 / 9) + 'px';
+      const lkH = lk ? lk.getBoundingClientRect().height + 10 : 0;
+      sheet.style.setProperty('--lk', lkH + 'px');
+      const maxH = root.clientHeight - padT - padB - gap - big.getBoundingClientRect().height - lkH;
+      const inner = sheet.clientWidth - padL - padR - cgap;
+      const leftMin = Math.max(300, Math.min(440, inner * 0.3));
+      const vw = Math.max(320, Math.min(inner - leftMin, maxH * 16 / 9));
+      vbox.style.width = Math.floor(vw) + 'px';
     };
     this.onResize = layout;
     window.addEventListener('resize', layout);
