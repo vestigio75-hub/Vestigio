@@ -27,11 +27,11 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 .lr-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 0;border-top:1.5px solid var(--ink);border-bottom:1px solid var(--line);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:0;animation:lrFade .7s .05s forwards}
 .lr-meta .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--roja);margin-right:10px;vertical-align:1px;animation:lrRec 1.6s ease-out infinite}
 @keyframes lrRec{0%{box-shadow:0 0 0 0 rgba(179,38,30,.55)}80%,100%{box-shadow:0 0 0 8px rgba(179,38,30,0)}}
-.lr-head{display:grid;grid-template-columns:auto 1fr;align-items:end;gap:clamp(16px,3vw,48px);padding:clamp(18px,3.5vh,36px) 0 clamp(20px,4vh,40px)}
+.lr-head{display:grid;grid-template-columns:auto 1fr;align-items:end;gap:clamp(8px,1vw,16px);padding:clamp(18px,3.5vh,36px) 0 clamp(20px,4vh,40px)}
 .lr-t{margin:0;display:contents}
-.lr-t1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(64px,12.4vw,196px);line-height:.8;letter-spacing:.015em;white-space:nowrap;overflow:hidden;padding:.08em .12em .16em 0;margin-bottom:-.12em}
+.lr-t1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(64px,12.4vw,196px);line-height:.8;letter-spacing:.015em;white-space:nowrap;overflow:hidden;padding:.08em .05em .16em 0;margin-bottom:-.12em}
 .lr-t1 .ch{display:inline-block;transform:translateY(105%);animation:lrRise .9s cubic-bezier(.2,.8,.2,1) forwards}
-.lr-t2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(20px,2.6vw,40px);line-height:1;letter-spacing:-.01em;text-transform:uppercase;padding-bottom:.25em;opacity:0;animation:lrFade .8s .55s forwards}
+.lr-t2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,3.4vw,54px);line-height:.98;letter-spacing:-.01em;text-transform:uppercase;padding-bottom:.25em;opacity:0;animation:lrFade .8s .55s forwards}
 @keyframes lrRise{to{transform:none}}
 @keyframes lrFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 /* video */
@@ -44,7 +44,7 @@ html,body{margin:0;height:100%;overflow:hidden;background:#D9C7B1}
 /* resumen y cierre */
 .lr-by{margin:0 0 clamp(16px,2.6vh,26px);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:0;animation:lrFade .8s .7s forwards}
 .lr-outro{margin:clamp(70px,13vh,140px) auto 0;padding:0 var(--pad);max-width:1280px}
-.lr-big{margin:0;padding-top:clamp(18px,3vh,30px);border-top:1.5px solid var(--ink);overflow:hidden;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;line-height:.9;letter-spacing:-.035em;text-transform:uppercase;font-size:8vw;animation:lrTint 12s ease-in-out infinite}
+.lr-big{margin:0;overflow:hidden;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;line-height:.9;letter-spacing:-.035em;text-transform:uppercase;font-size:8vw;animation:lrTint 12s ease-in-out infinite}
 .lr-big .ln{display:block;width:max-content;white-space:nowrap;word-spacing:.1em}
 .lr-big .bw{display:inline-block;overflow:hidden;vertical-align:bottom;padding-top:.06em}
 .lr-big .bw > span{display:inline-block;transform:translateY(105%)}
